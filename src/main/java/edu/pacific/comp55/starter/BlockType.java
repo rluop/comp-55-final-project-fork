@@ -1,5 +1,9 @@
 package edu.pacific.comp55.starter;
 
-public class BlockType {
+public enum BlockType {
 
+	RIGHTL, LEFTL, T, RIGHTS, LEFTS, SQUARE, BAR;
+	
+	
+	
 }
