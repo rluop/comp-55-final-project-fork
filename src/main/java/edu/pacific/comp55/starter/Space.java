@@ -12,5 +12,11 @@ public class Space {
 	public void setCol(int numCols) {
 		this.row = numCols;
 	}
+	
+	// getters
+	
+	public int getRow() {
+		return row;
+	}
 
 }
