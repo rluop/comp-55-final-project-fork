@@ -1,19 +1,22 @@
 package edu.pacific.comp55.ProjectCode;
 
+import java.awt.*;
+
+
 public class Game {
-	void moveHorizontal() {
+	public void moveHorizontal() {
 		
 	}
 	
-	void drawBlock() {
+	public void drawBlock() {
 		
 	}
 	
-	void holdBlock () {
+	public void holdBlock () {
 		
 	}
 	
-	void rotate() {
+	public void rotate() {
 		
 	}
 }
