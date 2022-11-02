@@ -18,5 +18,8 @@ public class Space {
 	public int getRow() {
 		return row;
 	}
+	public int getCol() {
+		return col;
+	}
 
 }
