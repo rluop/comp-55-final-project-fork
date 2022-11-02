@@ -34,4 +34,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public void showGame() {
 		
 	}
+	
+	public void showTime() {
+		
+	}
 }
