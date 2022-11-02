@@ -15,4 +15,8 @@ public class Board {
 		numRows = rows;
 		numCols = cols;
 	}
+	
+	public void addBlock(){
+		//TODO
+	}
 }
