@@ -5,19 +5,18 @@ import java.awt.event.KeyListener;
 
 
 public class Game {
-	public void moveHorizontal(KeyListener e) {
+	public void moveHorizontal(KeyEvent e) {
+	}
+	
+	public void drawBlock(KeyEvent e) {
 		
 	}
 	
-	public void drawBlock() {
+	public void holdBlock(KeyEvent e) {
 		
 	}
 	
-	public void holdBlock () {
-		
-	}
-	
-	public void rotate() {
+	public void rotate(KeyEvent e) {
 		
 	}
 }
