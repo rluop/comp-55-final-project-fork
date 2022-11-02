@@ -17,4 +17,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public void run() {
 		//needed for graphics program
 	}
+	
+	public void actionPerformed() {
+		
+	}
 }
