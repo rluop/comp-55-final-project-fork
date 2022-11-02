@@ -27,7 +27,19 @@ public class GraphicsGame extends GraphicsProgram {
 		
 	}
 	
+	public void showControl() {
+		
+	}
+	
 	public void showGame() {
+		
+	}
+	
+	public void showTime() {
+		
+	}
+	
+	public void showScore() {
 		
 	}
 }
