@@ -26,4 +26,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public void showMenu() {
 		
 	}
+	
+	public void showGame() {
+		
+	}
 }
