@@ -8,4 +8,7 @@ public class Block {
 		return false;
 	}
 	
+	boolean canRotateType() {
+		return true;
+	}
 }
