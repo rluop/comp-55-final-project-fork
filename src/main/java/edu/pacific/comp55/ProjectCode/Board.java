@@ -19,4 +19,8 @@ public class Board {
 	public void addBlock(){
 		//TODO 
 	}
+	
+	public boolean canPlaceBlock() {
+		return false; // TODO
+	}
 }
