@@ -9,6 +9,7 @@ import javax.swing.*;
 //
 public class GraphicsGame extends GraphicsProgram {
 	private Timer t;
+	private Game game;
 	
 	public void init() {
 		//needed for graphics program
