@@ -9,5 +9,8 @@ public class Space {
 	public void setRow(int numRows) {
 		this.row = numRows;
 	}
+	public void setCol(int numCols) {
+		this.row = numCols;
+	}
 
 }
