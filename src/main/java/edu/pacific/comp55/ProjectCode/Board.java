@@ -6,6 +6,13 @@ public class Board {
 	private int numRows;
 	private int numCols;
 	
-	//Block[] list; make a list instead like a vector to input easier
+	//Block[] list; made a list instead like a vector to input easier
 	private ArrayList<Block>block = new ArrayList<Block>();
+	
+	private Block activeBlock;
+	
+	public Board(int rows, int cols) {
+		numRows = rows;
+		numCols = cols;
+	}
 }
