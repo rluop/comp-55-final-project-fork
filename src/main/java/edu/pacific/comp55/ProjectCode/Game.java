@@ -1,10 +1,11 @@
 package edu.pacific.comp55.ProjectCode;
 
-import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 public class Game {
-	public void moveHorizontal() {
+	public void moveHorizontal(KeyListener e) {
 		
 	}
 	
