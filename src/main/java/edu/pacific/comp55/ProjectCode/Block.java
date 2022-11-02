@@ -11,4 +11,8 @@ public class Block {
 	boolean canRotateType() {
 		return true;
 	}
+	
+	boolean canMoveLeft() {
+		return true;
+	}
 }
