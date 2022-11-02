@@ -38,4 +38,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public void showTime() {
 		
 	}
+	
+	public void showScore() {
+		
+	}
 }
