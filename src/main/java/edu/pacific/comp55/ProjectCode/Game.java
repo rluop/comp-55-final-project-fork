@@ -12,4 +12,8 @@ public class Game {
 	void holdBlock () {
 		
 	}
+	
+	void rotate() {
+		
+	}
 }
