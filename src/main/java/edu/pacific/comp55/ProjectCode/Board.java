@@ -23,4 +23,8 @@ public class Board {
 	public boolean canPlaceBlock() {
 		return false; // TODO
 	}
+	
+	public boolean canClearLine() {
+		return false; // TODO
+	}
 }
