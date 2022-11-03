@@ -31,4 +31,8 @@ public class Board {
 	public boolean canRotate() {
 		return false; // TODO
 	}
+	
+	public boolean moveActiveBlockDown() {
+		return false; // TODO
+	}
 }
