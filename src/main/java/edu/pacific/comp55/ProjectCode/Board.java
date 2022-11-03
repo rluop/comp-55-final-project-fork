@@ -27,4 +27,8 @@ public class Board {
 	public boolean canClearLine() {
 		return false; // TODO
 	}
+	
+	public boolean canRotate() {
+		return false; // TODO
+	}
 }
