@@ -39,4 +39,8 @@ public class Board {
 	public boolean moveActiveBlockLeft() {
 		return false; // TODO
 	}
+	
+	public boolean moveActiveBlockRight() {
+		return false; // TODO
+	}
 }
