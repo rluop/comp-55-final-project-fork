@@ -35,4 +35,8 @@ public class Board {
 	public boolean moveActiveBlockDown() {
 		return false; // TODO
 	}
+	
+	public boolean moveActiveBlockLeft() {
+		return false; // TODO
+	}
 }
