@@ -10,6 +10,9 @@ public class Game {
 	}
 	
 	public void moveHorizontal(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			// TODO
+		}
 	}
 	
 	public void drawBlock(KeyEvent e) {
