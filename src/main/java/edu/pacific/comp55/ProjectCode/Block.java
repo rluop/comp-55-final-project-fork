@@ -31,4 +31,8 @@ public class Block {
 	void rotate() {
 		
 	}
+	
+//	Space[] spacesOccupied() {
+//		
+//	}
 }
