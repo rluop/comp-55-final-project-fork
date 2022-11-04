@@ -32,5 +32,8 @@ public class Game {
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			// TODO
 		}
+		if (e.getKeyCode() == KeyEvent.VK_Z) {
+			// TODO
+		}
 	}
 }
