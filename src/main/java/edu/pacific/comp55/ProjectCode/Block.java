@@ -27,4 +27,8 @@ public class Block {
 	Orientation getOrientation() {
 		return this.orientation;
 	}
+	
+	void rotate() {
+		
+	}
 }
