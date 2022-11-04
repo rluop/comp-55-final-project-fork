@@ -19,4 +19,24 @@ public class Block {
 	boolean canMoveRight() {
 		return true;
 	}
+	
+	boolean canMoveDown() {
+		return true;
+	}
+	
+	Orientation getOrientation() {
+		return this.orientation;
+	}
+	
+	void rotate() {
+		
+	}
+	
+//	Space[] spacesOccupied() {
+//		
+//	}
+	
+	BlockType getBlockType() {
+		return this.type;
+	}
 }
