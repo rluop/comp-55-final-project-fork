@@ -19,4 +19,8 @@ public class Block {
 	boolean canMoveRight() {
 		return true;
 	}
+	
+	boolean canMoveDown() {
+		return true;
+	}
 }
