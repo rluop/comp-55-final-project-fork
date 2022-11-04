@@ -23,4 +23,8 @@ public class Block {
 	boolean canMoveDown() {
 		return true;
 	}
+	
+	Orientation getOrientation() {
+		return this.orientation;
+	}
 }
