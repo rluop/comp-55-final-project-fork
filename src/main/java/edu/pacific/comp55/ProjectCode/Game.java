@@ -29,6 +29,8 @@ public class Game {
 	}
 	
 	public void rotate(KeyEvent e) {
-		
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			// TODO
+		}
 	}
 }
