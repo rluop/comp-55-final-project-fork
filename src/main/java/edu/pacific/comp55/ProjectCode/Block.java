@@ -35,4 +35,8 @@ public class Block {
 //	Space[] spacesOccupied() {
 //		
 //	}
+	
+	BlockType getBlockType() {
+		return this.type;
+	}
 }
