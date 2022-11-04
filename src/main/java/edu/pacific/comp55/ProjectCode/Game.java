@@ -19,10 +19,13 @@ public class Game {
 	}
 	
 	public void drawBlock(KeyEvent e) {
+		
 	}
 	
 	public void holdBlock(KeyEvent e) {
-		
+		if (e.getKeyCode() == KeyEvent.VK_C) {
+			// TODO
+		}
 	}
 	
 	public void rotate(KeyEvent e) {
