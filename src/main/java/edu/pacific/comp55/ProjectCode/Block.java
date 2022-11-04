@@ -3,6 +3,7 @@ package edu.pacific.comp55.ProjectCode;
 public class Block {
 	BlockType type;
 	Orientation orientation;
+	Space[] spacesOccupied;
 	
 	boolean isRock() {
 		return false;
@@ -32,9 +33,9 @@ public class Block {
 		
 	}
 	
-//	Space[] spacesOccupied() {
-//		
-//	}
+	Space[] spacesOccupied() {
+		return this.spacesOccupied;
+	}
 	
 	BlockType getBlockType() {
 		return this.type;
