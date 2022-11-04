@@ -5,8 +5,8 @@ import java.awt.event.KeyListener;
 
 
 public class Game {
-	public boolean moveDown() {
-		return false;
+	public void moveDown() {
+		// TODO
 	}
 	
 	public void moveHorizontal(KeyEvent e) {
