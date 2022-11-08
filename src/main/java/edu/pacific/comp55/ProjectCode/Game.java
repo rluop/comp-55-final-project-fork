@@ -5,8 +5,11 @@ import java.awt.event.KeyListener;
 
 
 public class Game {
-	public void moveDown() {
+	public void moveDown(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			// TODO
+		}
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 			// TODO
 		}
 	}
