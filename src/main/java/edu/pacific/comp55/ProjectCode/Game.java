@@ -6,7 +6,9 @@ import java.awt.event.KeyListener;
 
 public class Game {
 	public void moveDown() {
-		// TODO
+		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			// TODO
+		}
 	}
 	
 	public void moveHorizontal(KeyEvent e) {
