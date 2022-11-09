@@ -6,6 +6,7 @@ public class Block {
 	Space[] spacesOccupied;
 	Boolean rock = false;
 	Boolean rotationPhase = false;
+	private int length;
 	
 	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase){
 		this.type = type;
@@ -46,7 +47,7 @@ public class Block {
 	}
 	
 	void rotate() {
-		
+		//
 	}
 	
 	Space[] spacesOccupied() {
