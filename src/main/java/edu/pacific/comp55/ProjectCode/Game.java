@@ -23,8 +23,9 @@ public class Game {
 		}
 	}
 	
-	public void drawBlock(KeyEvent e) {
-		
+	public void drawBlock() {
+		// TODO
+		// once active block is placed, call next block
 	}
 	
 	public void holdBlock(KeyEvent e) {
