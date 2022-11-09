@@ -5,6 +5,8 @@ import java.awt.event.KeyListener;
 
 
 public class Game {
+	Board activeBlock;
+	
 	public void moveDown(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			// TODO
