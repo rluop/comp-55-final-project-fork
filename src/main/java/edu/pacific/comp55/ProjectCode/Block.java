@@ -51,6 +51,10 @@ public class Block {
 		//
 	}
 	
+	public boolean isVertical() {
+		return vertical;
+	}
+	
 	Space[] spacesOccupied() {
 		Space [] s = new Space[length];
 		return s;
