@@ -54,6 +54,6 @@ public class Block {
 	}
 	
 	BlockType getBlockType() {
-		return this.type;
+		return type;
 	}
 }
