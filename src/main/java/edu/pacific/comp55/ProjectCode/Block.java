@@ -7,6 +7,7 @@ public class Block {
 	Boolean rock = false;
 	Boolean rotationPhase = false;
 	private int length;
+	private boolean vertical;
 	
 	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase){
 		this.type = type;
