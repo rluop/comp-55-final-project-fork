@@ -7,7 +7,7 @@ public class Block {
 	Boolean rock = false;
 	
 	boolean isRock() {
-		return false;
+		return rock;
 	}
 	
 	boolean canRotateType() {
