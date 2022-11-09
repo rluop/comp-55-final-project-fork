@@ -7,6 +7,13 @@ public class Block {
 	Boolean rock = false;
 	Boolean rotationPhase = false;
 	
+	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase){
+		this.type = type;
+		this.orientation = orientation;
+		this.rock = rock;
+		this.rotationPhase = rotationPhase;
+	}
+	
 	boolean isRock() {
 		return rock;
 	}
