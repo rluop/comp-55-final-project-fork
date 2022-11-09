@@ -25,20 +25,24 @@ public class Block {
 		return false;
 	}
 	
-	boolean canMoveLeft() {
+	boolean spacesIfMoveLeft() { //return an array of the spaces, check if empty in the BOARD class
 		return true;
 	}
 	
-	boolean canMoveRight() {
+	boolean spacesIfMoveRight() {
 		return true;
 	}
 	
-	boolean canMoveDown() {
+	boolean spacesIfMoveDown() {
 		return true;
 	}
 	
 	Orientation getOrientation() {
 		return this.orientation;
+	}
+	
+	void canRotate() {
+		
 	}
 	
 	void rotate() {
