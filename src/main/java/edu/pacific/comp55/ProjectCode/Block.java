@@ -19,8 +19,10 @@ public class Block {
 	}
 	
 	boolean canRotateType() {
-		//if(!rock && )
-		return true;
+		if(!rock && !rotationPhase) {
+			return true;
+		}
+		return false;
 	}
 	
 	boolean canMoveLeft() {
