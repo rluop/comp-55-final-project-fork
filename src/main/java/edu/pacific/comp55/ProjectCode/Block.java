@@ -4,6 +4,7 @@ public class Block {
 	BlockType type;
 	Orientation orientation;
 	Space[] spacesOccupied;
+	Boolean rock = false;
 	
 	boolean isRock() {
 		return false;
