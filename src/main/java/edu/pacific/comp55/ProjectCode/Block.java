@@ -5,12 +5,14 @@ public class Block {
 	Orientation orientation;
 	Space[] spacesOccupied;
 	Boolean rock = false;
+	Boolean rotationPhase = false;
 	
 	boolean isRock() {
 		return rock;
 	}
 	
 	boolean canRotateType() {
+		//if(!rock && )
 		return true;
 	}
 	
