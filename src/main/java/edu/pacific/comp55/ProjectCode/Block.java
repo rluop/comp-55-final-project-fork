@@ -51,7 +51,8 @@ public class Block {
 	}
 	
 	Space[] spacesOccupied() {
-		return this.spacesOccupied;
+		Space [] s = new Space[length];
+		return s;
 	}
 	
 	BlockType getBlockType() {
