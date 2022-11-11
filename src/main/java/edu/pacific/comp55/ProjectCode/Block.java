@@ -57,6 +57,11 @@ public class Block {
 	
 	Space[] spacesOccupied() {
 		Space [] s = new Space[length];
+		if(isVertical()) {
+			for(int i = 0; i < s.length; i++) {
+				
+			}
+		}
 		return s;
 	}
 	
