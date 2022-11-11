@@ -61,7 +61,7 @@ public class Block {
 		Space [] s = new Space[length];
 		if(isVertical()) {
 			for(int i = 0; i < s.length; i++) {
-				
+				s[i] = new Space(row + i, col);
 			}
 		}
 		return s;
