@@ -55,7 +55,7 @@ public class Block {
 	
 	Space[] spacesOccupied() {
 		//Space [] s = new Space[length];
-		//if(getOrientation() == "UP") { // getOrientation() == "UP"
+		//if(type.toString() == "") { // getOrientation() == "UP"
 		//	for(int i = 0; i < s.length; i++) {
 			//	s[i] = new Space(row + i, col);
 			//}
