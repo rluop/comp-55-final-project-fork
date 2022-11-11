@@ -1,4 +1,5 @@
 package edu.pacific.comp55.ProjectCode;
+import java.util.Random;
 
 public class Block {
 	BlockType type;
@@ -10,8 +11,8 @@ public class Block {
 	private int col;
 	private Space startSpace;
 	
-	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
-		this.type = type;
+	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
+		//TODO make it choose a random type
 		this.orientation = orientation;
 		this.rock = rock;
 		this.rotationPhase = rotationPhase;
