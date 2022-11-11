@@ -16,6 +16,7 @@ public class Board {
 	public Board(int rows, int cols) {
 		numRows = rows;
 		numCols = cols;
+		board = new Block[20][10];
 	}
 	
 	public void addBlock(){
