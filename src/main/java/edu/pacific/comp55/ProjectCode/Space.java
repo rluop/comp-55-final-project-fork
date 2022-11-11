@@ -4,6 +4,10 @@ public class Space {
 	private int row;
 	private int col; 
 	
+	public Space(int row, int col) {
+		
+	}
+	
 	// setters
 	
 	public void setRow(int numRows) {
