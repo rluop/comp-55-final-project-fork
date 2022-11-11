@@ -9,6 +9,8 @@ public class Board {
 	//Block[] list; made a list instead like a vector to input easier
 	private ArrayList<Block>block = new ArrayList<Block>();
 	
+	private Block[][] board;
+	
 	private Block activeBlock;
 	
 	public Board(int rows, int cols) {
