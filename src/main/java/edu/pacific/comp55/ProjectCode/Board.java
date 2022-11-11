@@ -12,6 +12,7 @@ public class Board {
 	private Block[][] board;
 	
 	private Block activeBlock;
+	private Block nextBlock;
 	
 	public Board(int rows, int cols) {
 		numRows = rows;
