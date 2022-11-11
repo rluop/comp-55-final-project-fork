@@ -9,6 +9,7 @@ public class Block {
 	private int length;
 	private boolean vertical;
 	private int row;
+	private int col;
 	
 	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase){
 		this.type = type;
