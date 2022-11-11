@@ -5,7 +5,7 @@ public class Space {
 	private int col; 
 	
 	public Space(int row, int col) {
-		
+		this.row = row;
 	}
 	
 	// setters
