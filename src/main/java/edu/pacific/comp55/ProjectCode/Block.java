@@ -6,8 +6,6 @@ public class Block {
 	Space[] spacesOccupied;
 	Boolean rock = false;
 	Boolean rotationPhase = false;
-	private int length;
-	private boolean vertical;
 	private int row;
 	private int col;
 	
@@ -53,18 +51,14 @@ public class Block {
 		//
 	}
 	
-	public boolean isVertical() {
-		return vertical;
-	}
-	
 	Space[] spacesOccupied() {
-		Space [] s = new Space[length];
-		if(isVertical()) {
-			for(int i = 0; i < s.length; i++) {
-				s[i] = new Space(row + i, col);
-			}
-		}
-		return s;
+		//Space [] s = new Space[length];
+		//if(getOrientation() == "UP") { // getOrientation() == "UP"
+		//	for(int i = 0; i < s.length; i++) {
+			//	s[i] = new Space(row + i, col);
+			//}
+		//}
+		return null;
 	}
 	
 	BlockType getBlockType() {
