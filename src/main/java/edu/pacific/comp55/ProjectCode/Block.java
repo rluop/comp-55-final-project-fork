@@ -8,12 +8,14 @@ public class Block {
 	Boolean rotationPhase = false;
 	private int row;
 	private int col;
+	private Space startSpace;
 	
-	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase){
+	Block(BlockType type, Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
 		this.type = type;
 		this.orientation = orientation;
 		this.rock = rock;
 		this.rotationPhase = rotationPhase;
+		this.startSpace = startSpace;
 	}
 	
 	boolean isRock() {
