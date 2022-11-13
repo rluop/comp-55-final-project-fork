@@ -20,8 +20,8 @@ public class Board {
 		board = new Block[20][10];
 	}
 	
-	// TODO: Create a random block generator that assigns a block to nextBlock and returns it.
-	public Block createNextBlock() {
+	public Block createNextBlock(Orientation orientation, boolean rock, boolean rotationPhase, Space startSpace) {
+		nextBlock = new Block(orientation, rock, rotationPhase, startSpace);
 		return nextBlock;
 	}
 	
