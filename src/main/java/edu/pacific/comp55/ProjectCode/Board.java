@@ -15,8 +15,8 @@ public class Board {
 	private Block nextBlock;
 	
 	public Board(int rows, int cols) {
-		numRows = rows;
-		numCols = cols;
+		this.numRows = rows;
+		this.numCols = cols;
 		board = new Block[20][10];
 	}
 	

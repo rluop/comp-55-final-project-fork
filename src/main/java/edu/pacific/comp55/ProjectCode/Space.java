@@ -26,4 +26,8 @@ public class Space {
 	public int getCol() {
 		return col;
 	}
+	
+	public String toString() {
+		return "r" + row + "c" + col;
+	}
 }
