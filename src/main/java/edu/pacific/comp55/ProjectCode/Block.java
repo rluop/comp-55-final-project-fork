@@ -89,4 +89,8 @@ public class Block {
 	BlockType getBlockType() {
 		return type;
 	}
+	
+	public void setStartSpace() {
+		
+	}
 }
