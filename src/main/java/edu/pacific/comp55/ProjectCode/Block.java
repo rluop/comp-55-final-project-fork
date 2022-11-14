@@ -79,22 +79,83 @@ public class Block {
 	public Space[] spacesOccupied() {
 		Space[] spaceArray = new Space[4];
 		if (this.type == BlockType.RIGHTL) {
-			spaceArray[0] = this.startSpace;
-			spaceArray[1] = new Space(spaceArray[0].getRow() - 1,spaceArray[0].getCol());
-			spaceArray[2] = new Space(spaceArray[0].getRow() - 2, spaceArray[0].getCol());
-			spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() + 1);
+			if (this.orientation == Orientation.UP) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() - 1,spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() - 2, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() + 1);
+			}
+			else if (this.orientation == Orientation.RIGHT) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() + 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() + 2);
+				spaceArray[3] = new Space(spaceArray[0].getRow() + 1, spaceArray[0].getCol());
+			}
+			else if (this.orientation == Orientation.DOWN) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() + 2, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 1);
+			}
+			else {
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() - 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 2);
+				spaceArray[3] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
+			}
 		}
 		else if (this.type == BlockType.LEFTL) {
-			spaceArray[0] = this.startSpace;
-			spaceArray[1] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
-			spaceArray[2] = new Space(spaceArray[0].getRow() - 2, spaceArray[0].getCol());
-			spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 1);
+			if (this.orientation == Orientation.UP) {
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() - 2, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 1);
+			}
+			else if (this.orientation == Orientation.RIGHT) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() + 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() + 2);
+				spaceArray[3] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
+			}
+			else if (this.orientation == Orientation.DOWN) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() + 2, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() + 1);
+			}
+			else {
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() - 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 2);
+				spaceArray[3] = new Space(spaceArray[0].getRow() + 1, spaceArray[0].getCol());
+			}
+			
 		}
 		else if (this.type == BlockType.T) {
-			spaceArray[0] = this.startSpace;
-			spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() - 1);
-			spaceArray[2] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() + 1);
-			spaceArray[3] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
+			if (this.orientation == Orientation.UP) {
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() - 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() + 1);
+				spaceArray[3] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
+			}
+			else if (this.orientation == Orientation.RIGHT) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() - 1,spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() + 1, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 1);
+			}
+			else if (this.orientation == Orientation.DOWN) { 
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow(),spaceArray[0].getCol() + 1);
+				spaceArray[2] = new Space(spaceArray[0].getRow(), spaceArray[0].getCol() - 1);
+				spaceArray[3] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
+			}
+			else {
+				spaceArray[0] = this.startSpace;
+				spaceArray[1] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
+				spaceArray[2] = new Space(spaceArray[0].getRow() - 1, spaceArray[0].getCol());
+				spaceArray[3] = new Space(spaceArray[0].getRow() + 1, spaceArray[0].getCol() + 1);
+			}
 		}
 		else if (this.type == BlockType.RIGHTS) {
 			spaceArray[0] = this.startSpace;
