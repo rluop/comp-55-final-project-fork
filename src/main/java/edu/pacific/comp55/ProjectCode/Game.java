@@ -40,9 +40,16 @@ public class Game {
 		}
 	}
 	
-	public void rotate(KeyEvent e) {
+	public void rotate(KeyEvent e) {	
+		// int rotationNum = 0;
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			// TODO
+			//	if (rotationNum == 3) {
+			// 		rotationNum = 0;
+			//	}
+			//	else {
+			//		rotationNum++;
+			//		spaceArray(rotationNum);
+			//	}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_Z) {
 			// TODO
