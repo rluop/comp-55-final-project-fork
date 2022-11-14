@@ -52,7 +52,13 @@ public class Game {
 			//	}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_Z) {
-			// TODO
+			//	if (rotationNum == 0) {
+			// 		rotationNum = 3;
+			//	}
+			//	else {
+			//		rotationNum--;
+			//		spaceArray(rotationNum);
+			//	}
 		}
 	}
 }
