@@ -23,7 +23,7 @@ public class Game {
 	
 	public void moveHorizontal(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			// TODO
+			// activeBlock.move(-50, 0);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			// TODO
