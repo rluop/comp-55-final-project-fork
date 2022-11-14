@@ -16,7 +16,8 @@ public class Game {
 			// activeBlock.move(0, 50);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			// TODO
+			// check spacesOccupied in Block
+			// activeBlock.setLocation(activeBlock.getX(), ?);
 		}
 	}
 	
