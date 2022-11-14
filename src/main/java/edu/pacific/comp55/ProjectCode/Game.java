@@ -26,7 +26,7 @@ public class Game {
 			// activeBlock.move(-50, 0);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			// TODO
+			// activeBlock.move(50, 0);
 		}
 	}
 	
