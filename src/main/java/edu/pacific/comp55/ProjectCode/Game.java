@@ -9,11 +9,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Game {
-	Board activeBlock;
+	private Board activeBlock;
 	
 	public void moveDown(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			// TODO
+			// activeBlock.move(0, 50);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 			// TODO
@@ -31,7 +31,6 @@ public class Game {
 	
 	public void drawBlock() {
 		// TODO
-		// once active block is placed, call next block
 	}
 	
 	public void holdBlock(KeyEvent e) {
