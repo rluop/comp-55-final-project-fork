@@ -88,6 +88,8 @@ public class Block {
 	}
 	
 	Space[] spacesIfMoveDown() {
+		//nora
+		//dont forget we need a check in board to see if theres already a block in the spaces this function returns. this function only returns where the block WOULD be, not if the block can be there
 		return null;
 	}
 	
