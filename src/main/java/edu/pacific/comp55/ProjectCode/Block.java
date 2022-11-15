@@ -55,7 +55,12 @@ public class Block {
 	Space[] spacesIfMoveLeft() { //return an array of the spaces, check if empty in the BOARD class - prof suggestion
 		//nora: i think this should send an array of the spaces a block would occupy to canPlaceBlock in board, and then we can decide if the block should be placed or not somewhere else
 		//so rn i THINK this should just take spaces occupied and change a row, but please lmk if you think it should do something else!
-		return null;
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			//each col -1 when we move left
+			returnMe[i].setCol(returnMe[i].getCol()-1);
+		}
+		return returnMe;
 	}
 	
 	Space[] spacesIfMoveRight() {
