@@ -90,7 +90,17 @@ public class Block {
 	Space[] spacesIfMoveDown() {
 		//nora
 		//dont forget we need a check in board to see if theres already a block in the spaces this function returns. this function only returns where the block WOULD be, not if the block can be there
-		return null;
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			if(returnMe[i].getRow()-1 < 0) {
+				System.out.println("move out of bounds!");
+				return returnMe;
+			}
+		}
+		for(int i = 0; i<returnMe.length; i++) {
+			returnMe[i].setRow(returnMe[i].getRow()-1);
+		}
+		return returnMe;
 	}
 	
 	Orientation getOrientation() {
