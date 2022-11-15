@@ -189,6 +189,6 @@ public class Block {
 	}
 	
 	public void setStartSpace() {
-		
+		//nora: im not sure that we need this since spacesOccupied sets the start space?
 	}
 }
