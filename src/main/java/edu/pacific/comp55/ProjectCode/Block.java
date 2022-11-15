@@ -57,14 +57,26 @@ public class Block {
 		//so rn i THINK this should just take spaces occupied and change a row, but please lmk if you think it should do something else!
 		Space[] returnMe = spacesOccupied();
 		for(int i = 0; i<returnMe.length; i++) {
-			//each col -1 when we move left
+			//each col -1 when we move left, check to make sure its not out of bounds
+			if(returnMe[i].getCol()-1 < 0) {
+				System.out.println("move out of bounds!");
+				return returnMe;
+			}
+		}
+		for(int i = 0; i<returnMe.length; i++) {
+			//must have passed the checks, now set it
 			returnMe[i].setCol(returnMe[i].getCol()-1);
 		}
 		return returnMe;
 	}
 	
 	Space[] spacesIfMoveRight() {
-		return null;
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			//each col +1 when we move right
+			
+		}
+		return returnMe;
 	}
 	
 	Space[] spacesIfMoveDown() {
