@@ -108,6 +108,8 @@ public class Block {
 	}
 	
 	boolean canRotate() {
+		//nora
+		//i believe this needs to go in board. ill look into it more later
 		return true;
 	}
 	
