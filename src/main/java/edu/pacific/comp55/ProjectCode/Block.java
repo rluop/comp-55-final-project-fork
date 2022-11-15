@@ -15,7 +15,7 @@ public class Block {
 	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
 		randNum = Math.random()*100;
 		if(randNum < 14) {
-			//type = RIGHTL;
+			//type = RIGHTL;	//nora: im going to ask prof about these type assignments i couldnt get them working
 		}
 		else if(randNum < 28) {
 			//type = LEFTL;
