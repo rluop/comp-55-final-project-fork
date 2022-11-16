@@ -46,6 +46,9 @@ public class Block {
 	}
 	
 	boolean canRotateType() {
+		//nora
+		//there should be another version of this in board that checks if it can rotate with respect to the other blocks on the board
+		//this function jsust checks if we're in a phase that allows rotation (block isn't a rock etc)
 		if(!rock && !rotationPhase) {
 			return true;
 		}
@@ -105,13 +108,6 @@ public class Block {
 	
 	Orientation getOrientation() {
 		return this.orientation;
-	}
-	
-	boolean canRotate() {
-		//nora
-		//there should be another version of this in board that checks if it can rotate with respect to the other blocks on the board
-		//this function jsust checks if we're in a phase that allows rotation (block isn't a rock etc)
-		return true;
 	}
 	
 	void rotate() {
