@@ -38,6 +38,7 @@ public class Game {
 	}
 	
 	public void holdBlock(KeyEvent e) {
+		// check if canHold is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_C) {
 			// TODO
 		}
