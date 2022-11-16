@@ -45,6 +45,7 @@ public class Game {
 	}
 	
 	public void rotate(KeyEvent e) {	
+		// // check if canRotate is true in Board
 		// int rotationNum = 0;
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			//	if (rotationNum == 3) {
