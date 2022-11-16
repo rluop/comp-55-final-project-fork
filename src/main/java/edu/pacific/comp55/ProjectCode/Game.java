@@ -23,9 +23,11 @@ public class Game {
 	}
 	
 	public void moveHorizontal(KeyEvent e) {
+		// check if moveActiveBlockLeft is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			// activeBlock.move(-50, 0);
 		}
+		// check if moveActiveBlockRight is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			// activeBlock.move(50, 0);
 		}
