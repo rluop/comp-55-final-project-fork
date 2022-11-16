@@ -41,6 +41,11 @@ public class Board {
 		return false; // TODO
 	}
 	
+	public boolean canHold() {
+		return false; // TODO
+		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
+	}
+	
 	public boolean moveActiveBlockDown() {
 		if(activeBlock.canMoveDown()) {
 			

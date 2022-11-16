@@ -12,6 +12,7 @@ public class Game {
 	private Board activeBlock;
 	
 	public void moveDown(KeyEvent e) {
+		// check if moveActiveBlockDown is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			// activeBlock.move(0, 50);
 		}
@@ -22,9 +23,11 @@ public class Game {
 	}
 	
 	public void moveHorizontal(KeyEvent e) {
+		// check if moveActiveBlockLeft is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			// activeBlock.move(-50, 0);
 		}
+		// check if moveActiveBlockRight is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			// activeBlock.move(50, 0);
 		}
@@ -35,6 +38,7 @@ public class Game {
 	}
 	
 	public void holdBlock(KeyEvent e) {
+		// check if canHold is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_C) {
 			// TODO
 		}
