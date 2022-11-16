@@ -290,7 +290,8 @@ public class Block {
 		return type;
 	}
 	
-	public void setStartSpace() {
-		//nora: im not sure that we need this since spacesOccupied sets the start space?
+	public void setStartSpace(int newRow, int newCol) {
+		this.startSpace.setRow(newRow);
+		this.startSpace.setCol(newCol);
 	}
 }
