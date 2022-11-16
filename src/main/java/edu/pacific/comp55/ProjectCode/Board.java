@@ -41,6 +41,10 @@ public class Board {
 		return false; // TODO
 	}
 	
+	public boolean canHold() {
+		return false; // TODO
+	}
+	
 	public boolean moveActiveBlockDown() {
 		return false; // nora
 	}
