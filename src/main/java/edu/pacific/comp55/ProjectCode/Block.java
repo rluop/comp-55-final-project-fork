@@ -109,7 +109,8 @@ public class Block {
 	
 	boolean canRotate() {
 		//nora
-		//i believe this needs to go in board. ill look into it more later
+		//there should be another version of this in board that checks if it can rotate with respect to the other blocks on the board
+		//this function jsust checks if we're in a phase that allows rotation (block isn't a rock etc)
 		return true;
 	}
 	
