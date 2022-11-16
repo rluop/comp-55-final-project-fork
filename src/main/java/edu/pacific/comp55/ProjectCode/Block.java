@@ -55,6 +55,21 @@ public class Block {
 		return false;
 	}
 	
+	boolean canMoveDown() {
+		//nora
+		return true;
+	}
+	
+	boolean canMoveLeft() {
+		//nora
+		return true;
+	}
+	
+	boolean canMoveRight() {
+		//nora
+		return true;
+	}
+	
 	Space[] spacesIfMoveLeft() { //return an array of the spaces, check if empty in the BOARD class - prof suggestion
 		//nora: i think this should send an array of the spaces a block would occupy to canPlaceBlock in board, and then we can decide if the block should be placed or not somewhere else
 		//so rn i THINK this should just take spaces occupied and change a row, but please lmk if you think it should do something else!
