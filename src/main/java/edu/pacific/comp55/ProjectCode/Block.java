@@ -67,7 +67,7 @@ public class Block {
 			if(returnMe[i].getCol()-1 < 0) {
 				System.out.println("move out of bounds!");
 				return false;
-			}
+			}//
 		}
 		return true;
 	}
