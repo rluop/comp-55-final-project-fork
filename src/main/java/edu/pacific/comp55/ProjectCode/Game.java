@@ -2,11 +2,6 @@ package edu.pacific.comp55.ProjectCode;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import acm.graphics.*;
-import acm.program.*;
-import acm.util.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class Game {
 	private Board activeBlock;
