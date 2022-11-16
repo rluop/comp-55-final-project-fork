@@ -42,6 +42,9 @@ public class Board {
 	}
 	
 	public boolean moveActiveBlockDown() {
+		if(activeBlock.canMoveDown()) {
+			
+		}
 		return false; // nora
 	}
 	
