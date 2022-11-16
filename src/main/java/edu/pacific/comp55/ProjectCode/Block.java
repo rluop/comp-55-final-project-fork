@@ -96,6 +96,9 @@ public class Block {
 		//nora: i think this should send an array of the spaces a block would occupy to canPlaceBlock in board, and then we can decide if the block should be placed or not somewhere else
 		//so rn i THINK this should just take spaces occupied and change a row, but please lmk if you think it should do something else!
 		Space[] returnMe = spacesOccupied();
+		if(!canMoveLeft()) {
+			return returnMe;
+		}
 		for(int i = 0; i<returnMe.length; i++) {
 			//must have passed the checks, now set it
 			returnMe[i].setCol(returnMe[i].getCol()-1);
@@ -106,6 +109,9 @@ public class Block {
 	Space[] spacesIfMoveRight() {
 		//nora
 		Space[] returnMe = spacesOccupied();
+		if(!canMoveRight()) {
+			return returnMe;
+		}
 		//assuming it passed the bounds check
 		for(int i = 0; i<returnMe.length; i++) {
 			returnMe[i].setCol(returnMe[i].getCol()+1);
@@ -117,6 +123,9 @@ public class Block {
 		//nora
 		//dont forget we need a check in board to see if theres already a block in the spaces this function returns. this function only returns where the block WOULD be, not if the block can be there
 		Space[] returnMe = spacesOccupied();
+		if(!canMoveDown()) {
+			return returnMe;
+		}
 		for(int i = 0; i<returnMe.length; i++) {
 			returnMe[i].setRow(returnMe[i].getRow()-1);
 		}
