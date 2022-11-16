@@ -12,6 +12,7 @@ public class Game {
 	private Board activeBlock;
 	
 	public void moveDown(KeyEvent e) {
+		// check if moveActiveBlockDown is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			// activeBlock.move(0, 50);
 		}
