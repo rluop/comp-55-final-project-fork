@@ -119,7 +119,7 @@ public class Block {
 		return returnMe;
 	}
 	
-	Space[] spacesIfMoveDown() {
+	Space[] spacesIfMoveDown() {//
 		//nora
 		//dont forget we need a check in board to see if theres already a block in the spaces this function returns. this function only returns where the block WOULD be, not if the block can be there
 		Space[] returnMe = spacesOccupied();
