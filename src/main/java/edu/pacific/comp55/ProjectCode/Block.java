@@ -112,6 +112,7 @@ public class Block {
 	
 	void rotate() {
 		//nora
+		
 	}
 	
 	public Space[] spacesOccupied() {

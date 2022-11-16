@@ -42,14 +42,14 @@ public class Board {
 	}
 	
 	public boolean moveActiveBlockDown() {
-		return false; // TODO
+		return false; // nora
 	}
 	
 	public boolean moveActiveBlockLeft() {
-		return false; // TODO
+		return false; // nora
 	}
 	
 	public boolean moveActiveBlockRight() {
-		return false; // TODO
+		return false; // nora
 	}
 }
