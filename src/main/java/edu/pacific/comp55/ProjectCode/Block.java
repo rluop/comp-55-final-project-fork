@@ -67,13 +67,21 @@ public class Block {
 			if(returnMe[i].getCol()-1 < 0) {
 				System.out.println("move out of bounds!");
 				return false;
-			}//
+			}
 		}
 		return true;
 	}
 	
 	boolean canMoveRight() {
 		//nora
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			//each col +1 when we move right, bounds check first
+			if(returnMe[i].getCol()+1 > 10) {
+				System.out.println("move out of bounds!");
+				return false;
+			}
+		}
 		return true;
 	}
 	
@@ -91,13 +99,6 @@ public class Block {
 	Space[] spacesIfMoveRight() {
 		//nora
 		Space[] returnMe = spacesOccupied();
-		for(int i = 0; i<returnMe.length; i++) {
-			//each col +1 when we move right, bounds check first
-			if(returnMe[i].getCol()+1 > 10) {
-				System.out.println("move out of bounds!");
-				return returnMe;
-			}
-		}
 		//assuming it passed the bounds check
 		for(int i = 0; i<returnMe.length; i++) {
 			returnMe[i].setCol(returnMe[i].getCol()+1);
