@@ -38,7 +38,10 @@ public class Board {
 	}
 	
 	public boolean canRotate() {
-		return false; // TODO
+		if(!activeBlock.canRotateType()) {
+			return false;
+		}
+		return false; // nora: ill do the rest of this after we're ready to do the rotation function
 	}
 	
 	public boolean canHold() {
