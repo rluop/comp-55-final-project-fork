@@ -52,6 +52,31 @@ public class Block {
 		return false;
 	}
 	
+	boolean canMoveDown() {
+		//nora
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			if(returnMe[i].getRow()-1 < 0) {
+				System.out.println("move out of bounds!");
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	boolean canMoveRight() {
+		//nora
+		Space[] returnMe = spacesOccupied();
+		for(int i = 0; i<returnMe.length; i++) {
+			//each col +1 when we move right, bounds check first
+			if(returnMe[i].getCol()+1 > 10) {
+				System.out.println("move out of bounds!");
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	Space[] spacesIfMoveLeft() { //return an array of the spaces, check if empty in the BOARD class - prof suggestion
 		//nora: i think this should send an array of the spaces a block would occupy to canPlaceBlock in board, and then we can decide if the block should be placed or not somewhere else
 		//so rn i THINK this should just take spaces occupied and change a row, but please lmk if you think it should do something else!
