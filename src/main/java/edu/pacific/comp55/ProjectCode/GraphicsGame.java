@@ -19,7 +19,7 @@ public class GraphicsGame extends GraphicsProgram {
 		//needed for graphics program
 	}
 	
-	public void actionPerformed() {
+	public void actionPerformed(ActionEvent e) {
 		
 	}
 	
