@@ -25,7 +25,7 @@ public class Board {
 		return nextBlock;
 	}
 	
-	public void addBlock(){
+	public void spawnBlock(){
 		//TODO 
 	}
 	
