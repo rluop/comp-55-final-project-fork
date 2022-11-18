@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.*;
 //
 public class GraphicsGame extends GraphicsProgram {
+	public static final int PROGRAM_WIDTH = 1;
+	public static final int PROGRAM_HEIGHT = 1;
 	private Timer t = new Timer(1000, this);
 	private Game game;
 	
