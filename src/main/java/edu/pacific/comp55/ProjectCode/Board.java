@@ -57,6 +57,10 @@ public class Board {
 		if(!canPlaceBlock()) {
 			return false;
 		}
+		Space[] spacesOccupied = activeBlock.spacesOccupied();
+		for(int i = 0; i<spacesOccupied.length; i++) {
+			
+		}
 		return false; // nora
 	}
 	
