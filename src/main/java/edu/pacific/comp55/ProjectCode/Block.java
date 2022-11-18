@@ -133,12 +133,6 @@ public class Block {
 		return this.orientation;
 	}
 	
-	boolean canRotate() {
-		//nora
-		//i believe this needs to go in board. ill look into it more later
-		return true;
-	}
-	
 	void rotate() {
 		//save for after game made
 	}
