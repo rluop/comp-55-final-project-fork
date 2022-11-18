@@ -54,12 +54,11 @@ public class Board {
 		if(!activeBlock.canMoveDown()) {
 			return false;
 		}
-		if(!canPlaceBlock()) {
-			return false;
-		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-			
+//			if(spacesOccupied[i].getRow()-1 != null) {	to be changed when getVehicle equivalent is made
+//				
+//			}
 		}
 		return false; // nora
 	}
