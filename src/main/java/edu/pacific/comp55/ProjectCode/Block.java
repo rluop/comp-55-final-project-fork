@@ -320,4 +320,8 @@ public class Block {
 		this.startSpace.setRow(newRow);
 		this.startSpace.setCol(newCol);
 	}
+	
+	public String toString() {
+		return "Type: " + this.type + ", Orientation: " + this.orientation + ", Start: " + this.startSpace;
+	}
 }
