@@ -63,6 +63,10 @@ public class Board {
 	
 	public void removeBlock() {
 		tempBlock = activeBlock;
+		//need to remove it from the board/grid
+		
+		//need to remove it from the array
+		
 	}//nora
 	
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
@@ -73,6 +77,7 @@ public class Board {
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//change the temporary array to have the spaces the block will occupy once its moved.
+			//this is a bounds check, it will bnnot be moved in the actual movement of the block
 			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
 			if(getBlock(spacesOccupied[i]) != null) {
 				return false;
