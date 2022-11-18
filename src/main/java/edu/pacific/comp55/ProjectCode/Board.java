@@ -61,9 +61,11 @@ public class Board {
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-//			if(spacesOccupied[i].getRow()-1 != null) {	to be changed when getVehicle equivalent is made.
-//				
-//			}
+			//change the temporary array to have the spaces the block will occupy once its moved
+			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
+			if(getBlock(spacesOccupied[i]) != null) {
+				return false;
+			}
 		}
 		return false; // nora
 	}
