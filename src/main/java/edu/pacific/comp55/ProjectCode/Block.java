@@ -6,13 +6,13 @@ public class Block {
 	Orientation orientation;
 	Space[] spacesOccupied;
 	Boolean rock = false;
-	Boolean rotationPhase = false;
+	Boolean cantRotatePhase = false;
 	private int row;
 	private int col;
 	double randNum;
 	private Space startSpace;
 	
-	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, int startRow, int startCol){
+	Block(Orientation orientation, Boolean rock, Boolean cantRotatePhase, int startRow, int startCol){
 		randNum = Math.random()*100;
 		if(randNum < 14) {
 			type = BlockType.RIGHTL;
@@ -37,7 +37,7 @@ public class Block {
 		}
 		this.orientation = orientation;
 		this.rock = rock;
-		this.rotationPhase = rotationPhase;
+		this.cantRotatePhase = cantRotatePhase;
 		startSpace = new Space(startRow, startCol);
 	}
 	
@@ -46,7 +46,7 @@ public class Block {
 	}
 	
 	boolean canRotateType() {
-		if(!rock && !rotationPhase) {
+		if(!rock && !cantRotatePhase) {
 			return true;
 		}
 		return false;

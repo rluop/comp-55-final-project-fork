@@ -20,8 +20,8 @@ public class Board {
 		board = new Block[20][10];
 	}
 	
-	public Block createNextBlock(Orientation orientation, boolean rock, boolean rotationPhase, Space startSpace) {
-		nextBlock = new Block(orientation, rock, rotationPhase, startSpace);
+	public Block createNextBlock(Orientation orientation, boolean rock, boolean cantRotatePhase, Space startSpace) {
+		nextBlock = new Block(Orientation.UP, false, false, 0, 0);
 		return nextBlock;
 	}
 	
@@ -29,10 +29,9 @@ public class Board {
 		//TODO 
 	}
 	
-	public Block getBlock(Space s) {
-		//this function will be the equivalent of getVehicle in trafficjam, takes a space and returns whether there's a block there or not
-		return board[s.getRow()][s.getCol()];
-	}//nora
+	public void getBlock() {
+		//nora: this function will be the equivalent of getVehicle in trafficjam, takes a space and returns whether there's a block there or not
+	}
 	
 	public boolean canPlaceBlock() {
 		return false; // nora
