@@ -13,6 +13,7 @@ public class Board {
 	
 	private Block activeBlock;
 	private Block nextBlock;
+	private Block tempBlock;
 	
 	public Board(int rows, int cols) {
 		this.numRows = rows;
@@ -56,12 +57,12 @@ public class Board {
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
 	}
 	
-	public void addBlock() {
-		
+	public void addBlock(Space[] spacesOccupied) {
+		Block addMe = tempBlock;
 	}//nora
 	
 	public void removeBlock() {
-		
+		tempBlock = activeBlock;
 	}//nora
 	
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
@@ -77,6 +78,8 @@ public class Board {
 				return false;
 			}
 		}
+		//remove blah blah
+		addBlock(spacesOccupied);	//pass arr to func so it knows where to put the block
 		return false; // nora
 	}
 	

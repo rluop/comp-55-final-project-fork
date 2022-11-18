@@ -41,6 +41,10 @@ public class Block {
 		startSpace = new Space(startRow, startCol);
 	}
 	
+	public Space getStartSpace() {
+		return startSpace;
+	}
+	
 	boolean isRock() {
 		return rock;
 	}
