@@ -6,11 +6,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
-//
+
 public class GraphicsGame extends GraphicsProgram {
 	public static final int PROGRAM_WIDTH = 1;
 	public static final int PROGRAM_HEIGHT = 1;
-	private Timer t = new Timer(1000, this);
+	private Timer t = new Timer(1000, this); // 1000 ms = 1 second
 	private Game game;
 	private GLabel timer;
 	private GLabel score;
