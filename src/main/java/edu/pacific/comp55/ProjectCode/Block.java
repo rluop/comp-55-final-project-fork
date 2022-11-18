@@ -12,7 +12,7 @@ public class Block {
 	double randNum;
 	private Space startSpace;
 	
-	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
+	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, int startRow, int startCol){
 		randNum = Math.random()*100;
 		if(randNum < 14) {
 			type = BlockType.RIGHTL;
@@ -38,7 +38,7 @@ public class Block {
 		this.orientation = orientation;
 		this.rock = rock;
 		this.rotationPhase = rotationPhase;
-		this.startSpace = startSpace;
+		startSpace = new Space(startRow, startCol);
 	}
 	
 	boolean isRock() {
@@ -131,6 +131,12 @@ public class Block {
 	
 	Orientation getOrientation() {
 		return this.orientation;
+	}
+	
+	boolean canRotate() {
+		//nora
+		//i believe this needs to go in board. ill look into it more later
+		return true;
 	}
 	
 	void rotate() {
@@ -317,5 +323,9 @@ public class Block {
 	
 	public String toString() {
 		return "Type: " + this.type + ", Orientation: " + this.orientation + ", Start: " + this.startSpace;
+	}
+	
+	public static void main(String[] args) {
+		Block newBlock = new Block(Orientation.UP, false, false, 1,1);
 	}
 }
