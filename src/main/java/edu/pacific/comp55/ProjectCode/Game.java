@@ -40,25 +40,30 @@ public class Game {
 	}
 	
 	public void rotate(KeyEvent e) {	
-		// // check if canRotate is true in Board
+		// check if canRotate is true in Board
 		// int rotationNum = 0;
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			//	if (rotationNum == 3) {
-			// 		rotationNum = 0;
-			//	}
-			//	else {
-			//		rotationNum++;
-			//		spaceArray(rotationNum);
-			//	}
+			/*
+			if (rotationNum == 3) {
+				rotationNum = 0;
+			}
+			else {
+				rotationNum++;
+				spaceArray(rotationNum);
+			}
+
+			*/
 		}
 		if (e.getKeyCode() == KeyEvent.VK_Z) {
-			//	if (rotationNum == 0) {
-			// 		rotationNum = 3;
-			//	}
-			//	else {
-			//		rotationNum--;
-			//		spaceArray(rotationNum);
-			//	}
+			/*
+			if (rotationNum == 0) {
+				rotationNum = 3;
+			}
+			else {
+				rotationNum--;
+				spaceArray(rotationNum);
+			}
+			*/
 		}
 	}
 }
