@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 //
 public class GraphicsGame extends GraphicsProgram {
-	private Timer t;
+	private Timer t = new Timer(1000, this);
 	private Game game;
 	
 	public void init() {
@@ -19,7 +19,7 @@ public class GraphicsGame extends GraphicsProgram {
 		//needed for graphics program
 	}
 	
-	public void actionPerformed() {
+	public void actionPerformed(ActionEvent e) {
 		
 	}
 	
