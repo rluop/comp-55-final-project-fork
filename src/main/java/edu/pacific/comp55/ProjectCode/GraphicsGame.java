@@ -12,6 +12,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public static final int PROGRAM_HEIGHT = 1;
 	private Timer t = new Timer(1000, this);
 	private Game game;
+	private GLabel timer;
+	private GLabel score;
 	
 	public void init() {
 		//needed for graphics program
