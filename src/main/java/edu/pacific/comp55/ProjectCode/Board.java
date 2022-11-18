@@ -30,7 +30,8 @@ public class Board {
 	}
 	
 	public boolean canPlaceBlock() {
-		return false; // TODO
+		//this will check the spaces occupied and see if a block can move 
+		return false; // nora
 	}
 	
 	public boolean canClearLine() {
@@ -46,9 +47,12 @@ public class Board {
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
 	}
 	
-	public boolean moveActiveBlockDown() {
-		if(activeBlock.canMoveDown()) {
-			
+	public boolean moveActiveBlockDown() {//
+		if(!activeBlock.canMoveDown()) {
+			return false;
+		}
+		if(!canPlaceBlock()) {
+			return false;
 		}
 		return false; // nora
 	}
