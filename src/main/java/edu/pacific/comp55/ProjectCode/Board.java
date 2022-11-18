@@ -49,6 +49,8 @@ public class Board {
 		return false; // nora: ill do the rest of this after we're ready to do the rotation function.
 	}
 	
+	//troubleshooting
+	
 	public boolean canHold() {
 		return false; // TODO
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
