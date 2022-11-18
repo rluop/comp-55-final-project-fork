@@ -30,7 +30,7 @@ public class Board {
 	}
 	
 	public void getBlock() {
-		//nora: this function will be the equivalent of getVehicle in trafficjam, takes a space and returns whether theres a block there or not
+		//nora: this function will be the equivalent of getVehicle in trafficjam, takes a space and returns whether there's a block there or not
 	}
 	
 	public boolean canPlaceBlock() {
