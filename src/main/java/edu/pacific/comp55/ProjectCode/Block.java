@@ -15,25 +15,25 @@ public class Block {
 	Block(Orientation orientation, Boolean rock, Boolean rotationPhase, Space startSpace){
 		randNum = Math.random()*100;
 		if(randNum < 14) {
-			//type = RIGHTL;	//nora: im going to ask prof about these type assignments i couldnt get them working
+			type = BlockType.RIGHTL;	//nora: im going to ask prof about these type assignments i couldnt get them working
 		}
 		else if(randNum < 28) {
 			type = BlockType.LEFTL;
 		}
 		else if(randNum < 42) {
-			//type = T;
+			type = BlockType.T;
 		}
 		else if(randNum < 56) {
-			//type = RIGHTS;
+			type = BlockType.RIGHTS;
 		}
 		else if(randNum < 70) {
-			//type = LEFTS;
+			type = BlockType.LEFTS;
 		}
 		else if(randNum < 84) {
-			//type = SQUARE;
+			type = BlockType.SQUARE;
 		}
 		else {
-			//type = BAR;
+			type = BlockType.BAR;
 		}
 		this.orientation = orientation;
 		this.rock = rock;
