@@ -18,7 +18,7 @@ public class Block {
 			//type = RIGHTL;	//nora: im going to ask prof about these type assignments i couldnt get them working
 		}
 		else if(randNum < 28) {
-			//type = LEFTL;
+			type = BlockType.LEFTL;
 		}
 		else if(randNum < 42) {
 			//type = T;
@@ -140,7 +140,7 @@ public class Block {
 	}
 	
 	void rotate() {
-		//
+		//save for after game made
 	}
 	
 	public Space[] spacesOccupied() {
