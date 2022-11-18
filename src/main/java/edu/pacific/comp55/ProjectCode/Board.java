@@ -57,8 +57,8 @@ public class Board {
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
 	}
 	
-	public void addBlock(Space[] spacesOccupied) {
-		Block addMe = tempBlock;
+	public void addBlock() {
+		Block addMe = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.canRotateType(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol());
 	}//nora
 	
 	public void removeBlock() {
@@ -79,7 +79,7 @@ public class Board {
 			}
 		}
 		//remove blah blah
-		addBlock(spacesOccupied);	//pass arr to func so it knows where to put the block
+		addBlock();
 		return false; // nora
 	}
 	
