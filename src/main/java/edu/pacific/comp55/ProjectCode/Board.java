@@ -56,7 +56,7 @@ public class Board {
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-//			if(spacesOccupied[i].getRow()-1 != null) {	to be changed when getVehicle equivalent is made
+//			if(spacesOccupied[i].getRow()-1 != null) {	to be changed when getVehicle equivalent is made.
 //				
 //			}
 		}
