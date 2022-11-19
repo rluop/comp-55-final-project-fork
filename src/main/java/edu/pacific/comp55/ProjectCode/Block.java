@@ -145,6 +145,7 @@ public class Block {
 	
 	void rotate() {
 		//save for after game made
+		System.out.println("rotation function run.");
 	}
 	
 	public Space[] spacesOccupied() {
