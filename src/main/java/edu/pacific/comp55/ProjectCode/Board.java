@@ -53,6 +53,7 @@ public class Board {
 	}
 	
 	public boolean canRotate() {
+		System.out.println("canRotate function run.");
 		if(!activeBlock.canRotateType()) {
 			return false;
 		}
