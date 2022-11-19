@@ -27,6 +27,15 @@ public class Board {
 	}
 	
 	public void spawnBlock(){
+		activeBlock = nextBlock;
+		if (activeBlock.type == BlockType.BAR) {
+			activeBlock.setStartSpace(0,4);
+		}
+		else if(activeBlock.type == BlockType.LEFTL){
+			activeBlock.setStartSpace(1, 4);
+		}
+		Space[] spaces = new Space[4];
+		spaces = activeBlock.spacesOccupied();
 		//TODO 
 	}
 	
