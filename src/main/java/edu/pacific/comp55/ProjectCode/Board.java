@@ -21,8 +21,8 @@ public class Board {
 		board = new Block[20][10];
 	}
 	
-	public Block createNextBlock(Orientation orientation, boolean rock, boolean cantRotatePhase, Space startSpace) {
-		nextBlock = new Block(Orientation.UP, false, false, 0, 0);
+	public Block createNextBlock(Orientation orientation, boolean rock, boolean cantRotatePhase, int startRow, int startCol) {
+		nextBlock = new Block(orientation, rock, cantRotatePhase, startRow, startCol);
 		return nextBlock;
 	}
 	
