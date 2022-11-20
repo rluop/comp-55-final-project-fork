@@ -121,4 +121,15 @@ public class Board {
 	public boolean moveActiveBlockRight() {
 		return false; // nora
 	}
+	
+	public String toString() {
+		return BoardConverter.createString(this);
+	}
+	
+	public static void main(String[] args) {
+		Board b = new Board(0,0);
+		b.createNextBlock(Orientation.UP, false, false, 0,0);
+		b.spawnBlock();
+		System.out.println(b);
+	}
 }
