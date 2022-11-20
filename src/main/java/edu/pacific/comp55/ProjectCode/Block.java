@@ -332,6 +332,10 @@ public class Block {
 	public static void main(String[] args) {
 		Block newBlock = new Block(Orientation.UP, false, false, 1,1);
 		System.out.println(newBlock);
+		newBlock.setStartSpace(3,7);
+		System.out.println(newBlock);
+		
+		
 		Space spaces[] = newBlock.spacesOccupied();
 		for (int i = 0; i < 4; i++) {
 			System.out.println(spaces[i]);

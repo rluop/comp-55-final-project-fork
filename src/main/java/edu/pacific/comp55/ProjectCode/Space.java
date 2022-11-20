@@ -15,7 +15,7 @@ public class Space {
 		this.row = numRows;
 	}
 	public void setCol(int numCols) {
-		this.row = numCols;
+		this.col = numCols;
 	}
 	
 	// getters

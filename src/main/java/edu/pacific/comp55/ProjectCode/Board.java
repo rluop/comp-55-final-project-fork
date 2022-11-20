@@ -26,21 +26,21 @@ public class Board {
 	
 	public void spawnBlock(){
 		activeBlock = nextBlock;
-		System.out.println(activeBlock);
+		nextBlock = new Block(Orientation.UP, false, false, 0,0);
 		if (activeBlock.type == BlockType.BAR) {
 			activeBlock.setStartSpace(0,4);
 		}
 		else if(activeBlock.type == BlockType.LEFTL){
-			activeBlock.setStartSpace(1, 4);
+			activeBlock.setStartSpace(1, 3);
 		}
 		else if (activeBlock.type == BlockType.RIGHTL) {
 			activeBlock.setStartSpace(1,5);
 		}
 		else if (activeBlock.type == BlockType.LEFTS) {
-			activeBlock.setStartSpace(1, 4);
+			activeBlock.setStartSpace(0, 4);
 		}
 		else if (activeBlock.type == BlockType.RIGHTS) {
-			activeBlock.setStartSpace(1, 5);
+			activeBlock.setStartSpace(0, 4);
 		}
 		else if (activeBlock.type == BlockType.SQUARE) {
 			activeBlock.setStartSpace(1, 4);
@@ -51,11 +51,11 @@ public class Board {
 		
 		System.out.println(activeBlock);
 		
-//		Space[] spaces = new Space[4];
-//		spaces = activeBlock.spacesOccupied();
-//		for (int i = 0; i < 4; i++) {
-//			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
-//		}
+		Space[] spaces = new Space[4];
+		spaces = activeBlock.spacesOccupied();
+		for (int i = 0; i < 4; i++) {
+			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
+		}
 		//TODO 
 	}
 	
@@ -128,6 +128,7 @@ public class Board {
 		return BoardConverter.createString(this);
 	}
 	
+	// Board Testing
 	public static void main(String[] args) {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
