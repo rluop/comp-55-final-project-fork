@@ -7,8 +7,6 @@ public class Block {
 	Space[] spacesOccupied;
 	Boolean rock = false;
 	Boolean cantRotatePhase = false;
-	private int row;
-	private int col;
 	double randNum;
 	private Space startSpace;
 	

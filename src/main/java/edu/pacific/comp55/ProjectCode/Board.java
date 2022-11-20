@@ -3,8 +3,8 @@ package edu.pacific.comp55.ProjectCode;
 import java.util.*;
 
 public class Board {
-	private int numRows;
-	private int numCols;
+	// private int numRows;  *Rows are always 20
+	// private int numCols;  *Cols are always 10
 	
 	//Block[] list; made a list instead like a vector to input easier
 	private ArrayList<Block>block = new ArrayList<Block>();
@@ -15,9 +15,7 @@ public class Board {
 	private Block nextBlock;
 	private Block tempBlock;
 	
-	public Board(int rows, int cols) {
-		this.numRows = rows;
-		this.numCols = cols;
+	public Board() {
 		board = new Block[20][10];
 	}
 	
@@ -127,7 +125,7 @@ public class Board {
 	}
 	
 	public static void main(String[] args) {
-		Board b = new Board(0,0);
+		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
 		System.out.println(b);
