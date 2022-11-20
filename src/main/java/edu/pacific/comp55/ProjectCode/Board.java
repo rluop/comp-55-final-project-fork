@@ -26,6 +26,7 @@ public class Board {
 	
 	public void spawnBlock(){
 		activeBlock = nextBlock;
+		System.out.println(activeBlock);
 		if (activeBlock.type == BlockType.BAR) {
 			activeBlock.setStartSpace(0,4);
 		}
@@ -47,11 +48,14 @@ public class Board {
 		else { // T block
 			activeBlock.setStartSpace(1,4);
 		}
-		Space[] spaces = new Space[4];
-		spaces = activeBlock.spacesOccupied();
-		for (int i = 0; i < 4; i++) {
-			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
-		}
+		
+		System.out.println(activeBlock);
+		
+//		Space[] spaces = new Space[4];
+//		spaces = activeBlock.spacesOccupied();
+//		for (int i = 0; i < 4; i++) {
+//			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
+//		}
 		//TODO 
 	}
 	
