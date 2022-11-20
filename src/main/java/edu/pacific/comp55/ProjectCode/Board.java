@@ -34,8 +34,26 @@ public class Board {
 		else if(activeBlock.type == BlockType.LEFTL){
 			activeBlock.setStartSpace(1, 4);
 		}
+		else if (activeBlock.type == BlockType.RIGHTL) {
+			activeBlock.setStartSpace(1,5);
+		}
+		else if (activeBlock.type == BlockType.LEFTS) {
+			activeBlock.setStartSpace(1, 4);
+		}
+		else if (activeBlock.type == BlockType.RIGHTS) {
+			activeBlock.setStartSpace(1, 5);
+		}
+		else if (activeBlock.type == BlockType.SQUARE) {
+			activeBlock.setStartSpace(1, 4);
+		}
+		else { // T block
+			activeBlock.setStartSpace(1,4);
+		}
 		Space[] spaces = new Space[4];
 		spaces = activeBlock.spacesOccupied();
+		for (int i = 0; i < 4; i++) {
+			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
+		}
 		//TODO 
 	}
 	
