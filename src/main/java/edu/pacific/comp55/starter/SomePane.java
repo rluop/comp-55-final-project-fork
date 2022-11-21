@@ -12,7 +12,7 @@ public class SomePane extends GraphicsPane {
 
 	public SomePane(MainApplication app) {
 		this.program = app;
-		img = new GImage("mainmenu.png", 10, 10);
+		img = new GImage("controls.png", 10, 10);
 		para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
 		para.setFont("Arial-24");
 	}
