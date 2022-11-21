@@ -124,6 +124,13 @@ public class Board {
 		return false; // nora
 	}
 	
+	public void blockPlaced() {//nora: this should be run when a block reaches where it should be placed on the board
+		//adds the block's spaces occupied to the board's spaces occupied, to make line deletion easier.
+		//only 2 blocks should exist in board, activeBlock and nextBlock. and maybe the held block
+		//everything else on the board is just occupied spaces.
+		
+	}
+	
 	public String toString() {
 		return BoardConverter.createString(this);
 	}
