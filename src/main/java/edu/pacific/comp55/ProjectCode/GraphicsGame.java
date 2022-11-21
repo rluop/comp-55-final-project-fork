@@ -16,7 +16,8 @@ public class GraphicsGame extends GraphicsProgram {
 	private GLabel score;
 	
 	public void init() {
-		//needed for graphics program
+		setSize(PROGRAM_WIDTH, PROGRAM_HEIGHT);
+		requestFocus();
 	}
 	
 	public void run() {
