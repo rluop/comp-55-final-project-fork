@@ -14,6 +14,8 @@ public class GraphicsGame extends GraphicsProgram {
 	private Game game;
 	private GLabel timer;
 	private GLabel score;
+	private int timerCount = 0;
+	private int scoreCount = 0;
 	
 	public void init() {
 		setSize(PROGRAM_WIDTH, PROGRAM_HEIGHT);
