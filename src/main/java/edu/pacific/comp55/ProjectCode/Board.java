@@ -113,7 +113,7 @@ public class Board {
 			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
 			if(getBlock(spacesOccupied[i]) != null) {
-				canPlaceBlock();
+				spawnBlock();
 				return false;
 			}
 		}
