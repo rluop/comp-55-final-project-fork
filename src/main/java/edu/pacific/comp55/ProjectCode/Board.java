@@ -87,6 +87,11 @@ public class Board {
 	
 	public void addBlock(Block addMe) {
 		//add addMe to board and arraylist
+		Space[] addMeSpaces = addMe.spacesOccupied();
+		for(int i = 0; i<addMeSpaces.length; i++) {
+			board[addMeSpaces[i].getRow()][addMeSpaces[i].getCol()] = addMe;
+		}
+		blocksOnBoard.add(addMe);
 	}//nora
 	
 	public void removeBlock() {
