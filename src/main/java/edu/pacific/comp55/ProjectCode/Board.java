@@ -64,10 +64,6 @@ public class Board {
 		return board[s.getRow()][s.getCol()];
 	}
 	
-	public boolean canPlaceBlock() {
-		return false; // TODO
-	}
-	
 	public boolean canClearLine() {
 		return false; // TODO
 	}
