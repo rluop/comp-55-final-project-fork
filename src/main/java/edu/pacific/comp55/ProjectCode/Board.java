@@ -7,7 +7,7 @@ public class Board {
 	// private int numCols;  *Cols are always 10
 	
 	//Block[] list; made a list instead like a vector to input easier
-	private ArrayList<Block>block = new ArrayList<Block>();
+	private ArrayList<Block>blocksOnBoard = new ArrayList<Block>();
 	
 	private Block[][] board;
 	
