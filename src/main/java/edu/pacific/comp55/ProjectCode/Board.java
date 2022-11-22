@@ -91,11 +91,17 @@ public class Board {
 	}//nora
 	
 	public void removeBlock() {
-		tempBlock = activeBlock;
 		//need to remove it from the board/grid
-		
+		Space[] s = activeBlock.spacesOccupied();
+		for(int i = 0; i<s.length; i++) {
+			board[s[i].getRow()][s[i].getCol()] = null;
+		}
 		//need to remove it from the array
-		
+		for(int i = 0; i<blocksOnBoard.size(); i++) {
+			if(blocksOnBoard.get(i)==activeBlock) {
+				blocksOnBoard.remove(i);
+			}
+		}
 	}//nora
 	
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
