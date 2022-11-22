@@ -85,8 +85,8 @@ public class Board {
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
 	}
 	
-	public void addBlock() {
-		Block addMe = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.canRotateType(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol());
+	public void addBlock(Block addMe) {
+		//add addMe to board and arraylist
 	}//nora
 	
 	public void removeBlock() {
@@ -99,21 +99,23 @@ public class Board {
 	
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
 	public boolean moveActiveBlockDown() {
+		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveDown()) {
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-			//change the temporary array to have the spaces the block will occupy once its moved.
-			//this is a bounds check, it will bnnot be moved in the actual movement of the block
+			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
 			if(getBlock(spacesOccupied[i]) != null) {
 				return false;
 			}
 		}
-		//remove blah blah
-		addBlock();
-		return false; // nora
+		removeBlock();
+		//now move it!
+		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()-1, activeBlock.getStartSpace().getCol());
+		addBlock(activeBlock);
+		return true; // nora
 	}
 	
 	public boolean moveActiveBlockLeft() {

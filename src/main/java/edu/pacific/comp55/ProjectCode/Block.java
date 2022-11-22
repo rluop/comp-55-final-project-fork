@@ -47,6 +47,10 @@ public class Block {
 		return rock;
 	}
 	
+	boolean getCantRotatePhase() {
+		return cantRotatePhase;
+	}
+	
 	boolean canRotateType() {
 		if(!rock && !cantRotatePhase) {
 			return true;
