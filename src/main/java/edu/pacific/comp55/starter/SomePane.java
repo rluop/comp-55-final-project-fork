@@ -16,6 +16,7 @@ public class SomePane extends GraphicsPane {
 		//para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
 		//para.setFont("Arial-24");
 		
+		
 	}
 
 	@Override
