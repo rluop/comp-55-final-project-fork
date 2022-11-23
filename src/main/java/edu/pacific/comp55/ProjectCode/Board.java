@@ -66,7 +66,25 @@ public class Board {
 	
 	public int canClearLine() {
 		//nora: go through each of teh rows and loop through each column. if every column is full for some row, return that row. if no row can be cleared, return -1
-		return -1; // TODO
+		boolean canClear = true;
+		int returnInd = -1; //needed to be init, -1 isnt a valid row. but, it should be reassigned if the value is used. 
+		for(int i = 0; i<board.length; i++) {
+			for(int j = 0; j<board[i].length; j++) {
+				if(board[i][j]==null) {
+					canClear = false;
+				}
+			}
+			if(canClear) {
+				returnInd = i;
+			}
+		}
+		if(canClear) {
+			return returnInd;
+		}
+		else {
+			return -1;
+		}
+		//need to remember wherever we call this, it needs to be called more than once because it can only return one row index at a time, and more than one line may be cleared at a time
 	}
 	
 	public boolean canRotate() {
