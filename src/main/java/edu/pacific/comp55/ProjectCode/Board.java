@@ -7,7 +7,7 @@ public class Board {
 	// private int numCols;  *Cols are always 10
 	
 	//Block[] list; made a list instead like a vector to input easier
-	private ArrayList<Block>block = new ArrayList<Block>();
+	private ArrayList<Block>blocksOnBoard = new ArrayList<Block>();
 	
 	private Block[][] board;
 	
@@ -64,12 +64,27 @@ public class Board {
 		return board[s.getRow()][s.getCol()];
 	}
 	
-	public boolean canPlaceBlock() {
-		return false; // TODO
-	}
-	
-	public boolean canClearLine() {
-		return false; // TODO
+	public int canClearLine() {
+		//nora: go through each of teh rows and loop through each column. if every column is full for some row, return that row. if no row can be cleared, return -1
+		boolean canClear = true;
+		int returnInd = -1; //needed to be init, -1 isnt a valid row. but, it should be reassigned if the value is used. 
+		for(int i = 0; i<board.length; i++) {
+			for(int j = 0; j<board[i].length; j++) {
+				if(board[i][j]==null) {
+					canClear = false;
+				}
+			}
+			if(canClear) {
+				returnInd = i;
+			}
+		}
+		if(canClear) {
+			return returnInd;
+		}
+		else {
+			return -1;
+		}
+		//need to remember wherever we call this, it needs to be called more than once because it can only return one row index at a time, and more than one line may be cleared at a time
 	}
 	
 	public boolean canRotate() {
@@ -85,35 +100,49 @@ public class Board {
 		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
 	}
 	
-	public void addBlock() {
-		Block addMe = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.canRotateType(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol());
+	public void addBlock(Block addMe) {
+		//add addMe to board and arraylist
+		Space[] addMeSpaces = addMe.spacesOccupied();
+		for(int i = 0; i<addMeSpaces.length; i++) {
+			board[addMeSpaces[i].getRow()][addMeSpaces[i].getCol()] = addMe;
+		}
+		blocksOnBoard.add(addMe);
 	}//nora
 	
 	public void removeBlock() {
-		tempBlock = activeBlock;
 		//need to remove it from the board/grid
-		
+		Space[] s = activeBlock.spacesOccupied();
+		for(int i = 0; i<s.length; i++) {
+			board[s[i].getRow()][s[i].getCol()] = null;
+		}
 		//need to remove it from the array
-		
+		for(int i = 0; i<blocksOnBoard.size(); i++) {
+			if(blocksOnBoard.get(i)==activeBlock) {
+				blocksOnBoard.remove(i);
+			}
+		}
 	}//nora
 	
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
 	public boolean moveActiveBlockDown() {
+		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveDown()) {
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-			//change the temporary array to have the spaces the block will occupy once its moved.
-			//this is a bounds check, it will bnnot be moved in the actual movement of the block
+			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
 			if(getBlock(spacesOccupied[i]) != null) {
+				spawnBlock();
 				return false;
 			}
 		}
-		//remove blah blah
-		addBlock();
-		return false; // nora
+		removeBlock();
+		//now move it!
+		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()-1, activeBlock.getStartSpace().getCol());
+		addBlock(activeBlock);
+		return true; // nora
 	}
 	
 	public boolean moveActiveBlockLeft() {
@@ -122,13 +151,6 @@ public class Board {
 	
 	public boolean moveActiveBlockRight() {
 		return false; // nora
-	}
-	
-	public void blockPlaced() {//nora: this should be run when a block reaches where it should be placed on the board
-		//adds the block's spaces occupied to the board's spaces occupied, to make line deletion easier.
-		//only 2 blocks should exist in board, activeBlock and nextBlock. and maybe the held block
-		//everything else on the board is just occupied spaces.
-		
 	}
 	
 	public String toString() {
