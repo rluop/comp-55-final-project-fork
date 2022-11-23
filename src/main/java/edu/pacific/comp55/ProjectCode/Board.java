@@ -64,8 +64,9 @@ public class Board {
 		return board[s.getRow()][s.getCol()];
 	}
 	
-	public boolean canClearLine() {
-		return false; // TODO
+	public int canClearLine() {
+		//nora: go through each of teh rows and loop through each column. if every column is full for some row, return that row. if no row can be cleared, return -1
+		return -1; // TODO
 	}
 	
 	public boolean canRotate() {
