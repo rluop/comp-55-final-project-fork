@@ -8,8 +8,7 @@ public class SomePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 										// all of the GraphicsProgram calls
 	private GImage controls;
-	private GImage game;
-	private GParagraph para;
+	//private GParagraph para;
 
 	public SomePane(MainApplication app) {
 		this.program = app;
