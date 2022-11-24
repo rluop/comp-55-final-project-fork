@@ -36,7 +36,6 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGame() {
-		//playRandomSound();
 		switchToScreen(game);
 	}
 

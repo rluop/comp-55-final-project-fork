@@ -53,7 +53,7 @@ public class MenuPane extends GraphicsPane {
 		if (obj == rect) {
 			program.switchToSome();
 		}else if(obj == play) {
-			program.switchToMenu();// NEED TO CHANGE SCREEN
+			program.switchToGame();
 		}
 	}
 	
