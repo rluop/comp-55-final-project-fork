@@ -8,6 +8,7 @@ public class MainApplication extends GraphicsApplication {
 	private SomePane somePane;
 	private MenuPane menu;
 	private GamePane game;
+	private PausePane pause;
 	
 	private int count;
 
@@ -17,6 +18,7 @@ public class MainApplication extends GraphicsApplication {
 
 	public void run() {
 		System.out.println("Hello, world!");
+		pause = new PausePane(this);
 		game = new GamePane(this);
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
