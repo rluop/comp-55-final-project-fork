@@ -43,7 +43,8 @@ public class GamePane extends GraphicsPane {
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		if(keyCode == KeyEvent.VK_ESCAPE) {
-			System.out.println("esc pressed");
+			program.switchToPause();
+			//System.out.println("esc pressed");
 		}
 	}
 	
