@@ -146,7 +146,24 @@ public class Board {
 	}
 	
 	public boolean moveActiveBlockLeft() {
-		return false; // nora
+		//check if it can move considering the bounds of the board
+		if(!activeBlock.canMoveLeft()) {
+			return false;
+		}
+		Space[] spacesOccupied = activeBlock.spacesOccupied();
+		for(int i = 0; i<spacesOccupied.length; i++) {
+			//check (using temporary array) if it can move considering other blocks on the board
+			spacesOccupied[i].setRow(spacesOccupied[i].getCol()-1);
+			if(getBlock(spacesOccupied[i]) != null) {
+				spawnBlock();
+				return false;
+			}
+		}
+		removeBlock();
+		//now move it!
+		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()-1);
+		addBlock(activeBlock);
+		return true; // nora
 	}
 	
 	public boolean moveActiveBlockRight() {
