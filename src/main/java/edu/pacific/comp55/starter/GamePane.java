@@ -19,15 +19,12 @@ public class GamePane extends GraphicsPane {
 
 	@Override
 	public void showContents() {
-		//program.add(controls);
-		
-		//program.add(para);
+		program.add(game);
 	}
 
 	@Override
 	public void hideContents() {
-		//program.remove(controls);
-		//program.remove(para);
+		program.remove(game);
 	}
 
 	@Override
