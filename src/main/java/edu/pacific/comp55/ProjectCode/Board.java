@@ -133,6 +133,7 @@ public class Board {
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
+			//if the space it WOULD move down to is occupied, block needs to be placed
 			if(getBlock(spacesOccupied[i]) != null) {
 				spawnBlock();
 				return false;
