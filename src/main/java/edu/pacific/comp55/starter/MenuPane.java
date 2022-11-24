@@ -14,7 +14,7 @@ public class MenuPane extends GraphicsPane {
 	private GImage menu;
 	
 	private GButton play;
-	private GImage game;
+	//private GImage game;
 	
 
 	public MenuPane(MainApplication app) {
@@ -30,7 +30,7 @@ public class MenuPane extends GraphicsPane {
 		
 		menu = new GImage("mainmenu.png", 0,0);
 		
-		game = new GImage("game.png", 0,0);
+		//game = new GImage("game.png", 0,0);
 	}
 
 	@Override
