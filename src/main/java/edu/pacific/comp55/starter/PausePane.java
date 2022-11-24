@@ -8,7 +8,6 @@ public class PausePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 										// all of the GraphicsProgram calls
 	private GImage pause;
-	//private GParagraph para;
 
 	public PausePane(MainApplication app) {
 		this.program = app;
@@ -28,6 +27,7 @@ public class PausePane extends GraphicsPane {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		//para.setText("you need\nto click\non the eyes\nto go back");
+		//TODO CREATE BUTTONS FOR THIS AND CHANGE IT
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == pause) {
 			program.switchToMenu();
