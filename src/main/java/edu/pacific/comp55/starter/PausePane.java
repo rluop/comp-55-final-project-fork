@@ -12,24 +12,17 @@ public class PausePane extends GraphicsPane {
 
 	public PausePane(MainApplication app) {
 		this.program = app;
-		pause = new GImage("controls.png", 0, 0);
-		//para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
-		//para.setFont("Arial-24");
-		
-		
+		pause = new GImage("pause.png", 0, 0);
 	}
 
 	@Override
 	public void showContents() {
-		//program.add(controls);
-		
-		//program.add(para);
+		program.add(pause);
 	}
 
 	@Override
 	public void hideContents() {
-		//program.remove(controls);
-		//program.remove(para);
+		program.remove(pause);
 	}
 
 	@Override
