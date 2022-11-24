@@ -156,7 +156,6 @@ public class Board {
 			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getCol()-1);
 			if(getBlock(spacesOccupied[i]) != null) {
-				spawnBlock();
 				return false;
 			}
 		}
