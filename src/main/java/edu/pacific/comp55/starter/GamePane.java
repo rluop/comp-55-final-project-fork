@@ -1,4 +1,5 @@
 package edu.pacific.comp55.starter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
@@ -35,4 +36,15 @@ public class GamePane extends GraphicsPane {
 			program.switchToMenu();
 		}
 	}*/
+	
+	
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int keyCode = e.getKeyCode();
+		if(keyCode == KeyEvent.VK_ESCAPE) {
+			System.out.println("esc pressed");
+		}
+	}
+	
 }
