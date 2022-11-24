@@ -52,6 +52,8 @@ public class MenuPane extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
 			program.switchToSome();
+		}else if(obj == play) {
+			program.switchToMenu();// NEED TO CHANGE SCREEN
 		}
 	}
 	
