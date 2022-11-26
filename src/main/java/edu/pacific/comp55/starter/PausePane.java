@@ -28,11 +28,15 @@ public class PausePane extends GraphicsPane {
 	@Override
 	public void showContents() {
 		program.add(pause);
+		program.add(resume);
+		program.add(menu);
 	}
 
 	@Override
 	public void hideContents() {
 		program.remove(pause);
+		program.remove(resume);
+		program.remove(menu);
 	}
 
 	@Override
@@ -40,8 +44,10 @@ public class PausePane extends GraphicsPane {
 		//para.setText("you need\nto click\non the eyes\nto go back");
 		//TODO CREATE BUTTONS FOR THIS AND CHANGE IT
 		GObject obj = program.getElementAt(e.getX(), e.getY());
-		if (obj == pause) {
+		if (obj == menu) {
 			program.switchToMenu();
+		}else if(obj == resume) {
+			program.switchToGame();
 		}
 	}
 }
