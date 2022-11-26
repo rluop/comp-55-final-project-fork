@@ -17,10 +17,10 @@ public class PausePane extends GraphicsPane {
 		pause = new GImage("pause.png", 0, 0);
 		
 		resume = new GButton("controls", 610, 610, 300, 120);
-		resume.setColor(Color.black);
+		resume.setColor(Color.pink);
 		//resume.setVisible(false);
 		
-		menu = new GButton("controls", 610, 610, 300, 120);
+		menu = new GButton("controls", 350, 510, 250, 120);
 		menu.setColor(Color.red);
 		//menu.setVisible(false);
 	}
