@@ -18,6 +18,7 @@ public class Board {
 	public Board() {
 		board = new Block[20][10];
 	}
+
 	
 	public Block createNextBlock(Orientation orientation, boolean rock, boolean cantRotatePhase, int startRow, int startCol) {
 		nextBlock = new Block(orientation, rock, cantRotatePhase, startRow, startCol);
@@ -184,6 +185,13 @@ public class Board {
 		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()+1);
 		addBlock(activeBlock);
 		return true; // nora
+	}
+	
+	public boolean fullBoard() {
+		if (board[0][4] != null) {
+			return true;
+		}
+		return false;
 	}
 	
 	public String toString() {

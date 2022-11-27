@@ -8,11 +8,24 @@ public class Game {
 	
 	public static void main(String[] args) {
 		Game g = new Game();
+		g.setupBoard();
+		g.playGame();
+	}
+	
+	public void setupBoard() {
+		board = new Board();
+	}
+	
+	public void playGame() {
+		board.createNextBlock(Orientation.UP, false, false, 0,0);
+		board.spawnBlock();
+		System.out.println(board);
 	}
 	
 	public void moveDown(KeyEvent e) {
 		// check if moveActiveBlockDown is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			board.moveActiveBlockDown();
 			// activeBlock.move(0, 50);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
