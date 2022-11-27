@@ -1,7 +1,11 @@
 package edu.pacific.comp55.ProjectCode;
 
+import java.util.ArrayList;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import acm.graphics.*;
 
 public class Game {
 	private Board board;
@@ -43,10 +47,6 @@ public class Game {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			// activeBlock.move(50, 0);
 		}
-	}
-	
-	public void drawBlock() {
-		// TODO
 	}
 	
 	public void holdBlock(KeyEvent e) {

@@ -49,4 +49,29 @@ public class GraphicsGame extends GraphicsProgram {
 	public void showScore() {
 		
 	}
+	
+	public void drawBlock(Block B) {
+		GImage block;
+		if (B.getBlockType() == BlockType.BAR) {
+			block = new GImage("media/bar2.jpg",0,0);
+		}
+		else if (B.getBlockType() == BlockType.RIGHTL) {
+			block = new GImage("media/l4.png",0,0);
+		}
+		else if (B.getBlockType() == BlockType.LEFTL) {
+			block = new GImage("media/lm4.png",0,0);
+		}
+		else if (B.getBlockType() == BlockType.RIGHTS) {
+			block = new GImage("media/s.png",0,0);
+		}
+		else if (B.getBlockType() == BlockType.SQUARE) {
+			block = new GImage("media/square.png",0,0);
+		}
+		else {
+			block = new GImage("media/t3.png",0,0);
+		}
+		add(block);
+		// TODO: ADD LEFTS
+	}
+	
 }
