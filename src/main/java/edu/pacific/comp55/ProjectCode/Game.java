@@ -4,7 +4,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Game {
-	private Board activeBlock;
+	private Board board;
+	
+	public static void main(String[] args) {
+		Game g = new Game();
+	}
 	
 	public void moveDown(KeyEvent e) {
 		// check if moveActiveBlockDown is true in Board
