@@ -150,7 +150,7 @@ public class Board {
 			}
 		}
 		removeBlock();
-		//now move it!
+		//now move it!!
 		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()-1, activeBlock.getStartSpace().getCol());
 		addBlock(activeBlock);
 		return true; // nora
