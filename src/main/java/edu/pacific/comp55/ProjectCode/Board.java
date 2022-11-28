@@ -185,7 +185,7 @@ public class Board {
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
-			spacesOccupied[i].setRow(spacesOccupied[i].getCol()+1);
+			spacesOccupied[i].setCol(spacesOccupied[i].getCol()+1);
 			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
 				return false;
 			}
