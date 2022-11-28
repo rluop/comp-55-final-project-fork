@@ -151,7 +151,7 @@ public class Board {
 		}
 		removeBlock();
 		//now move it!!
-		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()+1, activeBlock.getStartSpace().getCol());
+		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()+1, activeBlock.getStartSpace().getCol());
 		addBlock(activeBlock);
 		return true; // nora
 	}
@@ -192,7 +192,7 @@ public class Board {
 		}
 		removeBlock();
 		//now move it!!
-		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()+1);
+		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()+1);
 		addBlock(activeBlock);
 		return true; // nora
 	}
@@ -244,7 +244,7 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.moveActiveBlockDown();
+		b.moveActiveBlockLeft();
 		System.out.println(b);
 	}
 }
