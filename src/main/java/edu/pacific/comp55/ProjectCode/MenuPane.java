@@ -17,7 +17,6 @@ public class MenuPane extends GraphicsPane {
 	
 	private GButton play;
 	private GButton quit;
-	//private GImage game;
 	
 
 	public MenuPane(MainApplication app) {
