@@ -69,7 +69,7 @@ public class Block {
 		//nora
 		Space[] returnMe = spacesOccupied();
 		for(int i = 0; i<returnMe.length; i++) {
-			if(returnMe[i].getRow()-1 < 0) {
+			if(returnMe[i].getRow()+1 > 20) {
 				System.out.println("move out of bounds!");
 				return false;
 			}

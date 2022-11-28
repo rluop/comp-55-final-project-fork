@@ -142,7 +142,7 @@ public class Board {
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
-			spacesOccupied[i].setRow(spacesOccupied[i].getRow()-1);
+			spacesOccupied[i].setRow(spacesOccupied[i].getRow()+1);
 			//if the space it WOULD move down to is occupied, block needs to be placed
 			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
 				spawnBlock();
@@ -151,7 +151,7 @@ public class Board {
 		}
 		removeBlock();
 		//now move it!!
-		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()-1, activeBlock.getStartSpace().getCol());
+		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow()+1, activeBlock.getStartSpace().getCol());
 		addBlock(activeBlock);
 		return true; // nora
 	}
@@ -244,7 +244,7 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.moveActiveBlockLeft();
+		b.moveActiveBlockDown();
 		System.out.println(b);
 	}
 }
