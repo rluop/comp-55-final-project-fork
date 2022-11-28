@@ -40,10 +40,12 @@ public class Block {
 		else {
 			type = BlockType.BAR;
 		}
+		this.spacesOccupied = new Space[4];
 		this.orientation = orientation;
 		this.rock = rock;
 		this.cantRotatePhase = cantRotatePhase;
 		startSpace = new Space(startRow, startCol);
+		this.spacesOccupied = spacesOccupied();
 	}
 	
 	public Space getStartSpace() {
@@ -146,15 +148,40 @@ public class Block {
 		return this.orientation;
 	}
 	
-	void rotateRight() {
-		//save for after game made
-		System.out.println("rotation function run.");
+void rotateRight() {
+		
+		if (this.orientation == Orientation.UP) {
+			this.orientation = Orientation.RIGHT;
+		}
+		else if (this.orientation == Orientation.RIGHT) {
+			this.orientation = Orientation.DOWN;
+		}
+		else if (this.orientation == Orientation.DOWN) {
+			this.orientation = Orientation.LEFT;
+		}
+		else {
+			this.orientation = Orientation.UP;
+		}
+		this.spacesOccupied = spacesOccupied();
+		System.out.println("ROTATE RIGHT");
 	}
 	
-	void rotateLeft() {
-		//save for after game made
-		System.out.println("rotation function run.");
+void rotateLeft() {
+	if (this.orientation == Orientation.UP) {
+		this.orientation = Orientation.LEFT;
 	}
+	else if (this.orientation == Orientation.RIGHT) {
+		this.orientation = Orientation.UP;
+	}
+	else if (this.orientation == Orientation.DOWN) {
+		this.orientation = Orientation.RIGHT;
+	}
+	else {
+		this.orientation = Orientation.DOWN;
+	}
+	this.spacesOccupied = spacesOccupied();
+	System.out.println("ROTATE LEFT");
+}
 	
 	public Space[] spacesOccupied() {
 		Space[] spaceArray = new Space[4];
