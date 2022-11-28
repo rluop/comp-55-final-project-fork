@@ -1,4 +1,8 @@
-package edu.pacific.comp55.starter;
+package edu.pacific.comp55.ProjectCode;
+
+import edu.pacific.comp55.starter.AudioPlayer;
+import edu.pacific.comp55.starter.GraphicsApplication;
+
 public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;

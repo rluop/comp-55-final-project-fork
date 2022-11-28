@@ -1,9 +1,11 @@
-package edu.pacific.comp55.starter;
+package edu.pacific.comp55.ProjectCode;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
 import acm.graphics.GObject;
+import edu.pacific.comp55.starter.GButton;
+import edu.pacific.comp55.starter.GraphicsPane;
 
 public class PausePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
