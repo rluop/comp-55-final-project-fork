@@ -9,6 +9,13 @@ public class Block {
 	Boolean cantRotatePhase = false;
 	double randNum;
 	private Space startSpace;
+	Block(BlockType type, Orientation orientation, Boolean rock, Boolean cantRotatePhase, int startRow, int startCol){
+		this.type = type;
+		this.orientation = orientation;
+		this.rock = rock;
+		this.cantRotatePhase = cantRotatePhase;
+		startSpace = new Space(startRow, startCol);
+	}
 	
 	Block(Orientation orientation, Boolean rock, Boolean cantRotatePhase, int startRow, int startCol){
 		randNum = Math.random()*100;

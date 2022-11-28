@@ -111,6 +111,7 @@ public class Board {
 	}
 	
 	public void addBlock(Block addMe) {
+		activeBlock = addMe;
 		//add addMe to board and arraylist
 		Space[] addMeSpaces = addMe.spacesOccupied();
 		for(int i = 0; i<addMeSpaces.length; i++) {
@@ -165,13 +166,13 @@ public class Board {
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
 			spacesOccupied[i].setRow(spacesOccupied[i].getCol()-1);
-			if(getBlock(spacesOccupied[i]) != null) {
+			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
 				return false;
 			}
 		}
 		removeBlock();
 		//now move it!
-		activeBlock = new Block(activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()-1);
+		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()-1);
 		addBlock(activeBlock);
 		return true; // nora
 	}
@@ -203,16 +204,47 @@ public class Board {
 		return false;
 	}
 	
+	public Block getActiveBlock() {
+		return activeBlock;
+	}
+
+
+	public void setActiveBlock(Block activeBlock) {
+		this.activeBlock = activeBlock;
+	}
+
+
+	public Block getNextBlock() {
+		return nextBlock;
+	}
+
+
+	public void setNextBlock(Block nextBlock) {
+		this.nextBlock = nextBlock;
+	}
+
+
 	public String toString() {
 		return BoardConverter.createString(this);
 	}
 	
 	// Board Testing
 	public static void main(String[] args) {
-		Board b = new Board();
-		b.createNextBlock(Orientation.UP, false, false, 0,0);
-		b.spawnBlock();
-		b.moveActiveBlockLeft();
-		System.out.println(b);
+		//Board b = new Board();
+		//b.createNextBlock(Orientation.UP, false, false, 0,0);
+		Block b = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 3);
+		Block t = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 2);
+		for(int i = 0 ; i< 4 ; i++) {
+			System.out.println("--------------" + b.spacesOccupied()[i].toString());
+		}
+		//b.spawnBlock();
+		for(int i = 0 ; i< 4 ; i++) {
+			System.out.println("++++++++++++" + t.spacesOccupied()[i].toString());
+		}
+		//b.moveActiveBlockLeft();
+		//for(int i = 0 ; i< 4 ; i++) {
+		//	System.out.println("****************" + b.getActiveBlock().spacesOccupied()[i].toString());
+		//}
+		//System.out.println(b);
 	}
 }
