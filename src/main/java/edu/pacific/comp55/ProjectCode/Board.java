@@ -229,7 +229,7 @@ public class Board {
 	
 	// Board Testing
 	public static void main(String[] args) {
-		System.out.println("lets move a block by hand...");
+		System.out.println("let's move a block by hand...");
 		Block bb = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 3);
 		Block t = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 2);
 		for(int i = 0 ; i< 4 ; i++) {
