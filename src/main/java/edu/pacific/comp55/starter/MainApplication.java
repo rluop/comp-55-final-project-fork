@@ -1,4 +1,7 @@
 package edu.pacific.comp55.starter;
+
+import edu.pacific.comp55.ProjectCode.GamePane;
+
 public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
