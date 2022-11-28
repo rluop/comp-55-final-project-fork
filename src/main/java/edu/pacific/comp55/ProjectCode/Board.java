@@ -164,8 +164,9 @@ public class Board {
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
-			spacesOccupied[i].setRow(spacesOccupied[i].getCol()-1);
+			spacesOccupied[i].setCol(spacesOccupied[i].getCol()-1);
 			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
+				System.out.print("there's already a block there!");
 				return false;
 			}
 		}
@@ -236,7 +237,7 @@ public class Board {
 			System.out.println("--------------" + bb.spacesOccupied()[i].toString());
 		}
 		for(int i = 0 ; i< 4 ; i++) {
-			System.out.println("++++++++++++" + t.spacesOccupied()[i].toString());
+			System.out.println("++++++++++++++" + t.spacesOccupied()[i].toString());
 		}
 		
 		System.out.println("now try using function and board...");
