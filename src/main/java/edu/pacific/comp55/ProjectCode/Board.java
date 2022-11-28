@@ -229,21 +229,24 @@ public class Board {
 	
 	// Board Testing
 	public static void main(String[] args) {
-		//Board b = new Board();
-		//b.createNextBlock(Orientation.UP, false, false, 0,0);
-		Block b = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 3);
+		System.out.println("lets move a block by hand...");
+		Block bb = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 3);
 		Block t = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 2);
 		for(int i = 0 ; i< 4 ; i++) {
-			System.out.println("--------------" + b.spacesOccupied()[i].toString());
+			System.out.println("--------------" + bb.spacesOccupied()[i].toString());
 		}
-		//b.spawnBlock();
 		for(int i = 0 ; i< 4 ; i++) {
 			System.out.println("++++++++++++" + t.spacesOccupied()[i].toString());
 		}
-		//b.moveActiveBlockLeft();
-		//for(int i = 0 ; i< 4 ; i++) {
-		//	System.out.println("****************" + b.getActiveBlock().spacesOccupied()[i].toString());
-		//}
-		//System.out.println(b);
+		for(int i = 0 ; i< 4 ; i++) {
+			System.out.println("****************" + bb.spacesOccupied()[i].toString());
+		}
+		
+		System.out.println("now try using function and board...");
+		Board b = new Board();
+		b.createNextBlock(Orientation.UP, false, false, 0,0);
+		b.spawnBlock();
+		b.moveActiveBlockLeft();
+		System.out.println(b);
 	}
 }
