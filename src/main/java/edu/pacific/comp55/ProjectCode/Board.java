@@ -51,6 +51,7 @@ public class Board {
 		}
 		
 		System.out.println(activeBlock);
+		blocksOnBoard.add(activeBlock);
 		
 		Space[] spaces = new Space[4];
 		spaces = activeBlock.spacesOccupied();
