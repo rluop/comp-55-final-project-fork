@@ -16,6 +16,7 @@ public class MenuPane extends GraphicsPane {
 	private GImage menu;
 	
 	private GButton play;
+	private GButton quit;
 	//private GImage game;
 	
 
@@ -30,6 +31,10 @@ public class MenuPane extends GraphicsPane {
 		play.setFillColor(Color.red);
 		play.setVisible(false);
 		
+		quit = new GButton("quit", 540, 350, 150, 80);
+		quit.setFillColor(Color.red);
+		//quit.setVisible(false);
+		
 		menu = new GImage("mainmenu.png", 0,0);
 		menu.setSize(program.PROG_WIDTH + 250, program.PROG_HEIGHT + 10);
 	}
@@ -39,6 +44,7 @@ public class MenuPane extends GraphicsPane {
 		program.add(menu);
 		program.add(rect);
 		program.add(play);
+		program.add(quit);
 	}
 
 	@Override
@@ -46,6 +52,7 @@ public class MenuPane extends GraphicsPane {
 		program.remove(menu);
 		program.remove(rect);
 		program.remove(play);
+		program.remove(quit);
 	}
 
 	@Override
@@ -55,6 +62,8 @@ public class MenuPane extends GraphicsPane {
 			program.switchToSome();
 		}else if(obj == play) {
 			program.switchToGame();
+		}else if(obj == quit) {
+			program.switchToPause(); // CHANGE THIS
 		}
 	}
 	
