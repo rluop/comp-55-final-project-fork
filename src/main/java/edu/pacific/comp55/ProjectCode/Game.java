@@ -1,19 +1,9 @@
 package edu.pacific.comp55.ProjectCode;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import javax.swing.*;
-
 import java.awt.event.*;
-
-import acm.graphics.*;
-import acm.program.GraphicsProgram;
-
 
 public class Game implements KeyListener {
 	private Board board;
-	private Timer t;
 	
 	public static void main(String[] args) {
 		Game g = new Game();
@@ -33,6 +23,7 @@ public class Game implements KeyListener {
 			System.out.println(board);
 			wait(3000);
 			board.moveActiveBlockDown();
+			
 		}
 	}
 	
