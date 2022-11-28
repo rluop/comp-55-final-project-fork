@@ -8,7 +8,6 @@ import acm.graphics.GImage;
 import acm.graphics.GObject;
 import edu.pacific.comp55.starter.GButton;
 import edu.pacific.comp55.starter.GraphicsPane;
-import edu.pacific.comp55.starter.MainApplication;
 
 public class MenuPane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to

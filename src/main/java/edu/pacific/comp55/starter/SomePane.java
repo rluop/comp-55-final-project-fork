@@ -3,6 +3,7 @@ import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
 import acm.graphics.GObject;
+import edu.pacific.comp55.ProjectCode.MainApplication;
 
 public class SomePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
