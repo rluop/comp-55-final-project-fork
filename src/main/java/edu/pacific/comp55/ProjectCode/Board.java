@@ -13,7 +13,6 @@ public class Board {
 	
 	private Block activeBlock;
 	private Block nextBlock;
-	private Block tempBlock;
 	
 	public Board() {
 		board = new Block[20][10];
