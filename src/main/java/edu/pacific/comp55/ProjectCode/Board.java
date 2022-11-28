@@ -203,6 +203,7 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
+		b.moveActiveBlockLeft();
 		System.out.println(b);
 	}
 }

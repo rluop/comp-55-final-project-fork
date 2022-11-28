@@ -1,14 +1,18 @@
 package edu.pacific.comp55.ProjectCode;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import javax.swing.*;
+
+import java.awt.event.*;
 
 import acm.graphics.*;
 
+
 public class Game {
 	private Board board;
+	private Timer t;
 	
 	public static void main(String[] args) {
 		Game g = new Game();
@@ -23,7 +27,12 @@ public class Game {
 	public void playGame() {
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
-		System.out.println(board);
+		
+		while (true) {//board.fullBoard() == false) {
+			wait(3000);
+			System.out.println(board);
+		
+		}
 	}
 	
 	public void moveDown(KeyEvent e) {
@@ -82,5 +91,14 @@ public class Game {
 			}
 			*/
 		}
+	}
+	
+	public static void wait(int ms) {
+	    try {
+	        Thread.sleep(ms);
+	    }
+	    catch(InterruptedException ex) {
+	        Thread.currentThread().interrupt();
+	    }
 	}
 }
