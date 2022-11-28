@@ -13,6 +13,7 @@ public class MainApplication extends GraphicsApplication {
 	private MenuPane menu;
 	private GamePane game;
 	private PausePane pause;
+	private QuitPane quit;
 	
 	private int count;
 
@@ -22,6 +23,7 @@ public class MainApplication extends GraphicsApplication {
 
 	public void run() {
 		System.out.println("Hello, world!");
+		quit = new QuitPane(this);
 		pause = new PausePane(this);
 		game = new GamePane(this);
 		somePane = new SomePane(this);
@@ -47,6 +49,10 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToPause() {
 		switchToScreen(pause);
+	}
+	
+	public void switchToQuit() {
+		switchToScreen(quit);
 	}
 
 	
