@@ -63,7 +63,7 @@ public class MenuPane extends GraphicsPane {
 		}else if(obj == play) {
 			program.switchToGame();
 		}else if(obj == quit) {
-			program.switchToPause(); // CHANGE THIS
+			program.switchToPause(); // CHANGE THIS 
 		}
 	}
 	
