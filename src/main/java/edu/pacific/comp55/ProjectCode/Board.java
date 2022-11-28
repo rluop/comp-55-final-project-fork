@@ -188,7 +188,7 @@ public class Board {
 	}
 	
 	public boolean fullBoard() {
-		if (board[0][4] != null) {
+		if (board[0][4] != null && board[0][4] != activeBlock) {
 			return true;
 		}
 		return false;

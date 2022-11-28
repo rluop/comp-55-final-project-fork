@@ -28,11 +28,11 @@ public class Game {
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
 		
-		while (true) {//board.fullBoard() == false) {
+		while (board.fullBoard() == false) {
 			wait(3000);
 			System.out.println(board);
-		
 		}
+	
 	}
 	
 	public void moveDown(KeyEvent e) {
