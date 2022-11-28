@@ -349,6 +349,7 @@ void rotateLeft() {
 				spaceArray[3] = new Space(spaceArray[0].getRow() + 1,spaceArray[0].getCol());
 			}
 		}
+		this.spacesOccupied = spaceArray;
 		return spaceArray;
 	}
 	
@@ -359,6 +360,13 @@ void rotateLeft() {
 	public void setStartSpace(int newRow, int newCol) {
 		this.startSpace.setRow(newRow);
 		this.startSpace.setCol(newCol);
+		this.spacesOccupied = spacesOccupied();
+	}
+	
+	public void printSpaces() {
+		for (int i = 0; i < 4; i++) {
+			System.out.println(spacesOccupied[i]);
+		}
 	}
 	
 	public String toString() {
