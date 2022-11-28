@@ -52,11 +52,13 @@ public class Game implements KeyListener {
 	public void moveHorizontal(KeyEvent e) {
 		// check if moveActiveBlockLeft is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			System.out.println("LEFT");
 			board.moveActiveBlockLeft();
 			// activeBlock.move(-50, 0);
 		}
 		// check if moveActiveBlockRight is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			System.out.println("RIGHT");
 			board.moveActiveBlockRight();
 			// activeBlock.move(50, 0);
 		}
@@ -72,28 +74,32 @@ public class Game implements KeyListener {
 	public void rotate(KeyEvent e) {	
 		// check if canRotate is true in Board
 		// int rotationNum = 0;
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			/*
-			if (rotationNum == 3) {
-				rotationNum = 0;
-			}
-			else {
-				rotationNum++;
-				spaceArray(rotationNum);
-			}
+		if (board.canRotate()) {
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
+				board.rotateBlockRight();
+				/*
+				if (rotationNum == 3) {
+					rotationNum = 0;
+				}
+				else {
+					rotationNum++;
+					spaceArray(rotationNum);
+				}
 
-			*/
-		}
-		if (e.getKeyCode() == KeyEvent.VK_Z) {
-			/*
-			if (rotationNum == 0) {
-				rotationNum = 3;
+				*/
 			}
-			else {
-				rotationNum--;
-				spaceArray(rotationNum);
+			if (e.getKeyCode() == KeyEvent.VK_Z) {
+				board.rotateBlockRight();
+				/*
+				if (rotationNum == 0) {
+					rotationNum = 3;
+				}
+				else {
+					rotationNum--;
+					spaceArray(rotationNum);
+				}
+				*/
 			}
-			*/
 		}
 	}
 	

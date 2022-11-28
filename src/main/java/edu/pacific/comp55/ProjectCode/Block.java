@@ -139,7 +139,12 @@ public class Block {
 		return this.orientation;
 	}
 	
-	void rotate() {
+	void rotateRight() {
+		//save for after game made
+		System.out.println("rotation function run.");
+	}
+	
+	void rotateLeft() {
 		//save for after game made
 		System.out.println("rotation function run.");
 	}
