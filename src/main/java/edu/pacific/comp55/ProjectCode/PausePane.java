@@ -17,6 +17,7 @@ public class PausePane extends GraphicsPane {
 	public PausePane(MainApplication app) {
 		this.program = app;
 		pause = new GImage("pause.png", 0, 0);
+		pause.setSize(program.PROG_WIDTH + 250, program.PROG_HEIGHT + 10);
 		
 		resume = new GButton("controls", 610, 610, 300, 120);
 		resume.setColor(Color.pink);
