@@ -1,6 +1,7 @@
 package edu.pacific.comp55.starter;
 
 import edu.pacific.comp55.ProjectCode.GamePane;
+import edu.pacific.comp55.ProjectCode.MenuPane;
 
 public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 800;
