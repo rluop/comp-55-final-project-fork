@@ -8,9 +8,10 @@ import javax.swing.*;
 import java.awt.event.*;
 
 import acm.graphics.*;
+import acm.program.GraphicsProgram;
 
 
-public class Game {
+public class Game implements KeyListener {
 	private Board board;
 	private Timer t;
 	
@@ -29,15 +30,16 @@ public class Game {
 		board.spawnBlock();
 		
 		while (board.fullBoard() == false) {
-			wait(3000);
 			System.out.println(board);
+			wait(3000);
+			board.moveActiveBlockDown();
 		}
-	
 	}
 	
 	public void moveDown(KeyEvent e) {
 		// check if moveActiveBlockDown is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			System.out.println("DOWN");
 			board.moveActiveBlockDown();
 			// activeBlock.move(0, 50);
 		}
@@ -50,10 +52,12 @@ public class Game {
 	public void moveHorizontal(KeyEvent e) {
 		// check if moveActiveBlockLeft is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			board.moveActiveBlockLeft();
 			// activeBlock.move(-50, 0);
 		}
 		// check if moveActiveBlockRight is true in Board
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			board.moveActiveBlockRight();
 			// activeBlock.move(50, 0);
 		}
 	}
@@ -100,5 +104,24 @@ public class Game {
 	    catch(InterruptedException ex) {
 	        Thread.currentThread().interrupt();
 	    }
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		System.out.println("YES");
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
