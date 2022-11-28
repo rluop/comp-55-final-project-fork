@@ -241,7 +241,7 @@ public class Board {
 		for(int i = 0 ; i< 4 ; i++) {
 			System.out.println("****************" + bb.spacesOccupied()[i].toString());
 		}
-		
+		//
 		System.out.println("now try using function and board...");
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
