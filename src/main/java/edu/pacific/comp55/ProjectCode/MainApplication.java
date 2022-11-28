@@ -2,7 +2,6 @@ package edu.pacific.comp55.ProjectCode;
 
 import edu.pacific.comp55.starter.AudioPlayer;
 import edu.pacific.comp55.starter.GraphicsApplication;
-import edu.pacific.comp55.starter.PausePane;
 import edu.pacific.comp55.starter.SomePane;
 
 public class MainApplication extends GraphicsApplication {
