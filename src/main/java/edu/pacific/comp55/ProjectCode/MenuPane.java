@@ -31,8 +31,7 @@ public class MenuPane extends GraphicsPane {
 		play.setVisible(false);
 		
 		menu = new GImage("mainmenu.png", 0,0);
-		
-		//game = new GImage("game.png", 0,0);
+		menu.setSize(program.PROG_WIDTH + 250, program.PROG_HEIGHT + 10);
 	}
 
 	@Override
