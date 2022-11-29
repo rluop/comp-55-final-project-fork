@@ -7,6 +7,7 @@ import javax.swing.Timer;
 import acm.graphics.GLabel;
 import edu.pacific.comp55.starter.AudioPlayer;
 import edu.pacific.comp55.starter.GraphicsApplication;
+import javafx.scene.paint.Color;
 
 public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 1050;
@@ -36,7 +37,7 @@ public class MainApplication extends GraphicsApplication {
 	public void run() {
 		timer = new GLabel("timer", 0, 100);
 		add(timer);
-		time.start();
+		//time.start();
 		
 		System.out.println("Hello, world!");
 		quit = new QuitPane(this);
@@ -52,13 +53,14 @@ public class MainApplication extends GraphicsApplication {
 		//score.setFont(Font.MONOSPACED);
 		min++;
 		sec++;
+		//timer.setColor(Color.WHITE); //<-- cannot do that
+		
 		timer.setLocation(100, 100);
 		timer.sendToFront();
 		timer.setLabel(min/60 + ":" + sec);
 		if(sec == 59) {
 			sec = 0;
 		}
-		//score.setLabel("SCORE " + scoreCount);
 	}
 
 	public void switchToMenu() {
@@ -74,6 +76,7 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToGame() {
 		switchToScreen(game);
+		time.start();
 	}
 	
 	public void switchToPause() {
