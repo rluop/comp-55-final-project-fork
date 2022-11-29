@@ -77,8 +77,8 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGame() {
-		switchToScreen(game);
 		time.start();
+		switchToScreen(game);
 	}
 	
 	public void switchToPause() {
