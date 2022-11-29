@@ -12,8 +12,8 @@ public class QuitPane extends GraphicsPane {
 
 	public QuitPane(MainApplication app) {
 		this.program = app;
-		quit = new GImage("quit.png", 0, 0);
-		quit.setSize(program.PROG_WIDTH + 250, program.PROG_HEIGHT + 10);
+		quit = new GImage("quit1.png", 0, 0);
+		quit.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 		
 		
 	}

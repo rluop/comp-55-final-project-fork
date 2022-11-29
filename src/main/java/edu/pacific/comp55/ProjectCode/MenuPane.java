@@ -32,10 +32,10 @@ public class MenuPane extends GraphicsPane {
 		
 		quit = new GButton("quit", 640, 350, 200, 80);
 		quit.setFillColor(Color.red);
-		//quit.setVisible(false);
+		quit.setVisible(false);
 		
 		menu = new GImage("mainmenu.png", 0,0);
-		menu.setSize(program.PROG_WIDTH + 250, program.PROG_HEIGHT + 10);
+		menu.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 	}
 
 	@Override
