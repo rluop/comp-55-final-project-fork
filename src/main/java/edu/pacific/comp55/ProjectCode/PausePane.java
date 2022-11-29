@@ -21,11 +21,11 @@ public class PausePane extends GraphicsPane {
 		
 		resume = new GButton("resume", 550, 370, 240, 100);
 		resume.setColor(Color.pink);
-		//resume.setVisible(false);
+		resume.setVisible(false);
 		
 		menu = new GButton("menu", 230, 370, 240, 100);
 		menu.setColor(Color.red);
-		//menu.setVisible(false);
+		menu.setVisible(false);
 	}
 
 	@Override
@@ -44,8 +44,6 @@ public class PausePane extends GraphicsPane {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		//para.setText("you need\nto click\non the eyes\nto go back");
-		//TODO CREATE BUTTONS FOR THIS AND CHANGE IT
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == menu) {
 			program.switchToMenu();

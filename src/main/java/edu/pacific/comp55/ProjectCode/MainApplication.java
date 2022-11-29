@@ -1,5 +1,10 @@
 package edu.pacific.comp55.ProjectCode;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.Timer;
+
+import acm.graphics.GLabel;
 import edu.pacific.comp55.starter.AudioPlayer;
 import edu.pacific.comp55.starter.GraphicsApplication;
 
@@ -14,15 +19,25 @@ public class MainApplication extends GraphicsApplication {
 	private GamePane game;
 	private PausePane pause;
 	private QuitPane quit;
-	private GraphicsGame t;
+	
+	private GLabel timer;
+	private int min = 0;
+	private int sec = 0;
+	
+	private Timer time = new Timer(1000, this);
 	
 	private int count;
 
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		requestFocus();
 	}
 
 	public void run() {
+		timer = new GLabel("timer", 0, 100);
+		add(timer);
+		time.start();
+		
 		System.out.println("Hello, world!");
 		quit = new QuitPane(this);
 		pause = new PausePane(this);
@@ -31,6 +46,19 @@ public class MainApplication extends GraphicsApplication {
 		menu = new MenuPane(this);
 		setupInteractions();
 		switchToMenu();
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		//score.setFont(Font.MONOSPACED);
+		min++;
+		sec++;
+		timer.setLocation(100, 100);
+		timer.sendToFront();
+		timer.setLabel(min/60 + ":" + sec);
+		if(sec == 59) {
+			sec = 0;
+		}
+		//score.setLabel("SCORE " + scoreCount);
 	}
 
 	public void switchToMenu() {
