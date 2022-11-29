@@ -1,5 +1,6 @@
 package edu.pacific.comp55.ProjectCode;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 
 import javax.swing.Timer;
@@ -55,7 +56,8 @@ public class MainApplication extends GraphicsApplication {
 		sec++;
 		//timer.setColor(Color.WHITE); //<-- cannot do that
 		
-		timer.setLocation(100, 100);
+		timer.setFont(Font.MONOSPACED);
+		timer.setLocation(90, 90);
 		timer.sendToFront();
 		timer.setLabel(min/60 + ":" + sec);
 		if(sec == 59) {
