@@ -129,6 +129,7 @@ public class Board {
 		for(int i = 0; i<blocksOnBoard.size(); i++) {
 			if(blocksOnBoard.get(i)==activeBlock) {
 				blocksOnBoard.remove(i);
+				break;
 			}
 		}
 	}//nora
@@ -139,12 +140,12 @@ public class Board {
 		if(!activeBlock.canMoveDown()) {
 			return false;
 		}
-		Space[] spacesOccupied = activeBlock.spacesOccupied();
-		for(int i = 0; i<spacesOccupied.length; i++) {
+		Space[] tempSpacesOccupied = activeBlock.spacesOccupied();
+		for(int i = 0; i<tempSpacesOccupied.length; i++) {
 			//check (using temporary array) if it can move considering other blocks on the board
-			spacesOccupied[i].setRow(spacesOccupied[i].getRow()+1);
+			tempSpacesOccupied[i].setRow(tempSpacesOccupied[i].getRow()+1);
 			//if the space it WOULD move down to is occupied, block needs to be placed
-			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
+			if(getBlock(tempSpacesOccupied[i]) != null && getBlock(tempSpacesOccupied[i]) != activeBlock) {
 				spawnBlock();
 				return false;
 			}
@@ -163,9 +164,8 @@ public class Board {
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-			//check (using temporary array) if it can move considering other blocks on the board
-			spacesOccupied[i].setCol(spacesOccupied[i].getCol()-1);
-			if(getBlock(spacesOccupied[i]) != null && getBlock(spacesOccupied[i]) != activeBlock) {
+			Space s = new Space(spacesOccupied[i].getRow(), spacesOccupied[i].getCol()-1);
+			if(getBlock(s) != null && getBlock(s) != activeBlock) {
 				System.out.print("there's already a block there!");
 				return false;
 			}
@@ -231,19 +231,11 @@ public class Board {
 	// Board Testing
 	public static void main(String[] args) {
 		System.out.println("let's move a block by hand...");
-		Block bb = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 3);
-		Block t = new Block(BlockType.LEFTS, Orientation.UP, false, false, 0, 2);
-		for(int i = 0 ; i< 4 ; i++) {
-			System.out.println("--------------" + bb.spacesOccupied()[i].toString());
-		}
-		for(int i = 0 ; i< 4 ; i++) {
-			System.out.println("++++++++++++++" + t.spacesOccupied()[i].toString());
-		}
-		
 		System.out.println("now try using function and board...");
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
+		b.moveActiveBlockLeft();
 		b.moveActiveBlockLeft();
 		System.out.println(b);
 	}
