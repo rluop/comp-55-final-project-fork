@@ -22,15 +22,15 @@ public class MenuPane extends GraphicsPane {
 	public MenuPane(MainApplication app) {
 		super();
 		program = app;
-		rect = new GButton("controls", 430, 430, 200, 100);
+		rect = new GButton("controls", 430, 450, 200, 100);
 		rect.setColor(Color.black);
 		rect.setVisible(false);
 		
-		play = new GButton("play", 240, 350, 150, 80);
+		play = new GButton("play", 240, 380, 150, 80);
 		play.setFillColor(Color.red);
 		play.setVisible(false);
 		
-		quit = new GButton("quit", 640, 350, 200, 80);
+		quit = new GButton("quit", 640, 380, 200, 80);
 		quit.setFillColor(Color.red);
 		quit.setVisible(false);
 		

@@ -14,7 +14,7 @@ public class GamePane extends GraphicsPane {
 	public GamePane(MainApplication app) {
 		this.program = app;
 		game = new GImage("game.png", 0, 0);
-		game.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
+		game.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT-20);
 		
 		
 	}

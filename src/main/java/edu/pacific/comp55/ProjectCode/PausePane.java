@@ -19,13 +19,13 @@ public class PausePane extends GraphicsPane {
 		pause = new GImage("pause.png", 0, 0);
 		pause.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 		
-		resume = new GButton("resume", 550, 350, 240, 100);
+		resume = new GButton("resume", 550, 370, 240, 100);
 		resume.setColor(Color.pink);
-		resume.setVisible(false);
+		//resume.setVisible(false);
 		
-		menu = new GButton("menu", 230, 350, 240, 100);
+		menu = new GButton("menu", 230, 370, 240, 100);
 		menu.setColor(Color.red);
-		menu.setVisible(false);
+		//menu.setVisible(false);
 	}
 
 	@Override
