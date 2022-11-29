@@ -10,7 +10,6 @@ public class GamePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 										// all of the GraphicsProgram calls
 	private GImage game;
-	//private GParagraph para;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -39,5 +38,7 @@ public class GamePane extends GraphicsPane {
 			//System.out.println("esc pressed");
 		}
 	}
+	
+	
 	
 }

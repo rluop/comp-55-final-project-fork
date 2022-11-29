@@ -8,14 +8,16 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class GraphicsGame extends GraphicsProgram {
-	public static final int PROGRAM_WIDTH = 1;
-	public static final int PROGRAM_HEIGHT = 1;
+	public static final int PROGRAM_WIDTH = 600;
+	public static final int PROGRAM_HEIGHT = 800;
+	
 	private Timer t = new Timer(1000, this); // 1000 ms = 1 second
-	private Game game;
+	//private Game game;
 	private GLabel timer;
-	private GLabel score;
-	private int timerCount = 0;
-	private int scoreCount = 0;
+	//private GLabel score;
+	private int min = 0;
+	private int sec = 0;
+	//private int scoreCount = 0;
 	
 	public void init() {
 		setSize(PROGRAM_WIDTH, PROGRAM_HEIGHT);
@@ -24,13 +26,24 @@ public class GraphicsGame extends GraphicsProgram {
 	
 	public void run() {
 		//needed for graphics program
+		timer = new GLabel("timer", 0, 100);
+		add(timer);
+		t.start();
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		
+		//score.setFont(Font.MONOSPACED);
+		min++;
+		sec++;
+		timer.setLocation(100, 100);
+		timer.setLabel(min/60 + ":" + sec);
+		if(sec == 59) {
+			sec = 0;
+		}
+		//score.setLabel("SCORE " + scoreCount);
 	}
 	
-	public void showMenu() {
+	/*public void showMenu() {
 		
 	}
 	
@@ -49,8 +62,8 @@ public class GraphicsGame extends GraphicsProgram {
 	public void showScore() {
 		
 	}
-	
-	public void drawBlock(Block B) {
+	*/
+	/*public void drawBlock(Block B) {
 		GImage block;
 		if (B.getBlockType() == BlockType.BAR) {
 			block = new GImage("media/bar2.jpg",0,0);
@@ -72,6 +85,10 @@ public class GraphicsGame extends GraphicsProgram {
 		}
 		add(block);
 		// TODO: ADD LEFTS
+	}*/
+	
+	public static void main(String[] args) {
+		new GraphicsGame().start();
 	}
 	
 }

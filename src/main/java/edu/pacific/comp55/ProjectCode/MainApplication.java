@@ -14,6 +14,7 @@ public class MainApplication extends GraphicsApplication {
 	private GamePane game;
 	private PausePane pause;
 	private QuitPane quit;
+	private GraphicsGame t;
 	
 	private int count;
 
