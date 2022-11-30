@@ -145,6 +145,7 @@ public class Board {
 			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
 				System.out.println("block placed!");
+				spawnBlock();
 				return false;
 			}
 		}
@@ -161,9 +162,11 @@ public class Board {
 				return true;
 			}
 			System.out.println("block placed!");
+			spawnBlock();
 			return false;
 		}
 		System.out.println("block placed!");
+		spawnBlock();
 		return false;
 	}
 	
