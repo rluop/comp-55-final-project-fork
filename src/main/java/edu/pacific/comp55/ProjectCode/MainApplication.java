@@ -21,7 +21,7 @@ public class MainApplication extends GraphicsApplication {
 	private GamePane game;
 	private PausePane pause;
 	private QuitPane quit;
-	private GameOverPane over;
+	private GameOverPane over; 
 	
 	private Board board;
 	
