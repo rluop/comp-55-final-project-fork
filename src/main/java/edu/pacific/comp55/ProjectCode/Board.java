@@ -170,6 +170,15 @@ public class Board {
 		return false;
 	}
 	
+	public boolean instantFall() {
+		while(moveActiveBlockDown()) {
+			moveActiveBlockDown();
+		}
+		System.out.println("block placed!");
+		spawnBlock();
+		return false;
+	}
+	
 	public boolean moveActiveBlockLeft() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveLeft()) {
@@ -248,7 +257,7 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.fasterFall();
+		b.instantFall();
 		System.out.println(b);
 	}
 }
