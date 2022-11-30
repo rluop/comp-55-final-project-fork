@@ -137,7 +137,7 @@ public class Board {
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
 	public boolean moveActiveBlockDown() {
 		//check if it can move considering the bounds of the board
-		if(!activeBlock.canMoveDown()) {
+		if(activeBlock.canMoveDown()==0) {
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();

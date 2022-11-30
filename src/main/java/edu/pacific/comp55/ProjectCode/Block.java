@@ -67,16 +67,20 @@ public class Block {
 		return false;
 	}
 	
-	boolean canMoveDown() {
+	int canMoveDown() {
 		//nora
 		Space[] returnMe = spacesOccupied();
 		for(int i = 0; i<returnMe.length; i++) {
+			if(returnMe[i].getRow()+1 == 20) {
+				//need a different way to represent the block needs to be placed!
+				return 2;
+			}
 			if(returnMe[i].getRow()+1 > 20) {
 				System.out.println("move out of bounds!");
-				return false;
+				return 0;
 			}
 		}
-		return true;
+		return 1;
 	}
 	
 	boolean canMoveRight() {
@@ -135,7 +139,7 @@ public class Block {
 		//nora
 		//dont forget we need a check in board to see if theres already a block in the spaces this function returns. this function only returns where the block WOULD be, not if the block can be there
 		Space[] returnMe = spacesOccupied();
-		if(!canMoveDown()) {
+		if(canMoveDown()==0) {
 			return returnMe;
 		}
 		for(int i = 0; i<returnMe.length; i++) {
