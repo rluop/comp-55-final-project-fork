@@ -155,6 +155,18 @@ public class Board {
 		return true; // nora
 	}
 	
+	public boolean fasterFall() {
+		if(moveActiveBlockDown()) {
+			if(moveActiveBlockDown()) {
+				return true;
+			}
+			System.out.println("block placed!");
+			return false;
+		}
+		System.out.println("block placed!");
+		return false;
+	}
+	
 	public boolean moveActiveBlockLeft() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveLeft()) {
@@ -233,10 +245,7 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.moveActiveBlockDown();
-		b.moveActiveBlockDown();
-		b.spawnBlock();
-		b.moveActiveBlockDown();
+		b.fasterFall();
 		System.out.println(b);
 	}
 }
