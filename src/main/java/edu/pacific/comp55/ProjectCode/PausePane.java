@@ -48,6 +48,7 @@ public class PausePane extends GraphicsPane {
 		if (obj == menu) {
 			program.switchToMenu();
 		}else if(obj == resume) {
+			program.startTime();
 			program.switchToGame();
 		}
 	}
