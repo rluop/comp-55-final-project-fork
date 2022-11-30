@@ -254,9 +254,8 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.instantFall();
-		b.instantFall();
-		b.instantFall();
+		b.fasterFall();
+		b.rotateBlockLeft();
 		System.out.println(b);
 	}
 }
