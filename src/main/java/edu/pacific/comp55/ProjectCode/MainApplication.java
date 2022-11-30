@@ -14,7 +14,7 @@ public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 1050;
 	public static final int WINDOW_HEIGHT = 650;
 	public static final String MUSIC_FOLDER = "sounds";
-	private static final String[] SOUND_FILES = { "Tetris.mp3"};
+	private static final String SOUND_FILE = "Tetris.mp3";
 
 	private SomePane somePane;
 	private MenuPane menu;
@@ -98,7 +98,6 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGame() {
-		playRandomSound();
 		switchToScreen(game);
 	}
 	
@@ -139,9 +138,14 @@ public class MainApplication extends GraphicsApplication {
 
 	
 
-	private void playRandomSound() {
+	private void playSound() {
 		AudioPlayer audio = AudioPlayer.getInstance();
-		audio.playSound(MUSIC_FOLDER, SOUND_FILES[count % SOUND_FILES.length]);
+		audio.playSound(MUSIC_FOLDER, SOUND_FILE);
+	}
+	
+	private void pauseSound() {
+		AudioPlayer audio = AudioPlayer.getInstance();
+		audio.pauseSound(MUSIC_FOLDER, SOUND_FILE);
 	}
 	
 	public static void main(String[] args) {
