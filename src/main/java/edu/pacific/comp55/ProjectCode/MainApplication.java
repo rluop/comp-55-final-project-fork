@@ -64,6 +64,14 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 	}
+	
+	public void startTime() {
+		time.start();
+	}
+	
+	public void stopTime() {
+		time.stop();
+	}
 
 	public void switchToMenu() {
 		//playRandomSound();
@@ -77,7 +85,7 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGame() {
-		time.start();
+		//time.start();
 		switchToScreen(game);
 	}
 	
