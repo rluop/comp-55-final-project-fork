@@ -162,22 +162,12 @@ public class Board {
 	}
 	
 	public boolean fasterFall() {
-		boolean canMove = false;
-		if(moveActiveBlockDown()==true) {
-			if(moveActiveBlockDown()==true) {
+		if(moveActiveBlockDown()) {
+			if(moveActiveBlockDown()) {
 				return true;
 			}
-			else {
-				System.out.println("block placed! line 171");
-				spawnBlock();
-				return false;
-			}
 		}
-		else {
-			System.out.println("block placed! line 177");
-			spawnBlock();
-			return false;
-		}
+		return false;
 	}
 	
 	public boolean instantFall() {
@@ -267,21 +257,9 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
-		b.fasterFall();
+		for(int i = 0; i<35; i++) {
+			b.fasterFall();
+		}
 		//b.instantFall();
 		//b.instantFall();
 		System.out.println(b);
