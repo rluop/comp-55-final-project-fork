@@ -142,7 +142,7 @@ public class Board {
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
-			Space s = new Space(spacesOccupied[i].getRow()-1, spacesOccupied[i].getCol());
+			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
 				System.out.println("block placed!");
 				return false;
@@ -233,10 +233,10 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.moveActiveBlockRight();
-//		b.moveActiveBlockDown();
-//		b.spawnBlock();
-//		b.moveActiveBlockDown();
+		b.moveActiveBlockDown();
+		b.moveActiveBlockDown();
+		b.spawnBlock();
+		b.moveActiveBlockDown();
 		System.out.println(b);
 	}
 }
