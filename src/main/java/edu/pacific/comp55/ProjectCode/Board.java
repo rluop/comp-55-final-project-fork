@@ -140,11 +140,16 @@ public class Board {
 		if(activeBlock.canMoveDown()==0) {
 			return false;
 		}
+		else if(activeBlock.canMoveDown()==2) {
+			System.out.println("block placed! line 144");
+			spawnBlock();
+			return false;
+		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("block placed!");
+				System.out.println("block placed! line 152");
 				spawnBlock();
 				return false;
 			}
@@ -157,24 +162,31 @@ public class Board {
 	}
 	
 	public boolean fasterFall() {
-		if(moveActiveBlockDown()) {
-			if(moveActiveBlockDown()) {
+		boolean canMove = false;
+		if(moveActiveBlockDown()==true) {
+			if(moveActiveBlockDown()==true) {
 				return true;
 			}
-			System.out.println("block placed!");
+			else {
+				System.out.println("block placed! line 171");
+				spawnBlock();
+				return false;
+			}
+		}
+		else {
+			System.out.println("block placed! line 177");
 			spawnBlock();
 			return false;
 		}
-		System.out.println("block placed!");
-		spawnBlock();
-		return false;
 	}
 	
 	public boolean instantFall() {
-		while(moveActiveBlockDown()) {
-			moveActiveBlockDown();
+		while(true) {
+			if(!moveActiveBlockDown()) {
+				break;
+			}
 		}
-		System.out.println("block placed!");
+		System.out.println("block placed! line 184");
 		spawnBlock();
 		return false;
 	}
@@ -252,12 +264,26 @@ public class Board {
 	
 	// Board Testing
 	public static void main(String[] args) {
-		System.out.println("let's move a block by hand...");
-		System.out.println("now try using function and board...");
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		b.instantFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		b.fasterFall();
+		//b.instantFall();
+		//b.instantFall();
 		System.out.println(b);
 	}
 }
