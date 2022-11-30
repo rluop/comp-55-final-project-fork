@@ -249,7 +249,7 @@ public class Board {
 		return BoardConverter.createString(this);
 	}
 	
-	// Board Testing
+	//Board Testing
 	public static void main(String[] args) {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
