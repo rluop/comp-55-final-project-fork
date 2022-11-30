@@ -1,5 +1,45 @@
 package edu.pacific.comp55.ProjectCode;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
 
-public class GameOverPane {
+import acm.graphics.GImage;
+import acm.graphics.GObject;
+import edu.pacific.comp55.starter.GButton;
+import edu.pacific.comp55.starter.GraphicsPane;
 
+public class GameOverPane extends GraphicsPane {
+	private MainApplication program; // you will use program to get access to
+										// all of the GraphicsProgram calls
+	private GImage gameOver;
+	private GButton menu;
+
+	public GameOverPane(MainApplication app) {
+		this.program = app;
+		gameOver = new GImage("gameover.png", 0, 0);
+		gameOver.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
+		
+		menu = new GButton("menu", 230, 370, 240, 100); // TODO edit button location
+		menu.setColor(Color.red);
+		//menu.setVisible(false);
+	}
+
+	@Override
+	public void showContents() {
+		program.add(gameOver);
+		program.add(menu);
+	}
+
+	@Override
+	public void hideContents() {
+		program.remove(gameOver);
+		program.remove(menu);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		GObject obj = program.getElementAt(e.getX(), e.getY());
+		if (obj == menu) {
+			program.switchToMenu();
+		}
+	}
 }
