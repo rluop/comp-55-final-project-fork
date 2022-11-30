@@ -141,7 +141,7 @@ public class Board {
 			return false;
 		}
 		else if(activeBlock.canMoveDown()==2) {
-			System.out.println("block placed! line 144");
+			System.out.println("block placed!");
 			spawnBlock();
 			return false;
 		}
@@ -149,7 +149,7 @@ public class Board {
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("block placed! line 152");
+				System.out.println("block placed!");
 				spawnBlock();
 				return false;
 			}
@@ -176,7 +176,7 @@ public class Board {
 				break;
 			}
 		}
-		System.out.println("block placed! line 184");
+		System.out.println("block placed!");
 		spawnBlock();
 		return false;
 	}
