@@ -21,6 +21,8 @@ public class MainApplication extends GraphicsApplication {
 	private GamePane game;
 	private PausePane pause;
 	private QuitPane quit;
+	private GameOverPane over;
+	
 	private Board board;
 	
 	private GLabel timer;
@@ -44,6 +46,7 @@ public class MainApplication extends GraphicsApplication {
 		add(timer);
 		
 		System.out.println("Hello, world!");
+		over = new GameOverPane(this);
 		quit = new QuitPane(this);
 		pause = new PausePane(this);
 		game = new GamePane(this);
@@ -104,6 +107,10 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToQuit() {
 		switchToScreen(quit);
+	}
+	
+	public void switchToGameOver() {
+		switchToScreen(over);
 	}
 
 	
