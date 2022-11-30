@@ -23,7 +23,7 @@ public class MainApplication extends GraphicsApplication {
 	private QuitPane quit;
 	private GameOverPane over; 
 	
-	private Board board;
+	private Block block;
 	
 	private GLabel timer;
 	private GLabel score;
@@ -112,6 +112,29 @@ public class MainApplication extends GraphicsApplication {
 	public void switchToGameOver() {
 		switchToScreen(over);
 	}
+	
+	/*public void displayBlock(Block b) {
+		
+		Space[] space = new Space[4];
+		if (b.getBlockType() == BlockType.BAR) {
+ 			space.
+ 		}
+ 		else if (b.getBlockType() == BlockType.RIGHTL) {
+ 			space
+ 		}
+ 		else if (b.getBlockType() == BlockType.LEFTL) {
+ 			space
+ 		}
+ 		else if (b.getBlockType() == BlockType.RIGHTS) {
+ 			space 
+ 		}
+ 		else if (b.getBlockType() == BlockType.SQUARE) {
+ 			space 
+ 		}
+ 		else {
+ 			space 
+ 		}
+	}*/
 
 	
 
