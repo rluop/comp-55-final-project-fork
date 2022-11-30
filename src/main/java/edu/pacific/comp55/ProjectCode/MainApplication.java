@@ -21,10 +21,14 @@ public class MainApplication extends GraphicsApplication {
 	private GamePane game;
 	private PausePane pause;
 	private QuitPane quit;
+	private Board board;
 	
 	private GLabel timer;
+	private GLabel score;
+	
 	private int min = 0;
 	private int sec = 0;
+	private int scoreNum = 0;
 	
 	private Timer time = new Timer(1000, this);
 	
@@ -38,7 +42,6 @@ public class MainApplication extends GraphicsApplication {
 	public void run() {
 		timer = new GLabel("timer", 0, 100);
 		add(timer);
-		//time.start();
 		
 		System.out.println("Hello, world!");
 		quit = new QuitPane(this);
@@ -51,10 +54,8 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		//score.setFont(Font.MONOSPACED);
 		min++;
 		sec++;
-		//timer.setColor(Color.WHITE); //<-- cannot do that
 		
 		timer.setFont(Font.MONOSPACED);
 		timer.setLocation(90, 90);
@@ -63,6 +64,16 @@ public class MainApplication extends GraphicsApplication {
 		if(sec == 59) {
 			sec = 0;
 		}
+		
+		score.setFont(Font.MONOSPACED);
+		score.setLocation(90, 190); // not sure just a guesstimate
+		
+		/*if(board.clearLine() == true) {
+			scoreNum+=100;
+		}*/
+		
+		score.setLabel("SCORE " + scoreNum);
+		
 	}
 	
 	public void startTime() {
