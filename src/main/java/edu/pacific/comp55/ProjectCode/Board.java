@@ -170,15 +170,12 @@ public class Board {
 		return false;
 	}
 	
-	public boolean instantFall() {
-		while(true) {
+	public void instantFall() {
+		for(int i = 0; i<20; i++) {
 			if(!moveActiveBlockDown()) {
-				break;
+				return;
 			}
 		}
-		System.out.println("block placed!");
-		spawnBlock();
-		return false;
 	}
 	
 	public boolean moveActiveBlockLeft() {
@@ -257,11 +254,9 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		for(int i = 0; i<35; i++) {
-			b.fasterFall();
-		}
-		//b.instantFall();
-		//b.instantFall();
+		b.instantFall();
+		b.instantFall();
+		b.instantFall();
 		System.out.println(b);
 	}
 }
