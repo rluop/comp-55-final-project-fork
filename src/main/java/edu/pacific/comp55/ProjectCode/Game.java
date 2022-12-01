@@ -97,14 +97,19 @@ public class Game {
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
 		int counter = 0;
+		int waitTime = 500;
 		while (board.fullBoard() == false) {
 			if(counter % 2 == 0) {
 				board.moveActiveBlockDown();
 			}
 			System.out.println(board);
-			wait(500);
+			if(counter % 10 == 0) {
+				waitTime--;
+			}
+			wait(waitTime);
 			counter++;
 		}
+		System.out.println("game over!");
 	}
 	
 	public static void wait(int ms) {
