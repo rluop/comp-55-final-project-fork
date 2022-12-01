@@ -167,7 +167,6 @@ void rotateRight() {
 			this.orientation = Orientation.UP;
 		}
 		this.spacesOccupied = spacesOccupied();
-		System.out.println("ROTATE RIGHT");
 	}
 	
 void rotateLeft() {
@@ -184,7 +183,6 @@ void rotateLeft() {
 		this.orientation = Orientation.DOWN;
 	}
 	this.spacesOccupied = spacesOccupied();
-	System.out.println("ROTATE LEFT");
 }
 	
 	public Space[] spacesOccupied() {
