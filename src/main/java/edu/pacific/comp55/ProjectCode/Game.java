@@ -1,6 +1,7 @@
 package edu.pacific.comp55.ProjectCode;
 import acm.program.*; 
 import java.awt.event.*;
+import javax.swing.JTextField;
 
 public class Game {
 	private Board board;
@@ -28,6 +29,8 @@ public class Game {
 				// TODO Auto-generated method stub
 			}
 		};
+		JTextField keylistener = new JTextField();
+		keylistener.addKeyListener(listener);
 		g.setupBoard();
 		g.playGame();
 	}
