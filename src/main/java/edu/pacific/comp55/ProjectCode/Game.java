@@ -1,41 +1,15 @@
 package edu.pacific.comp55.ProjectCode;
-import acm.program.*; 
-import java.awt.event.*;
-import javax.swing.JTextField;
 
-public class Game {
+import java.awt.event.*;
+
+public class Game implements KeyListener {
 	private Board board;
 	
 	public static void main(String[] args) {
 		Game g = new Game();
-		KeyListener listener = new KeyListener() {
-			@Override
-			public void keyTyped(KeyEvent e) {
-				System.out.println("key typed");
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				System.out.println("key pressed");
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-				System.out.println("key released");
-				// TODO Auto-generated method stub
-			}
-		};
-		JTextField keylistener = new JTextField();
-		keylistener.addKeyListener(listener);
 		g.setupBoard();
 		g.playGame();
 	}
-	
-
 	
 	public void setupBoard() {
 		board = new Board();
@@ -47,7 +21,7 @@ public class Game {
 		
 		while (board.fullBoard() == false) {
 			System.out.println(board);
-			wait(1500);
+			wait(3000);
 			board.moveActiveBlockDown();
 			
 		}
@@ -127,5 +101,24 @@ public class Game {
 	    catch(InterruptedException ex) {
 	        Thread.currentThread().interrupt();
 	    }
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		System.out.println("YES");
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
