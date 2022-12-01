@@ -140,7 +140,7 @@ public class MainApplication extends GraphicsApplication {
 
 	public void playSound() {
 		AudioPlayer audio = AudioPlayer.getInstance();
-		audio.playSound(MUSIC_FOLDER, SOUND_FILE);
+		audio.playSound(MUSIC_FOLDER, SOUND_FILE, true);
 	}
 	
 	public void pauseSound() {
