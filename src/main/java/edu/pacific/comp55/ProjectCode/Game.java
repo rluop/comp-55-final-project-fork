@@ -86,9 +86,7 @@ public class Game {
 		g.setupBoard();
 		g.playGame();
 	}
-	
 
-	
 	public void setupBoard() {
 		board = new Board();
 	}
