@@ -60,6 +60,9 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void drawBlock() {
+		//this needs to 1 remove whatever is currently on the screen, 2 draw whatever should be on the screen according to the Game object
+		//should be run maybe 3 times a second!
+		//Space[] allSpacesOccupied = consoleGame.board.board.board; idea for later
 	}
 	
 	public void actionPerformed(ActionEvent e) {
