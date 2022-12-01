@@ -20,14 +20,11 @@ public class Game {
 		KeyListener listener = new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-				System.out.println("key typed");
-				// TODO Auto-generated method stub
-				
+				// TODO Auto-generated method stub				
 			}
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println("key pressed");
 				if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 					//TODO find some way to implement fasterFall here (if down is held down)
 					moveDown();
@@ -54,24 +51,19 @@ public class Game {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				System.out.println("key released");
 				// TODO Auto-generated method stub
 			}
 			//KEY EVENT FUNCTIONS
 			public void moveDown() {
-				System.out.println("moveDown called");
 				board.moveActiveBlockDown();
 			}
 			public void instantFall() {
-				System.out.println("instantFall called");
 				board.instantFall();
 			}
 			public void moveRight() {
-				System.out.println("moveRight called");
 				board.moveActiveBlockRight();
 			}
 			public void moveLeft() {
-				System.out.println("moveLeft called");
 				board.moveActiveBlockLeft();
 			}
 			public void holdBlock() {
@@ -104,12 +96,14 @@ public class Game {
 	public void playGame() {
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
-		
+		int counter = 0;
 		while (board.fullBoard() == false) {
+			if(counter % 2 == 0) {
+				board.moveActiveBlockDown();
+			}
 			System.out.println(board);
-			wait(1500);
-			board.moveActiveBlockDown();
-			
+			wait(500);
+			counter++;
 		}
 	}
 	

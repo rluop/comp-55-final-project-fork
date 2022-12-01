@@ -97,11 +97,15 @@ public class Board {
 	}
 	
 	public void rotateBlockRight() {
+		removeBlock();
 		activeBlock.rotateRight();
+		addBlock(activeBlock);
 	}
 	
 	public void rotateBlockLeft() {
+		removeBlock();
 		activeBlock.rotateLeft();
+		addBlock(activeBlock);
 	}
 	
 	public boolean canHold() {
