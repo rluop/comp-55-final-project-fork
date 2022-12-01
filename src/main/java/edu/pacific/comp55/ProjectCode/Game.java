@@ -23,7 +23,6 @@ public class Game implements KeyListener {
 			System.out.println(board);
 			wait(3000);
 			board.moveActiveBlockDown();
-			
 		}
 	}
 	

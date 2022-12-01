@@ -251,11 +251,11 @@ public class Board {
 	
 	//Board Testing
 	public static void main(String[] args) {
-		Board b = new Board();
-		b.createNextBlock(Orientation.UP, false, false, 0,0);
-		b.spawnBlock();
-		b.fasterFall();
-		b.rotateBlockLeft();
-		System.out.println(b);
+//		Board b = new Board();
+//		b.createNextBlock(Orientation.UP, false, false, 0,0);
+//		b.spawnBlock();
+//		b.fasterFall();
+//		b.rotateBlockLeft();
+//		System.out.println(b);
 	}
 }
