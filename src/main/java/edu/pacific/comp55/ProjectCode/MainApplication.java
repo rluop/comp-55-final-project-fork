@@ -148,6 +148,11 @@ public class MainApplication extends GraphicsApplication {
 		audio.pauseSound(MUSIC_FOLDER, SOUND_FILE);
 	}
 	
+	public void stopSound() {
+		AudioPlayer audio = AudioPlayer.getInstance();
+		audio.stopSound(MUSIC_FOLDER, SOUND_FILE);
+	}
+	
 	public static void main(String[] args) {
 		new MainApplication().start();
 	}
