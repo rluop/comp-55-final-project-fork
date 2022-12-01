@@ -18,9 +18,9 @@ public class GameOverPane extends GraphicsPane {
 		gameOver = new GImage("gameover.png", 0, 0);
 		gameOver.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 		
-		menu = new GButton("menu", 230, 370, 240, 100); // TODO edit button location
+		menu = new GButton("menu", 400, 415, 240, 100); // TODO edit button location
 		menu.setColor(Color.red);
-		//menu.setVisible(false);
+		menu.setVisible(false);
 	}
 
 	@Override
