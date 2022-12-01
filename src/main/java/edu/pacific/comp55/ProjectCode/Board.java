@@ -56,8 +56,7 @@ public class Board {
 		spaces = activeBlock.spacesOccupied();
 		for (int i = 0; i < 4; i++) {
 			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
-		}
-		//TODO 
+		} 
 	}
 	
 	public Block getBlock(Space s) {
