@@ -2,15 +2,37 @@ package edu.pacific.comp55.ProjectCode;
 import acm.program.*; 
 import java.awt.event.*;
 
-public class Game implements KeyListener {
+public class Game {
 	private Board board;
 	
 	public static void main(String[] args) {
 		Game g = new Game();
-		//g.addKeyListener(this);
+		KeyListener listener = new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				System.out.println("key typed");
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println("key pressed");
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				System.out.println("key released");
+				// TODO Auto-generated method stub
+			}
+		};
 		g.setupBoard();
 		g.playGame();
 	}
+	
+
 	
 	public void setupBoard() {
 		board = new Board();
@@ -102,25 +124,5 @@ public class Game implements KeyListener {
 	    catch(InterruptedException ex) {
 	        Thread.currentThread().interrupt();
 	    }
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		System.out.println("key typed");
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		System.out.println("key pressed");
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		System.out.println("key released");
-		// TODO Auto-generated method stub
 	}
 }
