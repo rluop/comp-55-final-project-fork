@@ -1,13 +1,22 @@
 package edu.pacific.comp55.ProjectCode;
-import acm.program.*; 
+import acm.program.*;
+
+import java.awt.BorderLayout;
 import java.awt.event.*;
 import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JFrame;
 
 public class Game {
 	private Board board;
 	
 	public static void main(String[] args) {
 		Game g = new Game();
+		JFrame frame = new JFrame("Key Listener");
+        Container contentPane = frame.getContentPane();
 		KeyListener listener = new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -29,8 +38,11 @@ public class Game {
 				// TODO Auto-generated method stub
 			}
 		};
-		JTextField keylistener = new JTextField();
-		keylistener.addKeyListener(listener);
+		JTextField textField = new JTextField();
+        textField.addKeyListener(listener);
+        contentPane.add(textField, BorderLayout.NORTH);
+        frame.pack();
+        frame.setVisible(true);
 		g.setupBoard();
 		g.playGame();
 	}
