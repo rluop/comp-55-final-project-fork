@@ -28,8 +28,28 @@ public class Game {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				System.out.println("key pressed");
-				// TODO Auto-generated method stub
-				
+				if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+					//TODO find some way to implement fasterFall here (if down is held down)
+					moveDown();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+					instantFall();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					moveRight();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+					moveLeft();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_C) {
+					holdBlock();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_UP) {
+					rotateRight();
+				}
+				else if(e.getKeyCode() == KeyEvent.VK_Z) {
+					rotateLeft();
+				}
 			}
 
 			@Override
@@ -37,71 +57,33 @@ public class Game {
 				System.out.println("key released");
 				// TODO Auto-generated method stub
 			}
-			public void moveDown(KeyEvent e) {
-				// check if moveActiveBlockDown is true in Board
-				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-					System.out.println("DOWN");
-					board.moveActiveBlockDown();
-					// activeBlock.move(0, 50);
-				}
-				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-					// check spacesOccupied in Block
-					// activeBlock.setLocation(activeBlock.getX(), ?);
-				}
+			//KEY EVENT FUNCTIONS
+			public void moveDown() {
+				System.out.println("moveDown called");
+				board.moveActiveBlockDown();
 			}
-			
-			public void moveHorizontal(KeyEvent e) {
-				// check if moveActiveBlockLeft is true in Board
-				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-					System.out.println("LEFT");
-					board.moveActiveBlockLeft();
-					// activeBlock.move(-50, 0);
-				}
-				// check if moveActiveBlockRight is true in Board
-				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-					System.out.println("RIGHT");
-					board.moveActiveBlockRight();
-					// activeBlock.move(50, 0);
-				}
+			public void instantFall() {
+				System.out.println("instantFall called");
+				board.instantFall();
 			}
-			
-			public void holdBlock(KeyEvent e) {
-				// check if canHold is true in Board
-				if (e.getKeyCode() == KeyEvent.VK_C) {
-					// TODO
-				}
+			public void moveRight() {
+				System.out.println("moveRight called");
+				board.moveActiveBlockRight();
 			}
-			
-			public void rotate(KeyEvent e) {	
-				// check if canRotate is true in Board
-				// int rotationNum = 0;
-				if (board.canRotate()) {
-					if (e.getKeyCode() == KeyEvent.VK_UP) {
-						board.rotateBlockRight();
-						/*
-						if (rotationNum == 3) {
-							rotationNum = 0;
-						}
-						else {
-							rotationNum++;
-							spaceArray(rotationNum);
-						}
-
-						*/
-					}
-					if (e.getKeyCode() == KeyEvent.VK_Z) {
-						board.rotateBlockRight();
-						/*
-						if (rotationNum == 0) {
-							rotationNum = 3;
-						}
-						else {
-							rotationNum--;
-							spaceArray(rotationNum);
-						}
-						*/
-					}
-				}
+			public void moveLeft() {
+				System.out.println("moveLeft called");
+				board.moveActiveBlockLeft();
+			}
+			public void holdBlock() {
+//				if (e.getKeyCode() == KeyEvent.VK_C) {
+//					// TODO
+//				}
+			}
+			public void rotateRight() {
+				board.rotateBlockRight();
+			}
+			public void rotateLeft() {
+				board.rotateBlockLeft();
 			}
 		};
 		JTextField textField = new JTextField();
