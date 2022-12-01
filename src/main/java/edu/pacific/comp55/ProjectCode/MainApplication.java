@@ -84,6 +84,10 @@ public class MainApplication extends GraphicsApplication {
 		time.start();
 	}
 	
+	public void restartTime() {
+		time.restart();
+	}
+	
 	public void stopTime() {
 		time.stop();
 	}

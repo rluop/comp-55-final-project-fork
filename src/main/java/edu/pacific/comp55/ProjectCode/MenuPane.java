@@ -60,6 +60,7 @@ public class MenuPane extends GraphicsPane {
 		if (obj == rect) {
 			program.switchToSome();
 		}else if(obj == play) {
+			//program.restartTime();
 			program.playSound();
 			program.startTime();
 			program.switchToGame();
