@@ -1,5 +1,5 @@
 package edu.pacific.comp55.ProjectCode;
-
+import acm.program.*; 
 import java.awt.event.*;
 
 public class Game implements KeyListener {
@@ -7,6 +7,7 @@ public class Game implements KeyListener {
 	
 	public static void main(String[] args) {
 		Game g = new Game();
+		//g.addKeyListener(this);
 		g.setupBoard();
 		g.playGame();
 	}
@@ -21,8 +22,9 @@ public class Game implements KeyListener {
 		
 		while (board.fullBoard() == false) {
 			System.out.println(board);
-			wait(3000);
+			wait(1500);
 			board.moveActiveBlockDown();
+			
 		}
 	}
 	
@@ -104,20 +106,21 @@ public class Game implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		System.out.println("YES");
+		System.out.println("key typed");
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		System.out.println("key pressed");
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		System.out.println("key released");
 		// TODO Auto-generated method stub
-		
 	}
 }
