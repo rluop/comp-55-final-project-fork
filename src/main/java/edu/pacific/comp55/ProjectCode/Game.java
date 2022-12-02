@@ -107,6 +107,10 @@ public class Game {
 			}
 			wait(waitTime);
 			counter++;
+			//check for clearing line
+			while(board.canClearLine() != -1) {
+				board.clearLine();
+			}
 		}
 		System.out.println("game over!");
 	}
