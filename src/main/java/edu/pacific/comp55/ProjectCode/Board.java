@@ -14,7 +14,9 @@ public class Board {
 	private Block activeBlock;
 	private Block nextBlock;
 	private Block heldBlock;
-	private Block tempBlock;
+	
+	private boolean canHold = true;
+	private boolean blockHeld = false;
 	
 	public Board() {
 		board = new Block[20][10];
@@ -141,31 +143,30 @@ public class Board {
 	}
 	
 	public void holdBlock() {
-		boolean canHold = true;
-		boolean blockHeld = false;
-		int numHolds = 0;
-		
 		if (canHold) {
-			if (numHolds == 0) {
-				if (blockHeld == false) {
-					heldBlock = activeBlock;
-					removeBlock();
-					addBlock(nextBlock);
-				}
-				else {
-					tempBlock = activeBlock;
-					activeBlock = heldBlock;
-					heldBlock = tempBlock;
-				}
+			if (blockHeld == false) {
+				heldBlock = activeBlock;
+				removeBlock();
+				addBlock(nextBlock);
+				
+				blockHeld = true;
 			}
-			numHolds++;
-			
+			else {
+				Block tempBlock;
+				
+				tempBlock = activeBlock;
+				activeBlock = heldBlock;
+				heldBlock = tempBlock;
+			}
+			canHold = false;
 		}
 		
 		// TODO: need to find out how to set boolean canHold back to true after placing a block, if i need a separate canHold boolean function
 	}
 	
 	public void addBlock(Block addMe) {
+		canHold = true; // resets hold state of block
+		
 		activeBlock = addMe;
 		//add addMe to board and arraylist
 		Space[] addMeSpaces = addMe.spacesOccupied();
