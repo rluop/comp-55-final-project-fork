@@ -66,7 +66,7 @@ public class MainApplication extends GraphicsApplication {
 		sec++;
 		
 		timer.setFont(Font.MONOSPACED);
-		timer.setLocation(90, 90);
+		timer.setLocation(90, 75);
 		timer.sendToFront();
 		timer.setLabel(min/60 + ":" + sec);
 		if(sec == 59) {

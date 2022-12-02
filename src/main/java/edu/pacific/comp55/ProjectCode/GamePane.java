@@ -138,28 +138,28 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	private void createNextBlock() {
 		System.out.println("create the next block");
-		GImage next = new GImage("media\\s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+		GImage next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		switch(board.getNextBlock().getBlockType()) {
 		case T:
-			next = new GImage("media\\t.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("t.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case SQUARE:
-			next = new GImage("media\\square.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("square.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case BAR:
-			next = new GImage("media\\bar.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("bar.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case RIGHTS:
-			next = new GImage("media\\s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case LEFTS:
-			next = new GImage("media\\s2.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("s2.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case RIGHTL:
-			next = new GImage("media\\l.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("l.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case LEFTL:
-			next = new GImage("media\\l2.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("l2.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		}
 		program.add(next);
