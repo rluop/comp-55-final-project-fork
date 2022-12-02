@@ -11,9 +11,9 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 public class Game {
-	private static Board board;
+	public static Board board;
 	
-	public static void main(String[] args) {
+	public  void main(String[] args) {
 		Game g = new Game();
 		JFrame frame = new JFrame("Key Listener");
         Container contentPane = frame.getContentPane();
@@ -97,6 +97,7 @@ public class Game {
 		int counter = 0;
 		int waitTime = 500;
 		while (board.fullBoard() == false) {
+			board.clearLine();    
 			if(counter % 2 == 0) {
 				board.moveActiveBlockDown();
 			}
@@ -106,6 +107,10 @@ public class Game {
 			}
 			wait(waitTime);
 			counter++;
+			//check for clearing line
+			while(board.canClearLine() != -1) {
+				board.clearLine();
+			}
 		}
 		System.out.println("game over!");
 	}

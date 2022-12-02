@@ -23,6 +23,8 @@ public class MainApplication extends GraphicsApplication {
 	private QuitPane quit;
 	private GameOverPane over; 
 	
+	private Game consoleGame;
+	
 	private Block block;
 	private Board board;
 	
@@ -56,6 +58,8 @@ public class MainApplication extends GraphicsApplication {
 		setupInteractions();
 		switchToMenu();
 	}
+	
+	
 	
 	public void actionPerformed(ActionEvent e) {
 		min++;
