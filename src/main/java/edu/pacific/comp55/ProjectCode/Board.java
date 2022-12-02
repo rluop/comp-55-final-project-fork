@@ -284,6 +284,7 @@ public class Board {
 	}
 	
 	//Board Testing
+	/*
 	public static void main(String[] args) {
 //		Board b = new Board();
 //		b.createNextBlock(Orientation.UP, false, false, 0,0);
@@ -315,4 +316,5 @@ public class Board {
 		b.clearLine();
 		System.out.println(b);
 	}
+	*/
 }

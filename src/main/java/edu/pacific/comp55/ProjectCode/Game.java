@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class Game {
 	public static Board board;
 	
-	public static void main(String[] args) {
+	public  void main(String[] args) {
 		Game g = new Game();
 		JFrame frame = new JFrame("Key Listener");
         Container contentPane = frame.getContentPane();
