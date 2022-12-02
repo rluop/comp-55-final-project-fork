@@ -35,7 +35,7 @@ public class MainApplication extends GraphicsApplication {
 	private int sec = 0;
 	private int scoreNum = 0;
 	
-	private Timer time = new Timer(2000, this);
+	private Timer time = new Timer(1000, this);
 	
 	private int count;
 
