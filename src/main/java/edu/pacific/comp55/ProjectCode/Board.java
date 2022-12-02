@@ -92,11 +92,29 @@ public class Board {
 	public void clearLine() {
 		int i = this.canClearLine();
 		if (i == -1) {
-			System.out.println("NONE");
+			return;
 		}
 		else {
 			for (int j = 0; j < board[i].length; j++) {
 				board[i][j] = null;
+			}
+		}
+		this.dropBlocks();
+	}
+	
+	public void dropBlocks() {
+		System.out.println(this);
+		for (int j = 0; j < 10; j++) {
+			int lastInd = 19;
+			for (int i = board.length - 1; i > 0; i--) {
+				if (board[lastInd][j] != null && lastInd > 0) {
+					lastInd -= 1;
+				}
+				if (board[i][j] != null && i != 19) {
+					board[lastInd][j] = board[i][j];
+					board[i][j] = null;
+					lastInd -= 1;
+				}
 			}
 		}
 	}
@@ -276,13 +294,22 @@ public class Board {
 		
 		
 		Board b = new Board();
-		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 1,1);
-		Block c = new Block(BlockType.BAR,Orientation.UP, false, false, 1,5);
-		Block d = new Block(BlockType.SQUARE,Orientation.UP, false, false, 1,8);
-
+		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 19,1);
+		Block c = new Block(BlockType.BAR,Orientation.UP, false, false, 19,5);
+		Block d = new Block(BlockType.SQUARE,Orientation.UP, false, false, 19,8);
+		Block e = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
+		Block g = new Block(BlockType.BAR,Orientation.UP, false, false, 18,1);
+		Block h = new Block(BlockType.BAR,Orientation.UP, false, false, 18,5);
+		Block i = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
+		Block j = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
+		
+		
 		b.addBlock(a);
 		b.addBlock(c);
 		b.addBlock(d);
+		b.addBlock(e);
+		b.addBlock(g);
+		b.addBlock(h);
 		
 		System.out.println(b);
 		b.clearLine();
