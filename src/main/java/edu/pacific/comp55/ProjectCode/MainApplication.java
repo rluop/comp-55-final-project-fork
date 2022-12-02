@@ -59,7 +59,15 @@ public class MainApplication extends GraphicsApplication {
 		switchToMenu();
 	}
 	
-	public void drawBlock() {
+	public void drawBoard() {
+		//drawing helper for drawDriver
+	}
+	
+	public void removeBoard() {
+		//removal helper for drawDriver
+	}
+	
+	public void drawDriver() {
 		//this needs to 1 remove whatever is currently on the screen, 2 draw whatever should be on the screen according to the Game object
 		//should be run maybe 3 times a second!
 		//Space[] allSpacesOccupied = consoleGame.board.board.board; idea for later
