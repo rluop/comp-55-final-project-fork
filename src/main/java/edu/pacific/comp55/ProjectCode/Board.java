@@ -141,26 +141,28 @@ public class Board {
 	}
 	
 	public void holdBlock() {
+		boolean canHold = true;
 		boolean blockHeld = false;
 		int numHolds = 0;
 		
-		if (numHolds == 0) {
-			if (blockHeld == false) {
-				heldBlock = activeBlock;
-				removeBlock();
-				addBlock(nextBlock);
-				
-				numHolds++;
+		if (canHold) {
+			if (numHolds == 0) {
+				if (blockHeld == false) {
+					heldBlock = activeBlock;
+					removeBlock();
+					addBlock(nextBlock);
+				}
+				else {
+					tempBlock = activeBlock;
+					activeBlock = heldBlock;
+					heldBlock = tempBlock;
+				}
 			}
-			else {
-				
-			}
+			numHolds++;
+			
 		}
-	}
-	
-	public boolean canHold() {
-		return false; // TODO
-		// ralph: you can only switch out the active block with the currently held block ONCE, you cannot infinitely switch blocks back and forth until the active block is placed
+		
+		// TODO: need to find out how to set boolean canHold back to true after placing a block, if i need a separate canHold boolean function
 	}
 	
 	public void addBlock(Block addMe) {
