@@ -97,6 +97,7 @@ public class Game {
 		int counter = 0;
 		int waitTime = 500;
 		while (board.fullBoard() == false) {
+			board.clearLine();    
 			if(counter % 2 == 0) {
 				board.moveActiveBlockDown();
 			}

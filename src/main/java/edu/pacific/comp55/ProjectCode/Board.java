@@ -69,6 +69,7 @@ public class Board {
 		boolean canClear = true;
 		int returnInd = -1; //needed to be init, -1 isnt a valid row. but, it should be reassigned if the value is used. 
 		for(int i = 0; i<board.length; i++) {
+			canClear = true;
 			for(int j = 0; j<board[i].length; j++) {
 				if(board[i][j]==null) {
 					canClear = false;
@@ -76,6 +77,7 @@ public class Board {
 			}
 			if(canClear) {
 				returnInd = i;
+				return returnInd;
 			}
 		}
 		if(canClear) {
@@ -85,6 +87,18 @@ public class Board {
 			return -1;
 		}
 		//need to remember wherever we call this, it needs to be called more than once because it can only return one row index at a time, and more than one line may be cleared at a time
+	}
+	
+	public void clearLine() {
+		int i = this.canClearLine();
+		if (i == -1) {
+			System.out.println("NONE");
+		}
+		else {
+			for (int j = 0; j < board[i].length; j++) {
+				board[i][j] = null;
+			}
+		}
 	}
 	
 	public boolean canRotate() {
@@ -259,5 +273,19 @@ public class Board {
 //		b.fasterFall();
 //		b.rotateBlockLeft();
 //		System.out.println(b);
+		
+		
+		Board b = new Board();
+		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 1,1);
+		Block c = new Block(BlockType.BAR,Orientation.UP, false, false, 1,5);
+		Block d = new Block(BlockType.SQUARE,Orientation.UP, false, false, 1,8);
+
+		b.addBlock(a);
+		b.addBlock(c);
+		b.addBlock(d);
+		
+		System.out.println(b);
+		b.clearLine();
+		System.out.println(b);
 	}
 }
