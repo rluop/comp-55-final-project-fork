@@ -13,6 +13,8 @@ public class Board {
 	
 	private Block activeBlock;
 	private Block nextBlock;
+	private Block heldBlock;
+	private Block tempBlock;
 	
 	public Board() {
 		board = new Block[20][10];
@@ -136,6 +138,24 @@ public class Board {
 		removeBlock();
 		activeBlock.rotateLeft();
 		addBlock(activeBlock);
+	}
+	
+	public void holdBlock() {
+		boolean blockHeld = false;
+		int numHolds = 0;
+		
+		if (numHolds == 0) {
+			if (blockHeld == false) {
+				heldBlock = activeBlock;
+				removeBlock();
+				addBlock(nextBlock);
+				
+				numHolds++;
+			}
+			else {
+				
+			}
+		}
 	}
 	
 	public boolean canHold() {
