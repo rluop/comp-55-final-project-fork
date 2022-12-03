@@ -16,15 +16,17 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage game;
 	
 	private Board board;
-	private Timer startGameTimer;
+	private Timer gameTimer;
+	private int counter;
+	private int speed = 1000;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
 		game = new GImage("newgame.png", 0, 0);
 		game.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT-20);
 		board = new Board();
-		startGameTimer = new Timer(500, this);
-		
+		gameTimer = new Timer(speed, this);
+		counter = 0;
 	}
 	
 	@Override
@@ -88,29 +90,37 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	
 	void playGame() {
-		board.createNextBlock(Orientation.UP, false, false, 0,0);
-		createNextBlock();
-		board.spawnBlock();
+		System.out.println("Hi");
+		counter++;
 		
-		int counter = 0;
-		int waitTime = 500;
-		while (board.fullBoard() == false) {
-			board.clearLine();    
-			if(counter % 2 == 0) {
-				board.moveActiveBlockDown();
-			}
-			System.out.println(board);
-			if(counter % 10 == 0) {
-				waitTime--;
-			}
-			wait(waitTime);
-			counter++;
-			//check for clearing line
-			while(board.canClearLine() != -1) {
-				board.clearLine();
-			}
+		if (board.fullBoard()) {
+			System.out.println("game over!");
+			gameTimer.stop();
 		}
-		System.out.println("game over!");
+		
+		board.clearLine();    
+		if(counter % 2 == 0) {
+			board.moveActiveBlockDown();
+			if(board.activeBlockSat) {
+				createNextBlock();
+				board.activeBlockSat = false;
+			}
+			//move blocks on screen
+		}
+		System.out.println(board);
+		
+		if(counter % 10 == 0 && speed > 100) {
+			gameTimer.stop();
+			speed -= 50;
+			gameTimer = new Timer(speed, this);
+			gameTimer.start();
+		}
+		
+			//check for clearing line
+		while(board.canClearLine() != -1) {
+			board.clearLine();
+			//update blocks on screen
+		}
 	}
 	
 	public void drawBoard() {
@@ -125,15 +135,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		//this needs to 1 remove whatever is currently on the screen, 2 draw whatever should be on the screen according to the Game object
 		//should be run maybe 3 times a second!
 		//Space[] allSpacesOccupied = consoleGame.board.board.board; idea for later
-	}
-	
-	public static void wait(int ms) {
-	    try {
-	        Thread.sleep(ms);
-	    }
-	    catch(InterruptedException ex) {
-	        Thread.currentThread().interrupt();
-	    }
 	}
 	
 	private void createNextBlock() {
@@ -169,14 +170,19 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	public void actionPerformed( ActionEvent e) {
 		System.out.println("Game Started");
 		playGame();
-		startGameTimer.stop();
 	}
 
 	@Override
 	public void showContents() {
 		System.out.println("Game showed");
 		drawBoard();
-		startGameTimer.start();
+		board.createNextBlock(Orientation.UP, false, false, 0,0);
+		createNextBlock();
+		
+		board.spawnBlock();
+		//add block on screen
+		
+		gameTimer.start();
 		
 	}
 

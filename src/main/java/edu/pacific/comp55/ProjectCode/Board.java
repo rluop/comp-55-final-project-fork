@@ -16,6 +16,8 @@ public class Board {
 	private Block heldBlock;
 	private Block tempBlock;
 	
+	public Boolean activeBlockSat = false;
+	
 	public Board() {
 		board = new Block[20][10];
 	}
@@ -196,6 +198,7 @@ public class Board {
 		}
 		else if(activeBlock.canMoveDown()==2) {
 			System.out.println("block placed!");
+			activeBlockSat = true;
 			spawnBlock();
 			return false;
 		}
