@@ -107,6 +107,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			//move blocks on screen
 		}
 		System.out.println(board);
+		//graphically print the board
 		
 		if(counter % 10 == 0 && speed > 100) {
 			gameTimer.stop();
@@ -127,6 +128,14 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	public void removeBoard() {
 		program.remove(game);
+	}
+	
+	public void graphicBoard() {
+		
+	}
+	
+	public void removeGraphicBoard() {
+		
 	}
 	
 	public void drawDriver() {
