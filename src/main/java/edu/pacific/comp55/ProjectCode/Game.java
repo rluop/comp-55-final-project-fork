@@ -102,6 +102,8 @@ public class Game {
 				board.moveActiveBlockDown();
 			}
 			System.out.println(board);
+			board.holdBlock();
+			System.out.println("bruh");
 			if(counter % 10 == 0) {
 				waitTime--;
 			}
