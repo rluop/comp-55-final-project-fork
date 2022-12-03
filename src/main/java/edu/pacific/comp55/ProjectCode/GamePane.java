@@ -134,6 +134,15 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		//should be run maybe 3 times a second!
 		//Space[] allSpacesOccupied = consoleGame.board.board.board; idea for later
 	}
+		
+	private void drawActiveBlock(Space[] spacesOccupied) {
+		//draw the block that is currently falling down the screen
+		//going to need some kind of spaces to pixel conversion
+	}
+	
+	private void removeLine(int lineNum) {
+		//if a line is cleared, remove it graphically
+	}
 	
 	private void createNextBlock() {
 		GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
