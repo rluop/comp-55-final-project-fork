@@ -90,7 +90,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	
 	void playGame() {
-		System.out.println("Hi");
 		counter++;
 		
 		if (board.fullBoard()) {
