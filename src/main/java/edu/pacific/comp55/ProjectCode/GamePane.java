@@ -136,7 +136,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	
 	private void createNextBlock() {
-		
+		GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+		program.add(cover);
 		System.out.println("create the next block");
 		GImage next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		switch(board.getNextBlock().getBlockType()) {
@@ -150,10 +151,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			next = new GImage("bar.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case RIGHTS:
-			next = new GImage("z.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case LEFTS:
-			next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+			next = new GImage("z.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 			break;
 		case RIGHTL:
 			next = new GImage("l.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
