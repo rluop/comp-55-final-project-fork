@@ -118,7 +118,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		while(board.canClearLine() != -1) {
 			board.clearLine();
-			//update blocks on screen
+			graphicBoard();
 		}
 	}
 	
