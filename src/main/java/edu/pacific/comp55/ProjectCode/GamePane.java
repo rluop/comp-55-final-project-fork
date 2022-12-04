@@ -135,8 +135,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		Block[][] addMe = new Block[20][10];
 		addMe = board.getBoard();
 		GImage px = new GImage("lpx.jpg", program.WINDOW_WIDTH / 2, program.WINDOW_HEIGHT / 2);
-		for(int i = 20; i<0; i++) {
-			for(int j = 10; j<0; j++) {
+		for(int i = 0; i<20; i++) {
+			for(int j = 0; j<10; j++) {
 				if(addMe[i][j]==null) {
 					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
