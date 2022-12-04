@@ -139,30 +139,36 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		for(int i = 0; i<20; i++) {
 			for(int j = 0; j<10; j++) {
 				if(addMe[i][j]==null) {
-					
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
-					
+					System.out.println("leftl added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="T") {
-					
+					System.out.println("t added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right S") {
-					
+					System.out.println("rights added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left S") {
-					
+					System.out.println("lefts added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Square") {
-					
+					System.out.println("square added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Bar"){
-					
+					System.out.println("bar added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
 				}
-				else if(addMe[i][j].getBlockType().toString()=="Right L"){//empty
-					
-				}
-				System.out.println("here");
+				else if(addMe[i][j].getBlockType().toString()=="Right L") {
+					System.out.println("rightl added");
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+				}				
 				program.add(px);
 			}
 		}
