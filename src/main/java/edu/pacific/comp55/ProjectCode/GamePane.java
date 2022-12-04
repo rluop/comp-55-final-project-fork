@@ -108,7 +108,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		//System.out.println(board);
 		//graphically print the board
-		graphicBoard();
+		//graphicBoard();
 		removeGraphicBoard();
 		
 		if(counter % 10 == 0 && speed > 100) {
@@ -164,7 +164,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	public void removeGraphicBoard() {
 		System.out.println("removeGraphicBoard run");
-		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 5, program.WINDOW_HEIGHT);
+		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 2 - (765/2), program.WINDOW_HEIGHT / 2 - (788/2));
 		program.add(bg);
 	}
 	
