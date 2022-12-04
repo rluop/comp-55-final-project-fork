@@ -30,6 +30,10 @@ public class Board {
 		return nextBlock;
 	}
 	
+	public Block[][] getBoard(){
+		return board;
+	}
+	
 	public void spawnBlock(){
 		activeBlock = nextBlock;
 		nextBlock = new Block(Orientation.UP, false, false, 0,0);
