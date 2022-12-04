@@ -131,7 +131,32 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	
 	public void graphicBoard() {
-		
+		Block[][] addMe = board.getBoard();
+		for(int i = 0; i<21; i++) {
+			for(int j = 0; j<11; j++) {
+				if(addMe[i][j].getBlockType().toString()=="Right L") {
+					
+				}
+				else if(addMe[i][j].getBlockType().toString()=="Left L") {
+					
+				}
+				else if(addMe[i][j].getBlockType().toString()=="T") {
+					
+				}
+				else if(addMe[i][j].getBlockType().toString()=="Right S") {
+					
+				}
+				else if(addMe[i][j].getBlockType().toString()=="Left S") {
+					
+				}
+				else if(addMe[i][j].getBlockType().toString()=="Square") {
+					
+				}
+				else { //bar
+					
+				}
+			}
+		}
 	}
 	
 	public void removeGraphicBoard() {
