@@ -107,7 +107,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		//System.out.println(board);
 		//graphically print the board
-		removeGraphicBoard();
 		graphicBoard();
 		
 		if(counter % 10 == 0 && speed > 100) {
@@ -174,10 +173,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 	}
 	
-	public void removeGraphicBoard() {
-		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 2 - (628/2), program.WINDOW_HEIGHT / 2 - (650.5/2));
-		program.add(bg);
-	}
+//	public void removeGraphicBoard() {
+//		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 2 - (628/2), program.WINDOW_HEIGHT / 2 - (650.5/2));
+//		program.add(bg);
+//	}
 	
 	private void createNextBlock() {
 		GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
