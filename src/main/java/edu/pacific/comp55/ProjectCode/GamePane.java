@@ -107,8 +107,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		//System.out.println(board);
 		//graphically print the board
-		//graphicBoard();
 		removeGraphicBoard();
+		graphicBoard();
 		
 		if(counter % 10 == 0 && speed > 100) {
 			gameTimer.stop();
@@ -133,10 +133,12 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	public void graphicBoard() {
 		System.out.println("graphicBoard run");
-		Block[][] addMe = board.getBoard();
-		for(int i = 0; i<21; i++) {
-			for(int j = 0; j<11; j++) {
-				if(addMe[i][j].getBlockType().toString()=="Right L") {
+		Block[][] addMe = new Block[20][10];
+		addMe = board.getBoard();
+		GImage px = new GImage("lpx.jpg", program.WINDOW_WIDTH / 2, program.WINDOW_HEIGHT / 2);
+		for(int i = 0; i<20; i++) {
+			for(int j = 0; j<10; j++) {
+				if(addMe[i][j]==null) {
 					
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
@@ -157,15 +159,16 @@ public class GamePane extends GraphicsPane implements ActionListener {
 				else if(addMe[i][j].getBlockType().toString()=="Bar"){
 					
 				}
-				else {//empty
+				else if(addMe[i][j].getBlockType().toString()=="Right L"){//empty
 					
 				}
+				System.out.println("here");
+				program.add(px);
 			}
 		}
 	}
 	
 	public void removeGraphicBoard() {
-		System.out.println("removeGraphicBoard run");
 		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 2 - (628/2), program.WINDOW_HEIGHT / 2 - (650.5/2));
 		program.add(bg);
 	}
