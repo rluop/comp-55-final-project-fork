@@ -97,7 +97,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			gameTimer.stop();
 		}
 		
-		//board.clearLine();    i don't know why this was here, maybe delete
 		if(counter % 2 == 0) {
 			board.moveActiveBlockDown();
 			if(board.activeBlockSat) {
@@ -171,25 +170,9 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		program.add(bg);
 	}
 	
-	public void drawDriver() {
-		//this needs to 1 remove whatever is currently on the screen, 2 draw whatever should be on the screen according to the Game object
-		//should be run maybe 3 times a second!
-		//Space[] allSpacesOccupied = consoleGame.board.board.board; idea for later
-	}
-		
-	private void drawActiveBlock(Space[] spacesOccupied) {
-		//draw the block that is currently falling down the screen
-		//going to need some kind of spaces to pixel conversion
-	}
-	
-	private void removeLine(int lineNum) {
-		//if a line is cleared, remove it graphically
-	}
-	
 	private void createNextBlock() {
 		GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		program.add(cover);
-		System.out.println("create the next block");
 		GImage next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		switch(board.getNextBlock().getBlockType()) {
 		case T:
@@ -219,13 +202,11 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 
 	public void actionPerformed( ActionEvent e) {
-		System.out.println("Game Started");
 		playGame();
 	}
 
 	@Override
 	public void showContents() {
-		System.out.println("Game showed");
 		drawBoard();
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		createNextBlock();
