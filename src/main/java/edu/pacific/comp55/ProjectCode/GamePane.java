@@ -167,7 +167,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	public void removeGraphicBoard() {
 		System.out.println("removeGraphicBoard run");
-		GImage bg = new GImage("bg.png", program.WINDOW_WIDTH / 2 - (765/2), program.WINDOW_HEIGHT / 2 - (788/2));
+		GImage bg = new GImage("bg.jpg", program.WINDOW_WIDTH / 2 - (628/2), program.WINDOW_HEIGHT / 2 - (650.5/2));
 		program.add(bg);
 	}
 	
