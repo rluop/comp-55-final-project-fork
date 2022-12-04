@@ -135,38 +135,38 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		Block[][] addMe = new Block[20][10];
 		addMe = board.getBoard();
 		GImage px = new GImage("lpx.jpg", program.WINDOW_WIDTH / 2, program.WINDOW_HEIGHT / 2);
-		for(int i = 0; i<20; i++) {
-			for(int j = 0; j<10; j++) {
+		for(int i = 20; i<0; i--) {
+			for(int j = 10; j<0; j--) {
 				if(addMe[i][j]==null) {
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
 					System.out.println("leftl added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="T") {
 					System.out.println("t added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("tpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right S") {
 					System.out.println("rights added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("spx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left S") {
 					System.out.println("lefts added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("zpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Square") {
 					System.out.println("square added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("squarepx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Bar"){
 					System.out.println("bar added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("barpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right L") {
 					System.out.println("rightl added");
-					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 210.4 - 5.6 - ((10.4+31)*j), program.WINDOW_HEIGHT - ((10.4+35)*i));
+					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}				
 				program.add(px);
 			}
