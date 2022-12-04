@@ -22,7 +22,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	public GamePane(MainApplication app) {
 		this.program = app;
-		game = new GImage("newgame.png", 0, 0);
+		game = new GImage("game1.png", 0, 0);
 		game.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT-20);
 		board = new Board();
 		gameTimer = new Timer(speed, this);
