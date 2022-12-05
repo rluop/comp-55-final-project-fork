@@ -20,6 +20,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private int counter;
 	private int speed = 1000;
 	private GImage next;
+	public boolean gamePaused = false;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -60,6 +61,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			rotateLeft();
 		}else if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 			//System.out.println("esc pressed");
+			gamePaused = true;
 			program.pauseSound();
 			program.stopTime();
 			program.switchToPause();
@@ -100,8 +102,13 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		if (board.fullBoard()) {
 			System.out.println("game over!");
-			program.switchToGameOver();
 			gameTimer.stop();
+			program.switchToGameOver();
+			return;
+		}
+		
+		if(gamePaused) {
+			return;
 		}
 		
 		if(counter % 2 == 0) {
