@@ -46,10 +46,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			instantFall();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			moveRight();
+			moveLeft();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			moveLeft();
+			moveRight();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_C) {
 			holdBlock();
