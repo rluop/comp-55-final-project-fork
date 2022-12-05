@@ -231,7 +231,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	@Override
 	public void hideContents() {
 		
-	}
+	} 
 	
 	
 	
