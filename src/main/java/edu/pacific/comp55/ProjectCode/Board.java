@@ -251,12 +251,12 @@ public class Board {
 		}
 		else if(activeBlock.canMoveDown()==2) {
 			System.out.println("block placed!");
-			activeBlockSat = true;
 			activeBlock = null;
 			if (this.fullBoard() == true) {
 				return false;
 			}
 			spawnBlock();
+			activeBlockSat = true;
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
@@ -269,6 +269,7 @@ public class Board {
 					return false;
 				}
 				spawnBlock();
+				activeBlockSat = true;
 				return false;
 			}
 		}
