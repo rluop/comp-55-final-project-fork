@@ -243,6 +243,9 @@ public class Board {
 	//this will check the spaces occupied against the spaces if I move some direction, and see if the space is otherwise occupied by some block on the board
 	public boolean moveActiveBlockDown() {
 		//check if it can move considering the bounds of the board
+		if (this.activeBlock == null) {
+			return false;
+		}
 		if(activeBlock.canMoveDown()==0) {
 			return false;
 		}
@@ -250,6 +253,9 @@ public class Board {
 			System.out.println("block placed!");
 			activeBlockSat = true;
 			activeBlock = null;
+			if (this.fullBoard() == true) {
+				return false;
+			}
 			spawnBlock();
 			return false;
 		}
@@ -259,6 +265,9 @@ public class Board {
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
 				System.out.println("block placed!");
 				activeBlock = null;
+				if (this.fullBoard() == true) {
+					return false;
+				}
 				spawnBlock();
 				return false;
 			}

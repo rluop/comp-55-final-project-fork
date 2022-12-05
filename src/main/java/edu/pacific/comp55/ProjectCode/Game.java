@@ -99,6 +99,9 @@ public class Game {
 		while (board.fullBoard() == false) {
 			board.clearLine();    
 			if(counter % 2 == 0) {
+				if (board.getActiveBlock() == null) {
+					break;
+				}
 				board.moveActiveBlockDown();
 			}
 			System.out.println(board);
