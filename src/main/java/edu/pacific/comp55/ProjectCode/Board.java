@@ -99,10 +99,10 @@ public class Board {
 		//need to remember wherever we call this, it needs to be called more than once because it can only return one row index at a time, and more than one line may be cleared at a time
 	}
 	
-	public void clearLine() {
+	public boolean clearLine() {
 		int i = this.canClearLine();
 		if (i == -1) {
-			return;
+			return false;
 		}
 		else {
 			for (int j = 0; j < board[i].length; j++) {
@@ -110,6 +110,7 @@ public class Board {
 			}
 		}
 		this.dropBlocks();
+		return true;
 	}
 	
 	public void dropBlocks() {
