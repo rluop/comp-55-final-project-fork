@@ -108,14 +108,13 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		
 		if(gamePaused) {
+			System.out.println("game is paused");
 			return;
 		}
 		
 		if(counter % 2 == 0) {
 			board.moveActiveBlockDown();
-			System.out.println("move");
 			if(board.activeBlockSat) {
-				System.out.println("update");
 				createNextBlock();
 				board.activeBlockSat = false;
 			}
@@ -235,8 +234,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		board.spawnBlock();
 		createNextBlock();
 		
-		gameTimer.start();
-		
+		gameTimer.start();	
 	}
 
 	@Override
