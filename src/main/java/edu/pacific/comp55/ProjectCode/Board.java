@@ -136,7 +136,16 @@ public class Board {
 	}
 	
 	public void rotateBlockRight() {
-		if (activeBlock.getStartSpace().getRow() == 0) {
+		if (activeBlock.getBlockType() == BlockType.BAR && activeBlock.getStartSpace().getRow() == 0) {
+			return;
+		}
+		if (activeBlock.getBlockType() == BlockType.RIGHTS && activeBlock.getStartSpace().getRow() == 0) {
+			return;
+		}
+		if (activeBlock.getBlockType() == BlockType.LEFTS && activeBlock.getStartSpace().getRow() == 0) {
+			return;
+		}
+		if (activeBlock.getBlockType() == BlockType.RIGHTL && activeBlock.getStartSpace().getRow() == 1) {
 			return;
 		}
 		removeBlock();
@@ -333,7 +342,8 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0, 0);
 		b.spawnBlock();
-		b.rotateBlockRight();
+		System.out.println(b);
+		b.rotateBlockLeft();
 		
 		// Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
 		
