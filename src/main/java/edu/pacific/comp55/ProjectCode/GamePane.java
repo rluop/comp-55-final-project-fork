@@ -64,13 +64,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			program.stopTime();
 			program.switchToPause();
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-				//System.out.println("esc pressed");
-				program.pauseSound();
-				program.stopTime();
-				program.switchToPause();
-				gameTimer.stop();
-		}
 	}
 
 	@Override
