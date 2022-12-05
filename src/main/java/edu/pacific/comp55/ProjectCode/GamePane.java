@@ -19,6 +19,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private Timer gameTimer;
 	private int counter;
 	private int speed = 1000;
+	private GImage next;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -94,16 +95,18 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		if (board.fullBoard()) {
 			System.out.println("game over!");
+			program.switchToGameOver();
 			gameTimer.stop();
 		}
 		
 		if(counter % 2 == 0) {
 			board.moveActiveBlockDown();
+			System.out.println("move");
 			if(board.activeBlockSat) {
+				System.out.println("update");
 				createNextBlock();
 				board.activeBlockSat = false;
 			}
-			//move blocks on screen
 		}
 		//System.out.println(board);
 		//graphically print the board
@@ -131,7 +134,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	
 	public void graphicBoard() {
-		System.out.println("graphicBoard run");
 		Block[][] addMe = new Block[20][10];
 		addMe = board.getBoard();
 		GImage px = new GImage("lpx.jpg", program.WINDOW_WIDTH / 2, program.WINDOW_HEIGHT / 2);
@@ -141,31 +143,24 @@ public class GamePane extends GraphicsPane implements ActionListener {
 					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
-					System.out.println("leftl added");
 					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="T") {
-					System.out.println("t added");
 					px = new GImage("tpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right S") {
-					System.out.println("rights added");
 					px = new GImage("spx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left S") {
-					System.out.println("lefts added");
 					px = new GImage("zpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Square") {
-					System.out.println("square added");
 					px = new GImage("squarepx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Bar"){
-					System.out.println("bar added");
 					px = new GImage("barpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right L") {
-					System.out.println("rightl added");
 					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}				
 				program.add(px);
@@ -179,9 +174,14 @@ public class GamePane extends GraphicsPane implements ActionListener {
 //	}
 	
 	private void createNextBlock() {
-		GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
-		program.add(cover);
-		GImage next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+		//GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+		//program.add(cover);
+		if (next != null) {
+			System.out.println("next is not nulllllllllll");
+			program.remove(next);
+		}
+		
+		next = new GImage("s.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		switch(board.getNextBlock().getBlockType()) {
 		case T:
 			next = new GImage("t.png", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
@@ -217,10 +217,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	public void showContents() {
 		drawBoard();
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
-		createNextBlock();
-		
 		board.spawnBlock();
-		//add block on screen
+		createNextBlock();
 		
 		gameTimer.start();
 		
