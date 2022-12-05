@@ -67,9 +67,7 @@ public class Game {
 				board.moveActiveBlockLeft();
 			}
 			public void holdBlock() {
-//				if (e.getKeyCode() == KeyEvent.VK_C) {
-//					// TODO
-//				}
+				board.holdBlock();
 			}
 			public void rotateRight() {
 				board.rotateBlockRight();

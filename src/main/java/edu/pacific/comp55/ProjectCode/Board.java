@@ -35,6 +35,8 @@ public class Board {
 	}
 	
 	public void spawnBlock(){
+		canHold = true; // resets hold state of block
+		
 		activeBlock = nextBlock;
 		nextBlock = new Block(Orientation.UP, false, false, 0,0);
 		if (activeBlock.type == BlockType.BAR) {
@@ -194,7 +196,7 @@ public class Board {
 	
 	public void holdBlock() {
 		if (canHold) {
-			if (blockHeld == false) {
+			if (!blockHeld) {
 				heldBlock = activeBlock;
 				removeBlock();
 				addBlock(nextBlock);
@@ -214,9 +216,7 @@ public class Board {
 		// TODO: need to find out how to set boolean canHold back to true after placing a block, if i need a separate canHold boolean function
 	}
 	
-	public void addBlock(Block addMe) {
-		canHold = true; // resets hold state of block
-		
+	public void addBlock(Block addMe) {	
 		activeBlock = addMe;
 		//add addMe to board and arraylist
 		Space[] addMeSpaces = addMe.spacesOccupied();

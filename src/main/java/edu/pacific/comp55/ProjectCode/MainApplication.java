@@ -46,7 +46,9 @@ public class MainApplication extends GraphicsApplication {
 
 	public void run() {
 		timer = new GLabel("timer", 0, 100);
+		score = new GLabel("score", 90, 90);
 		add(timer);
+		add(score);
 		
 		System.out.println("Hello, world!");
 		over = new GameOverPane(this);
@@ -76,14 +78,14 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 		
-		//score.setFont(Font.MONOSPACED);
-		//score.setLocation(90, 90); // not sure just a guesstimate
+		score.setFont(Font.MONOSPACED);
+		score.setLocation(90, 90); // not sure just a guesstimate
 		
-		/*if(board.clearLine() == true) {
+		if (board.clearLine()) {
 			scoreNum+=100;
-		}*/
+		}
 		
-		//score.setLabel("SCORE " + scoreNum);
+		score.setLabel("SCORE " + scoreNum);
 		
 	}
 	
