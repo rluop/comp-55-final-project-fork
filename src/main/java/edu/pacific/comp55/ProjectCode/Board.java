@@ -368,12 +368,12 @@ public class Board {
 //		System.out.println(b);
 		
 		
-		Board b = new Board();
-		b.createNextBlock(Orientation.UP, false, false, 0, 0);
-		b.spawnBlock();
-		System.out.println(b);
-		b.rotateBlockLeft();
-		System.out.println(b);
+//		Board b = new Board();
+//		b.createNextBlock(Orientation.UP, false, false, 0, 0);
+//		b.spawnBlock();
+//		System.out.println(b);
+//		b.rotateBlockLeft();
+//		System.out.println(b);
 		// Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
 		
 		
