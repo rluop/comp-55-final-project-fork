@@ -136,12 +136,18 @@ public class Board {
 	}
 	
 	public void rotateBlockRight() {
+		if (activeBlock.getStartSpace().getRow() == 0) {
+			return;
+		}
 		removeBlock();
 		activeBlock.rotateRight();
 		addBlock(activeBlock);
 	}
 	
 	public void rotateBlockLeft() {
+		if (activeBlock.getStartSpace().getRow() == 0) {
+			return;
+		}
 		removeBlock();
 		activeBlock.rotateLeft();
 		addBlock(activeBlock);
@@ -315,7 +321,7 @@ public class Board {
 	//Board Testing
 	
 	public static void main(String[] args) {
-		/*
+		
 //		Board b = new Board();
 //		b.createNextBlock(Orientation.UP, false, false, 0,0);
 //		b.spawnBlock();
@@ -325,30 +331,15 @@ public class Board {
 		
 		
 		Board b = new Board();
-		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 19,1);
-		Block c = new Block(BlockType.BAR,Orientation.UP, false, false, 19,5);
-		Block d = new Block(BlockType.SQUARE,Orientation.UP, false, false, 19,8);
-		Block e = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
-		Block g = new Block(BlockType.BAR,Orientation.UP, false, false, 18,1);
-		Block h = new Block(BlockType.BAR,Orientation.UP, false, false, 18,5);
-		Block i = new Block(BlockType.BAR,Orientation.UP, false, false, 17,1);
-		Block j = new Block(BlockType.BAR,Orientation.UP, false, false, 17,5);
+		b.createNextBlock(Orientation.UP, false, false, 0, 0);
+		b.spawnBlock();
+		b.rotateBlockRight();
 		
+		// Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
 		
-		b.addBlock(a);
-		b.addBlock(c);
-		b.addBlock(d);
-		b.addBlock(e);
-		b.addBlock(g);
-		b.addBlock(h);
-		b.addBlock(i);
-		b.addBlock(j);
-		
+
+	
 		System.out.println(b);
-		b.clearLine();
-		b.clearLine();
-		b.clearLine();
-		System.out.println(b);
-		*/
+		
 	}
 }
