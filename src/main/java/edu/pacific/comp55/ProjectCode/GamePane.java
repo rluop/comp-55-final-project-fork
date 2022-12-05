@@ -16,7 +16,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage game;
 	
 	private Board board;
-	private Timer gameTimer;
+	public Timer gameTimer;
 	private int counter;
 	private int speed = 1000;
 	private GImage next;
@@ -58,6 +58,13 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_Z) {
 			rotateLeft();
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+				//System.out.println("esc pressed");
+				program.pauseSound();
+				program.stopTime();
+				program.switchToPause();
+				gameTimer.stop();
 		}
 	}
 
@@ -108,6 +115,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 				board.activeBlockSat = false;
 			}
 		}
+
 		//graphically print the board
 		graphicBoard();
 		
