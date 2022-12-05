@@ -69,15 +69,15 @@ public class MainApplication extends GraphicsApplication {
 		timer.setLocation(90, 75);
 		timer.sendToFront();
 		timer.setLabel(min/60 + ":" + sec);
-		/*if(sec <= 9) {
+		if(sec <= 9) {
 			timer.setLabel(min/60 + ":0" + sec); // makes the timer have a zero before single integers like 0:05
-		}*/ 									// Ralph, I commented it out because maybe you had a different method
+		}
 		if(sec == 59) {
 			sec = 0;
 		}
 		
 		//score.setFont(Font.MONOSPACED);
-		//score.setLocation(90, 190); // not sure just a guesstimate
+		//score.setLocation(90, 90); // not sure just a guesstimate
 		
 		/*if(board.clearLine() == true) {
 			scoreNum+=100;
