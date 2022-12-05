@@ -108,7 +108,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 				board.activeBlockSat = false;
 			}
 		}
-		//System.out.println(board);
 		//graphically print the board
 		graphicBoard();
 		
