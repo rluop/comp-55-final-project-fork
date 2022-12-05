@@ -16,7 +16,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage game;
 	
 	private Board board;
-	private Timer gameTimer;
+	public Timer gameTimer;
 	private int counter;
 	private int speed = 1000;
 	private GImage next;
@@ -113,6 +113,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 				board.activeBlockSat = false;
 			}
 		}
+
 		//graphically print the board
 		graphicBoard();
 		
