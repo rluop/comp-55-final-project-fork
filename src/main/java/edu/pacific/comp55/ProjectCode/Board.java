@@ -113,14 +113,13 @@ public class Board {
 	}
 	
 	public void dropBlocks() {
-		System.out.println(this);
 		for (int j = 0; j < 10; j++) {
 			int lastInd = 19;
 			for (int i = board.length - 1; i > 0; i--) {
 				if (board[lastInd][j] != null && lastInd > 0) {
 					lastInd -= 1;
 				}
-				if (board[i][j] != null && i != 19) {
+				if (board[i][j] != null && i != 19 && lastInd > i) {
 					board[lastInd][j] = board[i][j];
 					board[i][j] = null;
 					lastInd -= 1;
@@ -314,8 +313,9 @@ public class Board {
 	}
 	
 	//Board Testing
-	/*
+	
 	public static void main(String[] args) {
+		/*
 //		Board b = new Board();
 //		b.createNextBlock(Orientation.UP, false, false, 0,0);
 //		b.spawnBlock();
@@ -331,8 +331,8 @@ public class Board {
 		Block e = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
 		Block g = new Block(BlockType.BAR,Orientation.UP, false, false, 18,1);
 		Block h = new Block(BlockType.BAR,Orientation.UP, false, false, 18,5);
-		Block i = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
-		Block j = new Block(BlockType.SQUARE,Orientation.UP, false, false, 17,8);
+		Block i = new Block(BlockType.BAR,Orientation.UP, false, false, 17,1);
+		Block j = new Block(BlockType.BAR,Orientation.UP, false, false, 17,5);
 		
 		
 		b.addBlock(a);
@@ -341,10 +341,14 @@ public class Board {
 		b.addBlock(e);
 		b.addBlock(g);
 		b.addBlock(h);
+		b.addBlock(i);
+		b.addBlock(j);
 		
 		System.out.println(b);
 		b.clearLine();
+		b.clearLine();
+		b.clearLine();
 		System.out.println(b);
+		*/
 	}
-	*/
 }
