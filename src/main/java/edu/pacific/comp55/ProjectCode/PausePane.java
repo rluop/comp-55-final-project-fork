@@ -9,10 +9,11 @@ import edu.pacific.comp55.starter.GraphicsPane;
 
 public class PausePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
-	private GamePane game;									// all of the GraphicsProgram calls
+									// all of the GraphicsProgram calls
 	private GImage pause;
 	private GButton resume;
 	private GButton menu;
+	public boolean paused = true;
 
 	public PausePane(MainApplication app) {
 		this.program = app;
@@ -52,8 +53,8 @@ public class PausePane extends GraphicsPane {
 		}else if(obj == resume) {
 			program.playSound();
 			program.startTime();
+			paused = false;
 			program.switchToGame();
-			game.gameTimer.start();
 		}
 	}
 }

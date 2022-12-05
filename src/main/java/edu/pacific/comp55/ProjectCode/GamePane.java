@@ -21,6 +21,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private int speed = 1000;
 	private GImage next;
 	public boolean gamePaused = false;
+	public boolean justPaused = false;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -99,6 +100,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 	void playGame() {
 		counter++;
+		justPaused = false;
 		
 		if (board.fullBoard()) {
 			System.out.println("game over!");
@@ -108,14 +110,14 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		
 		if(gamePaused) {
+			System.out.println("game is paused");
+			justPaused = true;
 			return;
 		}
 		
 		if(counter % 2 == 0) {
 			board.moveActiveBlockDown();
-			System.out.println("move");
 			if(board.activeBlockSat) {
-				System.out.println("update");
 				createNextBlock();
 				board.activeBlockSat = false;
 			}
@@ -227,13 +229,17 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	@Override
 	public void showContents() {
+		if(board.fullBoard()) {
+			this.board = new Board();
+		}
 		drawBoard();
-		board.createNextBlock(Orientation.UP, false, false, 0,0);
-		board.spawnBlock();
-		createNextBlock();
+		if(!justPaused) {
+			board.createNextBlock(Orientation.UP, false, false, 0,0);
+			board.spawnBlock();
+			createNextBlock();
+		}
 		
-		gameTimer.start();
-		
+		gameTimer.start();	
 	}
 
 	@Override

@@ -115,6 +115,7 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGame() {
+		game.gamePaused = false;
 		switchToScreen(game);
 	}
 	
