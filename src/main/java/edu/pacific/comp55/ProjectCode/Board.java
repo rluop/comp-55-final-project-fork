@@ -164,17 +164,27 @@ public class Board {
 	}
 	
 	public void rotateBlockLeft() {
-		if (activeBlock.getBlockType() == BlockType.LEFTS && activeBlock.getStartSpace().getRow() == 0) {
-			return;
+		if (activeBlock.getStartSpace().getRow() == 0) {
+			if (activeBlock.getBlockType() == BlockType.BAR) {
+				return;
+			}
+			else if (activeBlock.getBlockType() == BlockType.RIGHTS) {
+				return;
+			}
+			else if (activeBlock.getBlockType() == BlockType.LEFTS) {
+				return;
+			}
 		}
-		else if (activeBlock.getBlockType() == BlockType.LEFTL && activeBlock.getStartSpace().getRow() == 1) {
-			return;
-		}
-		else if (activeBlock.getBlockType() == BlockType.BAR && (activeBlock.getStartSpace().getRow() == 0 || activeBlock.getStartSpace().getRow() == 1)) {
-			return;
-		}
-		else if (activeBlock.getBlockType() == BlockType.RIGHTS && activeBlock.getStartSpace().getRow() == 0) {
-			return;
+		else if (activeBlock.getStartSpace().getRow() == 1) {
+			if (activeBlock.getBlockType() == BlockType.BAR) {
+				return;
+			}
+			else if(activeBlock.getBlockType() == BlockType.LEFTL) {
+				return;
+			}
+			else if (activeBlock.getBlockType() == BlockType.RIGHTL && activeBlock.getOrientation() == Orientation.DOWN) {
+				return;
+			}
 		}
 		removeBlock();
 		activeBlock.rotateLeft();
@@ -361,8 +371,6 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0, 0);
 		b.spawnBlock();
-		System.out.println(b);
-		b.moveActiveBlockDown();
 		System.out.println(b);
 		b.rotateBlockLeft();
 		System.out.println(b);
