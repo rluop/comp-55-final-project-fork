@@ -87,6 +87,10 @@ public class MainApplication extends GraphicsApplication {
 		
 	}
 	
+	public int getScore() {
+		return scoreNum;
+	}
+	
 	public void startTime() {
 		time.start();
 	}
