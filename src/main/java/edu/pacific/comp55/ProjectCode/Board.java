@@ -249,6 +249,7 @@ public class Board {
 		else if(activeBlock.canMoveDown()==2) {
 			System.out.println("block placed!");
 			activeBlockSat = true;
+			activeBlock = null;
 			spawnBlock();
 			return false;
 		}
@@ -257,6 +258,7 @@ public class Board {
 			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
 				System.out.println("block placed!");
+				activeBlock = null;
 				spawnBlock();
 				return false;
 			}
