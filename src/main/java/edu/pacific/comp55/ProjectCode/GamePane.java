@@ -227,6 +227,9 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	@Override
 	public void showContents() {
+		if(board.fullBoard()) {
+			this.board = new Board();
+		}
 		drawBoard();
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();

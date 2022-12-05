@@ -14,7 +14,7 @@ public class MenuPane extends GraphicsPane {
 										// all of the GraphicsProgram calls
 	private GButton rect;
 	private GImage menu;
-	
+	private GamePane game;
 	private GButton play;
 	private GButton quit;
 	
