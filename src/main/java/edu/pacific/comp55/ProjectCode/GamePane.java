@@ -57,6 +57,11 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_Z) {
 			rotateLeft();
+		}else if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			//System.out.println("esc pressed");
+			program.pauseSound();
+			program.stopTime();
+			program.switchToPause();
 		}
 	}
 
@@ -231,18 +236,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 	}
 	
-	/*
-	@Override
-	public void keyPressed(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-		if(keyCode == KeyEvent.VK_ESCAPE) {
-			//System.out.println("esc pressed");
-			program.pauseSound();
-			program.stopTime();
-			program.switchToPause();
-		}
-	}
-	*/
 	
 	
 }
