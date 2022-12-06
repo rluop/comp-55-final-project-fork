@@ -61,6 +61,8 @@ public class MenuPane extends GraphicsPane {
 			program.switchToSome();
 		}else if(obj == play) {
 			//program.restartTime();
+			program.min = 0;
+			program.sec = 0;
 			program.playSound();
 			program.startTime();
 			program.switchToGame();

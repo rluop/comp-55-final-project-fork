@@ -31,8 +31,8 @@ public class MainApplication extends GraphicsApplication {
 	private GLabel timer;
 	private GLabel score;
 	
-	private int min = 0;
-	private int sec = 0;
+	public int min = 0;
+	public int sec = 0;
 	private int scoreNum = 0;
 	
 	private Timer time = new Timer(1000, this);

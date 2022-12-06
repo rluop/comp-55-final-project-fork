@@ -22,6 +22,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage next;
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
+	public boolean newGame = false;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -238,7 +239,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			board.spawnBlock();
 			createNextBlock();
 		}
-		
 		gameTimer.start();	
 	}
 
