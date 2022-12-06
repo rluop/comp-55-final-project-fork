@@ -158,7 +158,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
-					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
+					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="T") {
 					px = new GImage("tpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
@@ -176,7 +176,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 					px = new GImage("barpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right L") {
-					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
+					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}				
 				program.add(px);
 			}
