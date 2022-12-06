@@ -301,6 +301,7 @@ public class Board {
 	public boolean moveActiveBlockLeft() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveLeft()) {
+			//System.out.println("can't move left");
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
@@ -321,6 +322,7 @@ public class Board {
 	public boolean moveActiveBlockRight() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveRight()) {
+			//System.out.println("can't move right");
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
@@ -379,15 +381,15 @@ public class Board {
 //		b.fasterFall();
 //		b.rotateBlockLeft();
 //		System.out.println(b);
-		
-		
+//		
+//		
 //		Board b = new Board();
 //		b.createNextBlock(Orientation.UP, false, false, 0, 0);
 //		b.spawnBlock();
 //		System.out.println(b);
 //		b.rotateBlockLeft();
 //		System.out.println(b);
-		// Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
+//		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
 		
 		
 	}
