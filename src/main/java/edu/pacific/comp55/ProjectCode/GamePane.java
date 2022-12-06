@@ -192,7 +192,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		//GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		//program.add(cover);
 		if (next != null) {
-			System.out.println("next is not nulllllllllll");
 			program.remove(next);
 		}
 		
