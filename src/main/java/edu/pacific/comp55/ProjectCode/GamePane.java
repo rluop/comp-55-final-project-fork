@@ -229,8 +229,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	@Override
 	public void showContents() {
-		if(board.fullBoard()) {
+		if(board.fullBoard() || newGame) {
 			this.board = new Board();
+			newGame = false;
+			justPaused = false;
 		}
 		drawBoard();
 		if(!justPaused) {
@@ -238,6 +240,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			board.spawnBlock();
 			createNextBlock();
 		}
+		gamePaused = false;
 		gameTimer.start();	
 	}
 

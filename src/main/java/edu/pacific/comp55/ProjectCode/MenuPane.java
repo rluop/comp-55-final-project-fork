@@ -63,6 +63,7 @@ public class MenuPane extends GraphicsPane {
 			//program.restartTime();
 			program.min = 0;
 			program.sec = 0;
+			program.newGame = true;
 			program.playSound();
 			program.startTime();
 			program.switchToGame();

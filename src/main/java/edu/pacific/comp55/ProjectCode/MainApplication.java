@@ -34,6 +34,7 @@ public class MainApplication extends GraphicsApplication {
 	public int min = 0;
 	public int sec = 0;
 	private int scoreNum = 0;
+	public boolean newGame = false;
 	
 	private Timer time = new Timer(1000, this);
 	
@@ -58,8 +59,6 @@ public class MainApplication extends GraphicsApplication {
 		setupInteractions();
 		switchToMenu();
 	}
-	
-	
 	
 	public void actionPerformed(ActionEvent e) {
 		min++;
@@ -114,6 +113,9 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToGame() {
 		game.gamePaused = false;
+		if(newGame) {
+			game.newGame = true;
+		}
 		switchToScreen(game);
 	}
 	
