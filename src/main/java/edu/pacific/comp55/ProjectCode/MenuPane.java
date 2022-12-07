@@ -72,15 +72,4 @@ public class MenuPane extends GraphicsPane {
 		}
 	}
 	
-	/*@Override
-	public void keyPressed(KeyEvent e) {
-		GObject obj = program.getElementAt(e.getID(), e.getID());
-		int keyCode = e.getKeyCode();
-		//System.out.println(keyCode);
-		if(keyCode == 10) {
-			if (obj == rect) {
-				program.switchToSome();
-			}
-		}
-	}*/
 }

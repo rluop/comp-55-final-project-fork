@@ -49,6 +49,9 @@ public class MainApplication extends GraphicsApplication {
 		timer = new GLabel("timer", 0, 100);
 		add(timer);
 		
+		score = new GLabel("Score", 10, 100);
+		//add(score);
+		
 		System.out.println("Hello, world!");
 		over = new GameOverPane(this);
 		quit = new QuitPane(this);
@@ -75,15 +78,20 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 		
-		//score.setFont(Font.MONOSPACED);
-		//score.setLocation(90, 90); // not sure just a guesstimate
+		/*score.setFont(Font.MONOSPACED);
+		score.setLocation(90, 90);
 		
-		/*if(board.clearLine() == true) {
+		if(board.clearLine() == true) {
 			scoreNum+=100;
-		}*/
+		}
 		
-		//score.setLabel("SCORE " + scoreNum);
+		score.sendToFront();
+		score.setLabel("SCORE " + scoreNum);*/
 		
+	}
+	
+	public void addScore() { // idk man supposed to add score on game pane
+		add(score);
 	}
 	
 	public int getScore() {
@@ -174,4 +182,5 @@ public class MainApplication extends GraphicsApplication {
 	public static void main(String[] args) {
 		new MainApplication().start();
 	}
+	
 }
