@@ -159,6 +159,15 @@ public class Board {
 				return;
 			}
 		}
+		
+		if (activeBlock.getBlockType() == BlockType.LEFTL && (activeBlock.getStartSpace().getCol() == 9 || activeBlock.getStartSpace().getCol() == 8) && activeBlock.getOrientation() == Orientation.LEFT) {
+			return;
+		}
+//		if (activeBlock.getBlockType() == BlockType.RIGHTL)
+		if ((activeBlock.getBlockType() == BlockType.BAR && activeBlock.getStartSpace().getCol() == 9) || (activeBlock.getBlockType() == BlockType.BAR && activeBlock.getOrientation() == Orientation.LEFT && activeBlock.getStartSpace().getCol() == 8)) {
+			return;
+		}
+		
 		removeBlock();
 		activeBlock.rotateRight();
 		addBlock(activeBlock);
@@ -187,6 +196,11 @@ public class Board {
 				return;
 			}
 		}
+		
+		if (activeBlock.getBlockType() == BlockType.LEFTL && activeBlock.getStartSpace().getCol() == 9) {
+			return;
+		}
+		
 		removeBlock();
 		activeBlock.rotateLeft();
 		addBlock(activeBlock);
