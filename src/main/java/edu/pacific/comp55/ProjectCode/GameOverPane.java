@@ -15,7 +15,7 @@ public class GameOverPane extends GraphicsPane {
 
 	public GameOverPane(MainApplication app) {
 		this.program = app;
-		gameOver = new GImage("gameover.png", 0, 0);
+		gameOver = new GImage("gameover1.png", 0, 0);
 		gameOver.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 		
 		menu = new GButton("menu", 400, 415, 240, 100); // TODO edit button location
