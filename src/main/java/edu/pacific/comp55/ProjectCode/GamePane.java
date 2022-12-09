@@ -18,8 +18,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private Board board;
 	public Timer gameTimer;
 	private int counter;
-	private int speed = 1000;
+	private int speed = 500;
+	private int scoreNum = 0;
 	private GImage next;
+	private GImage heldBlock;
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
 	public boolean newGame = false;
@@ -89,6 +91,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	}
 	public void holdBlock() {
 		board.holdBlock();
+		displayHoldBlock();
 //		if (e.getKeyCode() == KeyEvent.VK_C) {
 //			// TODO
 //		}
@@ -130,7 +133,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		//graphically print the board
 		graphicBoard();
 		
-		if(counter % 10 == 0 && speed > 100) {
+		if(counter % 20 == 0 && speed > 100) {
 			gameTimer.stop();
 			speed -= 50;
 			gameTimer = new Timer(speed, this);
@@ -139,8 +142,13 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		while(board.canClearLine() != -1) {
 			board.clearLine();
+			scoreNum+=100;
 			graphicBoard();
 		}
+	}
+	
+	public int getScore() {
+		return scoreNum;
 	}
 	
 	public void drawBoard() {
@@ -223,6 +231,38 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			break;
 		}
 		program.add(next);
+	}
+	
+	private void displayHoldBlock() {
+		if (heldBlock != null) {
+			program.remove(heldBlock);
+		}
+		
+		heldBlock = new GImage("s.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+		switch(board.getHoldBlock().getBlockType()) {
+		case T:
+			heldBlock = new GImage("t.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case SQUARE:
+			heldBlock = new GImage("square.jpg", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case BAR:
+			heldBlock = new GImage("bar.jpg", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case RIGHTS:
+			heldBlock = new GImage("s.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case LEFTS:
+			heldBlock = new GImage("z.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case RIGHTL:
+			heldBlock = new GImage("l.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		case LEFTL:
+			heldBlock = new GImage("lm.png", program.WINDOW_WIDTH - 1000, program.WINDOW_HEIGHT / 2);
+			break;
+		}
+		program.add(heldBlock);
 	}
 	
 

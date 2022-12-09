@@ -302,6 +302,10 @@ public class Board {
 		// TODO: need to find out how to set boolean canHold back to true after placing a block, if i need a separate canHold boolean function
 	}
 	
+	public Block getHoldBlock() {
+		return heldBlock;
+	}
+	
 	public void addBlock(Block addMe) {	
 		activeBlock = addMe;
 		//add addMe to board and arraylist
