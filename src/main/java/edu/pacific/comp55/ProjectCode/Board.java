@@ -75,7 +75,6 @@ public class Board {
 		canHold = true; // resets hold state of block
 		
 		activeBlock = b;
-		nextBlock = new Block(Orientation.UP, false, false, 0,0);
 		if (activeBlock.type == BlockType.BAR) {
 			activeBlock.setStartSpace(0,4);
 		}
