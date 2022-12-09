@@ -433,6 +433,10 @@ public class Board {
 	public Block getActiveBlock() {
 		return activeBlock;
 	}
+	
+	public Block getHeldBlock() {
+		return heldBlock;
+	}
 
 
 	public void setActiveBlock(Block activeBlock) {
@@ -458,12 +462,13 @@ public class Board {
 	
 	public static void main(String[] args) {
 		
-//		Board b = new Board();
-//		b.createNextBlock(Orientation.UP, false, false, 0,0);
-//		b.spawnBlock();
-//		b.fasterFall();
-//		b.rotateBlockLeft();
-//		System.out.println(b);
+		Board b = new Board();
+		b.createNextBlock(Orientation.UP, false, false, 0,0);
+		b.spawnBlock();
+		System.out.println(b);
+		b.holdBlock();
+		System.out.println();
+		System.out.println(b);
 //		
 //		
 //		Board b = new Board();
