@@ -71,6 +71,43 @@ public class Board {
 		} 
 	}
 	
+	public void spawnHoldBlock(Block b){
+		canHold = true; // resets hold state of block
+		
+		activeBlock = b;
+		nextBlock = new Block(Orientation.UP, false, false, 0,0);
+		if (activeBlock.type == BlockType.BAR) {
+			activeBlock.setStartSpace(0,4);
+		}
+		else if(activeBlock.type == BlockType.LEFTL){
+			activeBlock.setStartSpace(1, 3);
+		}
+		else if (activeBlock.type == BlockType.RIGHTL) {
+			activeBlock.setStartSpace(1,5);
+		}
+		else if (activeBlock.type == BlockType.LEFTS) {
+			activeBlock.setStartSpace(0, 4);
+		}
+		else if (activeBlock.type == BlockType.RIGHTS) {
+			activeBlock.setStartSpace(0, 4);
+		}
+		else if (activeBlock.type == BlockType.SQUARE) {
+			activeBlock.setStartSpace(1, 4);
+		}
+		else { // T block
+			activeBlock.setStartSpace(1,4);
+		}
+		
+		System.out.println(activeBlock);
+		blocksOnBoard.add(activeBlock);
+		
+		Space[] spaces = new Space[4];
+		spaces = activeBlock.spacesOccupied();
+		for (int i = 0; i < 4; i++) {
+			board[spaces[i].getRow()][spaces[i].getCol()] = activeBlock;
+		} 
+	}
+	
 	public Block getBlock(Space s) {
 		//nora: this function will be the equivalent of getVehicle in trafficjam, takes a space and returns whether there's a block there or not
 		return board[s.getRow()][s.getCol()];
@@ -250,10 +287,11 @@ public class Board {
 			}
 			else {
 				Block tempBlock;
-				
+				removeBlock();
 				tempBlock = activeBlock;
 				activeBlock = heldBlock;
 				heldBlock = tempBlock;
+				this.spawnHoldBlock(heldBlock);
 			}
 			canHold = false;
 		}

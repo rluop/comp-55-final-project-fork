@@ -88,6 +88,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		board.moveActiveBlockLeft();
 	}
 	public void holdBlock() {
+		board.holdBlock();
 //		if (e.getKeyCode() == KeyEvent.VK_C) {
 //			// TODO
 //		}
