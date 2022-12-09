@@ -106,6 +106,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		if (board.fullBoard()) {
 			System.out.println("game over!");
 			gameTimer.stop();
+			program.stopTime();
+			program.stopSound();
 			program.switchToGameOver();
 			return;
 		}
