@@ -34,7 +34,7 @@ public class MainApplication extends GraphicsApplication {
 	
 	public int min = 0;
 	public int sec = 0;
-	private int scoreNum = 0;
+	public int scoreNum = 0;
 	public boolean newGame = false;
 	
 	private Timer time = new Timer(1000, this);
@@ -49,14 +49,12 @@ public class MainApplication extends GraphicsApplication {
 	public void run() {
 		timer = new GLabel("timer", 0, 100);
 		scoreLabel = new GLabel("SCORE: ", 20, 100);
-		score = new GLabel("Score", 10, 100);
+		score = new GLabel(Integer.toString(scoreNum), 10, 100);
+		
 		add(timer);
 		add(scoreLabel);
 		add(score);
-		
-		//score = new GLabel("Score", 10, 100);
-		//add(score);
-		
+	
 		System.out.println("Hello, world!");
 		over = new GameOverPane(this);
 		quit = new QuitPane(this);
@@ -69,13 +67,15 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		// timer
 		min++;
 		sec++;
 		
 		timer.setFont(Font.MONOSPACED);
-		timer.setLocation(90, 75);
+		timer.setLocation(85, 75);
 		timer.sendToFront();
 		timer.setLabel(min/60 + ":" + sec);
+		
 		if(sec <= 9) {
 			timer.setLabel(min/60 + ":0" + sec); // makes the timer have a zero before single integers like 0:05
 		}
@@ -83,36 +83,23 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 		
+		// scoreLabel
+		
+		scoreLabel.setFont(Font.MONOSPACED);
+		// score.setColor(Color.WHITE);
+		scoreLabel.setLocation(40, 110);
+		scoreLabel.sendToFront();
+		
+		// score
+		
 		score.setFont(Font.MONOSPACED);
 		// score.setColor(Color.WHITE);
-		score.setLocation(25, 110); // not sure just a guesstimate
+		score.setLocation(85, 110);
 		score.sendToFront();
 		
-//<<<<<<< HEAD
-//=======
-		/*score.setFont(Font.MONOSPACED);
-		score.setLocation(90, 90);
->>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
+		scoreNum = game.getScore();
+		score.setLabel(Integer.toString(scoreNum));
 		
-<<<<<<< HEAD
-		if (board.clearLine()) {
-=======
-		if(board.clearLine() == true) {
->>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
-			scoreNum+=100;
-		}
-		
-<<<<<<< HEAD
-		score.setLabel("SCORE " + scoreNum);
-=======
-		score.sendToFront();
-		score.setLabel("SCORE " + scoreNum);*/
-//>>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
-		
-	}
-	
-	public void addScore() { // idk man supposed to add score on game pane
-		add(score);
 	}
 	
 	public int getScore() {

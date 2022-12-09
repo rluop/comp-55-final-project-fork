@@ -22,6 +22,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private int scoreNum = 0;
 	private GImage next;
 	private GImage heldBlock;
+	private GImage hold;
+
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
 	public boolean newGame = false;
@@ -57,6 +59,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_C) {
 			holdBlock();
+			// createHeldBlock();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_UP) {
 			rotateRight();
@@ -264,6 +267,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		program.add(heldBlock);
 	}
+
 	
 
 	public void actionPerformed( ActionEvent e) {
