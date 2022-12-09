@@ -295,7 +295,7 @@ public class Board {
 				tempBlock = activeBlock;
 				activeBlock = heldBlock;
 				heldBlock = tempBlock;
-				this.spawnHoldBlock(heldBlock);
+				this.spawnHoldBlock(activeBlock);
 			}
 			canHold = false;
 		}
@@ -468,16 +468,21 @@ public class Board {
 		
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
-		Block a = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 1);
-		Block c = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 5);
-		Block d = new Block(BlockType.SQUARE, Orientation.UP, false, false, 19, 8);
-		b.addBlock(a);
-		b.addBlock(c);
-		b.addBlock(d);
-		System.out.println(b);
 		b.spawnBlock();
-		b.clearLine();
-		System.out.println(b);
+		System.out.println(b.getHeldBlock());
+		b.holdBlock();
+		b.instantFall();
+		System.out.println(b.getHeldBlock());
+		b.holdBlock();
+		b.instantFall();
+		System.out.println(b.getHeldBlock());
+		b.holdBlock();
+		b.instantFall();
+		System.out.println(b.getHeldBlock());
+		b.holdBlock();
+		b.instantFall();
+		
+		
 //		
 //		
 //		Board b = new Board();
