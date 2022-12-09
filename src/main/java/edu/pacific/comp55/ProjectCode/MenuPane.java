@@ -61,6 +61,9 @@ public class MenuPane extends GraphicsPane {
 			program.switchToSome();
 		}else if(obj == play) {
 			//program.restartTime();
+			program.min = 0;
+			program.sec = 0;
+			program.newGame = true;
 			program.playSound();
 			program.startTime();
 			program.switchToGame();
@@ -69,15 +72,4 @@ public class MenuPane extends GraphicsPane {
 		}
 	}
 	
-	/*@Override
-	public void keyPressed(KeyEvent e) {
-		GObject obj = program.getElementAt(e.getID(), e.getID());
-		int keyCode = e.getKeyCode();
-		//System.out.println(keyCode);
-		if(keyCode == 10) {
-			if (obj == rect) {
-				program.switchToSome();
-			}
-		}
-	}*/
 }

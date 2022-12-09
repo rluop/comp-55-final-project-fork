@@ -22,6 +22,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage next;
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
+	public boolean newGame = false;
 
 	public GamePane(MainApplication app) {
 		this.program = app;
@@ -105,6 +106,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		if (board.fullBoard()) {
 			System.out.println("game over!");
 			gameTimer.stop();
+			program.stopTime();
+			program.stopSound();
 			program.switchToGameOver();
 			return;
 		}
@@ -157,7 +160,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 					px = new GImage("emptypx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Left L") {
-					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
+					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="T") {
 					px = new GImage("tpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
@@ -175,7 +178,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 					px = new GImage("barpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}
 				else if(addMe[i][j].getBlockType().toString()=="Right L") {
-					px = new GImage("lmpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
+					px = new GImage("lpx.jpg", program.WINDOW_WIDTH - 400 - (31*j), program.WINDOW_HEIGHT - 60 - (31*i));
 				}				
 				program.add(px);
 			}
@@ -191,7 +194,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		//GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
 		//program.add(cover);
 		if (next != null) {
-			System.out.println("next is not nulllllllllll");
 			program.remove(next);
 		}
 		
@@ -229,8 +231,10 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	@Override
 	public void showContents() {
-		if(board.fullBoard()) {
+		if(board.fullBoard() || newGame) {
 			this.board = new Board();
+			newGame = false;
+			justPaused = false;
 		}
 		drawBoard();
 		if(!justPaused) {
@@ -238,7 +242,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			board.spawnBlock();
 			createNextBlock();
 		}
-		
+		gamePaused = false;
 		gameTimer.start();	
 	}
 

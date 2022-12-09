@@ -161,6 +161,15 @@ public class Board {
 				return;
 			}
 		}
+		
+		if (activeBlock.getBlockType() == BlockType.LEFTL && (activeBlock.getStartSpace().getCol() == 9 || activeBlock.getStartSpace().getCol() == 8) && activeBlock.getOrientation() == Orientation.LEFT) {
+			return;
+		}
+//		if (activeBlock.getBlockType() == BlockType.RIGHTL)
+		if ((activeBlock.getBlockType() == BlockType.BAR && activeBlock.getStartSpace().getCol() == 9) || (activeBlock.getBlockType() == BlockType.BAR && activeBlock.getOrientation() == Orientation.LEFT && activeBlock.getStartSpace().getCol() == 8)) {
+			return;
+		}
+		
 		removeBlock();
 		activeBlock.rotateRight();
 		addBlock(activeBlock);
@@ -189,6 +198,11 @@ public class Board {
 				return;
 			}
 		}
+		
+		if (activeBlock.getBlockType() == BlockType.LEFTL && activeBlock.getStartSpace().getCol() == 9) {
+			return;
+		}
+		
 		removeBlock();
 		activeBlock.rotateLeft();
 		addBlock(activeBlock);
@@ -301,26 +315,7 @@ public class Board {
 	public boolean moveActiveBlockLeft() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveLeft()) {
-			return false;
-		}
-		Space[] spacesOccupied = activeBlock.spacesOccupied();
-		for(int i = 0; i<spacesOccupied.length; i++) {
-			Space s = new Space(spacesOccupied[i].getRow(), spacesOccupied[i].getCol()+1);
-			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("there's already a block there!");
-				return false;
-			}
-		}
-		removeBlock();
-		//now move it!
-		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()+1);
-		addBlock(activeBlock);
-		return true; // nora
-	}
-	
-	public boolean moveActiveBlockRight() {
-		//check if it can move considering the bounds of the board
-		if(!activeBlock.canMoveRight()) {
+			//System.out.println("can't move left");
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
@@ -332,8 +327,29 @@ public class Board {
 			}
 		}
 		removeBlock();
-		//now move it!!
+		//now move it!
 		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()-1);
+		addBlock(activeBlock);
+		return true; // nora
+	}
+	
+	public boolean moveActiveBlockRight() {
+		//check if it can move considering the bounds of the board
+		if(!activeBlock.canMoveRight()) {
+			//System.out.println("can't move right");
+			return false;
+		}
+		Space[] spacesOccupied = activeBlock.spacesOccupied();
+		for(int i = 0; i<spacesOccupied.length; i++) {
+			Space s = new Space(spacesOccupied[i].getRow(), spacesOccupied[i].getCol()+1);
+			if(getBlock(s) != null && getBlock(s) != activeBlock) {
+				System.out.println("there's already a block there!");
+				return false;
+			}
+		}
+		removeBlock();
+		//now move it!!
+		activeBlock = new Block(activeBlock.type, activeBlock.getOrientation(), activeBlock.isRock(), activeBlock.getCantRotatePhase(), activeBlock.getStartSpace().getRow(), activeBlock.getStartSpace().getCol()+1);
 		addBlock(activeBlock);
 		return true; // nora
 	}
@@ -379,15 +395,15 @@ public class Board {
 //		b.fasterFall();
 //		b.rotateBlockLeft();
 //		System.out.println(b);
-		
-		
+//		
+//		
 //		Board b = new Board();
 //		b.createNextBlock(Orientation.UP, false, false, 0, 0);
 //		b.spawnBlock();
 //		System.out.println(b);
 //		b.rotateBlockLeft();
 //		System.out.println(b);
-		// Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
+//		Block a = new Block(BlockType.BAR,Orientation.UP, false, false, 5,5);
 		
 		
 	}

@@ -88,7 +88,7 @@ public class Block {
 		Space[] returnMe = spacesOccupied();
 		for(int i = 0; i<returnMe.length; i++) {
 			//each col +1 when we move right, bounds check first
-			if(returnMe[i].getCol()+1 > 10) {
+			if(returnMe[i].getCol()+1 > 9) {
 				System.out.println("move out of bounds!");
 				return false;
 			}

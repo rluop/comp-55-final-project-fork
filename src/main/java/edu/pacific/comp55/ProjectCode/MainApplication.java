@@ -31,9 +31,10 @@ public class MainApplication extends GraphicsApplication {
 	private GLabel timer;
 	private GLabel score;
 	
-	private int min = 0;
-	private int sec = 0;
+	public int min = 0;
+	public int sec = 0;
 	private int scoreNum = 0;
+	public boolean newGame = false;
 	
 	private Timer time = new Timer(1000, this);
 	
@@ -50,6 +51,9 @@ public class MainApplication extends GraphicsApplication {
 		add(timer);
 		add(score);
 		
+		score = new GLabel("Score", 10, 100);
+		//add(score);
+		
 		System.out.println("Hello, world!");
 		over = new GameOverPane(this);
 		quit = new QuitPane(this);
@@ -60,8 +64,6 @@ public class MainApplication extends GraphicsApplication {
 		setupInteractions();
 		switchToMenu();
 	}
-	
-	
 	
 	public void actionPerformed(ActionEvent e) {
 		min++;
@@ -78,15 +80,33 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 		
+//<<<<<<< HEAD
 		score.setFont(Font.MONOSPACED);
 		score.setLocation(90, 90); // not sure just a guesstimate
+//=======
+		/*score.setFont(Font.MONOSPACED);
+		score.setLocation(90, 90);
+>>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
 		
+<<<<<<< HEAD
 		if (board.clearLine()) {
+=======
+		if(board.clearLine() == true) {
+>>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
 			scoreNum+=100;
 		}
 		
+<<<<<<< HEAD
 		score.setLabel("SCORE " + scoreNum);
+=======
+		score.sendToFront();
+		score.setLabel("SCORE " + scoreNum);*/
+//>>>>>>> branch 'main' of https://github.com/COMP55Fall2022/final-project-group-3-near.git
 		
+	}
+	
+	public void addScore() { // idk man supposed to add score on game pane
+		add(score);
 	}
 	
 	public int getScore() {
@@ -116,6 +136,9 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToGame() {
 		game.gamePaused = false;
+		if(newGame) {
+			game.newGame = true;
+		}
 		switchToScreen(game);
 	}
 	
@@ -174,4 +197,5 @@ public class MainApplication extends GraphicsApplication {
 	public static void main(String[] args) {
 		new MainApplication().start();
 	}
+	
 }
