@@ -153,13 +153,17 @@ public class Board {
 	}
 	
 	public void dropBlocks() {
+		Space[] spaces = activeBlock.spacesOccupied();
 		for (int j = 0; j < 10; j++) {
 			int lastInd = 19;
 			for (int i = board.length - 1; i > 0; i--) {
+				if ((i == spaces[0].getRow() && j == spaces[0].getCol()) || (i == spaces[1].getRow() && j == spaces[1].getCol()) || (i == spaces[2].getRow() && j == spaces[2].getCol()) || (i == spaces[3].getRow() && j == spaces[3].getCol())) {
+					continue;
+				}
 				if (board[lastInd][j] != null && lastInd > 0) {
 					lastInd -= 1;
 				}
-				if (board[i][j] != null && i != 19 && i != 0 && i != 1 && lastInd > i) {
+				if (board[i][j] != null && i != 19 && lastInd > i) {
 					board[lastInd][j] = board[i][j];
 					board[i][j] = null;
 					lastInd -= 1;
@@ -464,8 +468,6 @@ public class Board {
 		
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
-		
-		b.spawnBlock();
 		Block a = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 1);
 		Block c = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 5);
 		Block d = new Block(BlockType.SQUARE, Orientation.UP, false, false, 19, 8);
@@ -473,6 +475,7 @@ public class Board {
 		b.addBlock(c);
 		b.addBlock(d);
 		System.out.println(b);
+		b.spawnBlock();
 		b.clearLine();
 		System.out.println(b);
 //		
