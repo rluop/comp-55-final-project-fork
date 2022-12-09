@@ -29,6 +29,7 @@ public class MainApplication extends GraphicsApplication {
 	private Board board;
 	
 	private GLabel timer;
+	private GLabel scoreLabel;
 	private GLabel score;
 	
 	public int min = 0;
@@ -47,11 +48,13 @@ public class MainApplication extends GraphicsApplication {
 
 	public void run() {
 		timer = new GLabel("timer", 0, 100);
-		score = new GLabel("score", 90, 90);
+		scoreLabel = new GLabel("SCORE: ", 20, 100);
+		score = new GLabel("Score", 10, 100);
 		add(timer);
+		add(scoreLabel);
 		add(score);
 		
-		score = new GLabel("Score", 10, 100);
+		//score = new GLabel("Score", 10, 100);
 		//add(score);
 		
 		System.out.println("Hello, world!");
@@ -80,9 +83,12 @@ public class MainApplication extends GraphicsApplication {
 			sec = 0;
 		}
 		
-//<<<<<<< HEAD
 		score.setFont(Font.MONOSPACED);
-		score.setLocation(90, 90); // not sure just a guesstimate
+		// score.setColor(Color.WHITE);
+		score.setLocation(25, 110); // not sure just a guesstimate
+		score.sendToFront();
+		
+//<<<<<<< HEAD
 //=======
 		/*score.setFont(Font.MONOSPACED);
 		score.setLocation(90, 90);
