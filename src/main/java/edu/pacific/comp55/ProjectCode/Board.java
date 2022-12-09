@@ -162,16 +162,34 @@ public class Board {
 			}
 		}
 		
-		if (activeBlock.getBlockType() == BlockType.LEFTL && (activeBlock.getStartSpace().getCol() == 9 || activeBlock.getStartSpace().getCol() == 8) && activeBlock.getOrientation() == Orientation.LEFT) {
-			return;
-		}
-//		if (activeBlock.getBlockType() == BlockType.RIGHTL)
-		if ((activeBlock.getBlockType() == BlockType.BAR && activeBlock.getStartSpace().getCol() == 9) || (activeBlock.getBlockType() == BlockType.BAR && activeBlock.getOrientation() == Orientation.LEFT && activeBlock.getStartSpace().getCol() == 8)) {
-			return;
-		}
-		
 		removeBlock();
 		activeBlock.rotateRight();
+		
+		Space[] spaces = activeBlock.spacesOccupied();
+		for (int i = 0; i < 4; i++) {
+			if (spaces[i].getCol() > 9 || spaces[i].getCol() < 0) {
+				activeBlock.rotateLeft();
+				addBlock(activeBlock);
+				return;
+			}
+		}
+		
+//		if (activeBlock.getBlockType() == BlockType.LEFTL && (activeBlock.getStartSpace().getCol() == 9 || activeBlock.getStartSpace().getCol() == 8) && activeBlock.getOrientation() == Orientation.LEFT) {
+//			return;
+//		}
+////		if (activeBlock.getBlockType() == BlockType.RIGHTL)
+//		if ((activeBlock.getBlockType() == BlockType.BAR && activeBlock.getStartSpace().getCol() == 9) || (activeBlock.getBlockType() == BlockType.BAR && activeBlock.getOrientation() == Orientation.LEFT && activeBlock.getStartSpace().getCol() == 8)) {
+//			return;
+//		}
+//		
+//		if (activeBlock.getBlockType() == BlockType.T && activeBlock.getStartSpace().getCol() == 9 && activeBlock.getOrientation() == Orientation.LEFT) {
+//			return;
+//		}
+		
+		// if (activeBlock.getBlockType() == BlockType.)
+		
+		// removeBlock();
+		// activeBlock.rotateRight();
 		addBlock(activeBlock);
 	}
 	
@@ -199,12 +217,24 @@ public class Board {
 			}
 		}
 		
-		if (activeBlock.getBlockType() == BlockType.LEFTL && activeBlock.getStartSpace().getCol() == 9) {
-			return;
-		}
+//		if (activeBlock.getBlockType() == BlockType.LEFTL && activeBlock.getStartSpace().getCol() == 9) {
+//			return;
+//		}
 		
 		removeBlock();
 		activeBlock.rotateLeft();
+		
+		Space[] spaces = activeBlock.spacesOccupied();
+		for (int i = 0; i < 4; i++) {
+			if (spaces[i].getCol() > 9 || spaces[i].getCol() < 0) {
+				activeBlock.rotateRight();
+				addBlock(activeBlock);
+				return;
+			}
+		}
+		
+		// removeBlock();
+		// activeBlock.rotateLeft();
 		addBlock(activeBlock);
 	}
 	
