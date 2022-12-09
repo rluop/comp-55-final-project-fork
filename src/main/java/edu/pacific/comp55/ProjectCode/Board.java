@@ -159,7 +159,7 @@ public class Board {
 				if (board[lastInd][j] != null && lastInd > 0) {
 					lastInd -= 1;
 				}
-				if (board[i][j] != null && i != 19 && lastInd > i) {
+				if (board[i][j] != null && i != 19 && i != 0 && i != 1 && lastInd > i) {
 					board[lastInd][j] = board[i][j];
 					board[i][j] = null;
 					lastInd -= 1;
@@ -464,10 +464,16 @@ public class Board {
 		
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
+		
 		b.spawnBlock();
+		Block a = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 1);
+		Block c = new Block(BlockType.BAR, Orientation.UP, false, false, 19, 5);
+		Block d = new Block(BlockType.SQUARE, Orientation.UP, false, false, 19, 8);
+		b.addBlock(a);
+		b.addBlock(c);
+		b.addBlock(d);
 		System.out.println(b);
-		b.holdBlock();
-		System.out.println();
+		b.clearLine();
 		System.out.println(b);
 //		
 //		
