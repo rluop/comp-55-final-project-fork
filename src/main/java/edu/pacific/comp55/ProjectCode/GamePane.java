@@ -20,6 +20,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private int counter;
 	private int speed = 1000;
 	private GImage next;
+	private GImage hold;
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
 	public boolean newGame = false;
@@ -55,6 +56,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_C) {
 			holdBlock();
+			createHeldBlock();
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_UP) {
 			rotateRight();
@@ -223,6 +225,40 @@ public class GamePane extends GraphicsPane implements ActionListener {
 			break;
 		}
 		program.add(next);
+	}
+	
+	private void createHeldBlock() {
+		//GImage cover = new GImage("cover.jpg", program.WINDOW_WIDTH - 200, program.WINDOW_HEIGHT / 2);
+		//program.add(cover);
+		if (hold != null) {
+			program.remove(hold);
+		}
+		
+		hold = new GImage("s.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+		switch(board.getHeldBlock().getBlockType()) {
+		case T:
+			hold = new GImage("t.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case SQUARE:
+			hold = new GImage("square.jpg", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case BAR:
+			hold = new GImage("bar.jpg", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case RIGHTS:
+			hold = new GImage("s.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case LEFTS:
+			hold = new GImage("z.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case RIGHTL:
+			hold = new GImage("l.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		case LEFTL:
+			hold = new GImage("lm.png", program.WINDOW_WIDTH / 8 - 50, program.WINDOW_HEIGHT / 2);
+			break;
+		}
+		program.add(hold);
 	}
 	
 
