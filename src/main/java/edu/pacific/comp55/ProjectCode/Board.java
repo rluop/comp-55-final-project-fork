@@ -243,7 +243,8 @@ public class Board {
 			if (!blockHeld) {
 				heldBlock = activeBlock;
 				removeBlock();
-				addBlock(nextBlock);
+				// addBlock(nextBlock);
+				this.spawnBlock();
 				
 				blockHeld = true;
 			}
