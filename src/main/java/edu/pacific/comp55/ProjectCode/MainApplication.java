@@ -25,7 +25,7 @@ public class MainApplication extends GraphicsApplication {
 	
 	private Game consoleGame;
 	
-	private Block block;
+	private Block block;	
 	private Board board;
 	
 	private GLabel timer;
