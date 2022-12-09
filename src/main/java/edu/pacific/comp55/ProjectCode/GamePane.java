@@ -276,7 +276,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 
 	@Override
 	public void showContents() {
-		if(board.fullBoard() || newGame) {
+		if(board.fullBoard()) {
 			this.board = new Board();
 			newGame = false;
 			justPaused = false;
