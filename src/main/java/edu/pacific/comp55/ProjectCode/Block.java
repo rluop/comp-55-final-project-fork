@@ -365,6 +365,10 @@ void rotateLeft() {
 		this.spacesOccupied = spacesOccupied();
 	}
 	
+	public void setOrientation(Orientation o) {
+		this.orientation = o;
+	}
+	
 	public void printSpaces() {
 		for (int i = 0; i < 4; i++) {
 			System.out.println(spacesOccupied[i]);
