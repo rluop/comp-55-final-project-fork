@@ -84,6 +84,7 @@ public class MainApplication extends GraphicsApplication {
 		}
 		
 		// scoreLabel
+		//
 		
 		scoreLabel.setFont(Font.MONOSPACED);
 		// score.setColor(Color.WHITE);
