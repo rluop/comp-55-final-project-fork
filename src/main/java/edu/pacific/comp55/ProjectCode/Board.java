@@ -73,7 +73,6 @@ public class Board {
 	
 	public void spawnHoldBlock(Block b){
 		canHold = true; // resets hold state of block
-		
 		activeBlock = b;
 		if (activeBlock.type == BlockType.BAR) {
 			activeBlock.setStartSpace(0,4);
@@ -283,6 +282,7 @@ public class Board {
 			if (!blockHeld) {
 				heldBlock = activeBlock;
 				removeBlock();
+				heldBlock.setOrientation(Orientation.UP);
 				// addBlock(nextBlock);
 				this.spawnBlock();
 				
@@ -294,6 +294,7 @@ public class Board {
 				tempBlock = activeBlock;
 				activeBlock = heldBlock;
 				heldBlock = tempBlock;
+				heldBlock.setOrientation(Orientation.UP);
 				this.spawnHoldBlock(activeBlock);
 			}
 			canHold = false;
