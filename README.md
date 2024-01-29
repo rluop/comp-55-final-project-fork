@@ -5,8 +5,11 @@ The feature that I will implement in this iteration of the COMP 55 project is a 
 // PSUEDOCODE
 
 if change difficulty button is clicked
-switch to difficulty screen
-if difficulty 1 button is clicked
+    
+    switch to difficulty screen
+    
+        if difficulty 1 button is clicked
+        
     change file's contents to contain difficulty 1 value
   if difficulty 2 button is clicked
     change file's contents to contain difficulty 2 value
