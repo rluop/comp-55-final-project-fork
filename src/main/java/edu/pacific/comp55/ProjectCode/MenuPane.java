@@ -78,7 +78,7 @@ public class MenuPane extends GraphicsPane {
 			program.switchToQuit();
 		}
 		else if (obj == difficulty) {
-			// TODO: create difficulty background and program.switchToDifficulty function
+			program.switchToDifficulty();
 		}
 	}
 	

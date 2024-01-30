@@ -22,6 +22,7 @@ public class MainApplication extends GraphicsApplication {
 	private PausePane pause;
 	private QuitPane quit;
 	private GameOverPane over; 
+	private DifficultyPane difficulty;
 	
 	private Game consoleGame;
 	
@@ -62,6 +63,7 @@ public class MainApplication extends GraphicsApplication {
 		game = new GamePane(this);
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
+		difficulty = new DifficultyPane(this);
 		setupInteractions();
 		switchToMenu();
 	}
@@ -146,6 +148,10 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToGameOver() {
 		switchToScreen(over);
+	}
+	
+	public void switchToDifficulty() {
+		switchToScreen(difficulty);
 	}
 	
 	/*public void displayBlock(Block b) {
