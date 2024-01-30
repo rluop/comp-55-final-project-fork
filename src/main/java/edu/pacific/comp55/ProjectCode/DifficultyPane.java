@@ -36,11 +36,17 @@ public class DifficultyPane extends GraphicsPane {
 	@Override
 	public void showContents() {
 		program.add(back);
+		program.add(normal);
+		program.add(fast);
+		program.add(faster);
 	}
 
 	@Override
 	public void hideContents() {
 		program.remove(back);
+		program.add(normal);
+		program.add(fast);
+		program.add(faster);
 	}
 	
 	@Override
