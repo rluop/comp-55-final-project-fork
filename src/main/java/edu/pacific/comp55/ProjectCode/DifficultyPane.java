@@ -1,6 +1,10 @@
 package edu.pacific.comp55.ProjectCode;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import acm.graphics.GImage;
 import acm.graphics.GObject;
@@ -15,6 +19,10 @@ public class DifficultyPane extends GraphicsPane {
 	private GButton fast;
 	private GButton faster;
 	private GButton back;
+	private File fileName;
+	private File directory;
+	private File difficultyFile;
+	private FileWriter outputFile;
 
 	public DifficultyPane(MainApplication app) {
 		this.program = app;
@@ -36,6 +44,27 @@ public class DifficultyPane extends GraphicsPane {
 		back = new GButton("back to main menu", 810, 500, 200, 100);
 		back.setColor(Color.black);
 		back.setVisible(false);
+		
+		fileName = new File("bin\\main\\output.txt");
+		System.out.println(fileName.getParent());
+		
+		try {
+			if (fileName.createNewFile()) {
+				System.out.println("File created successfully!");
+			} else {
+				System.out.println("File already exists.");
+			}
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			outputFile = new FileWriter("bin\\main\\output.txt");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}	
 	}
 
 	@Override
@@ -61,7 +90,43 @@ public class DifficultyPane extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == back) {
 			program.switchToMenu();
+			
+			try {
+				outputFile.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 		}
-		// TODO: add functionality for all difficulty buttons
+		if (obj == normal) {
+			try {
+				System.out.println("difficulty is now normal!");
+				outputFile.write("1");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		if (obj == fast) {
+			try {	
+				System.out.println("difficulty is now fast!");
+				outputFile.write("2");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		if (obj == faster) {
+			try {
+				System.out.println("difficulty is now faster!");
+				outputFile.write("3");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 	}
 }
