@@ -17,6 +17,7 @@ public class MenuPane extends GraphicsPane {
 	private GamePane game;
 	private GButton play;
 	private GButton quit;
+	private GButton difficulty;
 	
 
 	public MenuPane(MainApplication app) {
@@ -34,6 +35,10 @@ public class MenuPane extends GraphicsPane {
 		quit.setFillColor(Color.red);
 		quit.setVisible(false);
 		
+		difficulty = new GButton("difficulty", 200, 200, 200, 100);
+		difficulty.setFillColor(Color.blue);
+		difficulty.setVisible(false);
+		
 		menu = new GImage("mainmenu.png", 0,0);
 		menu.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 	}
@@ -44,6 +49,7 @@ public class MenuPane extends GraphicsPane {
 		program.add(rect);
 		program.add(play);
 		program.add(quit);
+		program.add(difficulty);
 	}
 
 	@Override
@@ -52,6 +58,7 @@ public class MenuPane extends GraphicsPane {
 		program.remove(rect);
 		program.remove(play);
 		program.remove(quit);
+		program.remove(difficulty);
 	}
 
 	@Override
@@ -69,6 +76,9 @@ public class MenuPane extends GraphicsPane {
 			program.switchToGame();
 		}else if(obj == quit) {
 			program.switchToQuit();
+		}
+		else if (obj == difficulty) {
+			// TODO: create difficulty background and program.switchToDifficulty function
 		}
 	}
 	
