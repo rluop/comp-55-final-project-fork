@@ -35,7 +35,7 @@ public class MenuPane extends GraphicsPane {
 		quit.setFillColor(Color.red);
 		quit.setVisible(false);
 		
-		difficulty = new GButton("difficulty", 200, 200, 200, 100);
+		difficulty = new GButton("difficulty", 800, 520, 200, 100);
 		difficulty.setFillColor(Color.blue);
 		difficulty.setVisible(false);
 		
