@@ -10,43 +10,50 @@ import edu.pacific.comp55.starter.GraphicsPane;
 public class DifficultyPane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 										// all of the GraphicsProgram calls
-	private GImage back;
+	private GImage dScreen;
 	private GButton normal;
 	private GButton fast;
 	private GButton faster;
+	private GButton back;
 
 	public DifficultyPane(MainApplication app) {
 		this.program = app;
-		back = new GImage("difficulty.png", 0, 0);
-		back.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
+		dScreen = new GImage("difficulty.png", 0, 0);
+		dScreen.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
 		
-		normal = new GButton("normal difficulty", 200, 200, 200, 100);
+		normal = new GButton("normal difficulty", 425, 150, 200, 100);
 		normal.setColor(Color.black);
-		normal.setVisible(true);
+		normal.setVisible(false);
 		
-		fast = new GButton("fast difficulty", 200, 300, 200, 100);
+		fast = new GButton("fast difficulty", 425, 280, 200, 100);
 		fast.setColor(Color.black);
-		fast.setVisible(true);
+		fast.setVisible(false);
 		
-		faster = new GButton("faster difficulty", 200, 400, 200, 100);
+		faster = new GButton("faster difficulty", 425, 410, 200, 100);
 		faster.setColor(Color.black);
-		faster.setVisible(true);		
+		faster.setVisible(false);	
+		
+		back = new GButton("back to main menu", 810, 500, 200, 100);
+		back.setColor(Color.black);
+		back.setVisible(false);
 	}
 
 	@Override
 	public void showContents() {
-		program.add(back);
+		program.add(dScreen);
 		program.add(normal);
 		program.add(fast);
 		program.add(faster);
+		program.add(back);
 	}
 
 	@Override
 	public void hideContents() {
-		program.remove(back);
+		program.remove(dScreen);
 		program.add(normal);
 		program.add(fast);
 		program.add(faster);
+		program.add(back);
 	}
 	
 	@Override
@@ -55,5 +62,6 @@ public class DifficultyPane extends GraphicsPane {
 		if (obj == back) {
 			program.switchToMenu();
 		}
+		// TODO: add functionality for all difficulty buttons
 	}
 }

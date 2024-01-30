@@ -31,7 +31,7 @@ public class MenuPane extends GraphicsPane {
 		play.setFillColor(Color.red);
 		play.setVisible(false);
 		
-		quit = new GButton("quit", 640, 380, 200, 80);
+		quit = new GButton("quit", 655, 395, 150, 60);
 		quit.setFillColor(Color.red);
 		quit.setVisible(false);
 		
