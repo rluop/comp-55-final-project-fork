@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 
 public class Game {
 	public static Board board;
-	private DifficultyPane difficultyPane;
 	
 	public  void main(String[] args) {		
 		Game g = new Game();
@@ -94,12 +93,6 @@ public class Game {
 	}
 	
 	public void playGame() {
-		try {
-			System.out.println(difficultyPane.getDifficulty());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
 		int counter = 0;
