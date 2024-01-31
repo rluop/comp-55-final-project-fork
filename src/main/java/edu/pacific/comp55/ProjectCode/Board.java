@@ -18,6 +18,9 @@ public class Board {
 	private boolean canHold = true;
 	private boolean blockHeld = false;
 	
+	// 1 = normal, 2 = fast, 3 = faster
+	private char difficulty;
+	
 	public Boolean activeBlockSat = false;
 	
 	public Board() {
@@ -375,6 +378,22 @@ public class Board {
 	public boolean fasterFall() {
 		if(moveActiveBlockDown()) {
 			if(moveActiveBlockDown()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean difficulty2Speed() {
+		if (moveActiveBlockDown()) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean difficulty3Speed() {
+		if (moveActiveBlockDown()) {
+			if (moveActiveBlockDown() ) {
 				return true;
 			}
 		}

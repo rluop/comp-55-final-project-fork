@@ -1,7 +1,10 @@
 package edu.pacific.comp55.ProjectCode;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,6 +12,7 @@ import java.io.PrintWriter;
 import acm.graphics.GImage;
 import acm.graphics.GObject;
 import edu.pacific.comp55.starter.GButton;
+import edu.pacific.comp55.starter.GParagraph;
 import edu.pacific.comp55.starter.GraphicsPane;
 
 public class DifficultyPane extends GraphicsPane {
@@ -64,7 +68,14 @@ public class DifficultyPane extends GraphicsPane {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}	
+		}
+		
+		try {
+			getDifficulty();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -85,6 +96,14 @@ public class DifficultyPane extends GraphicsPane {
 		program.add(back);
 	}
 	
+	public FileReader getDifficulty() throws IOException {		
+		FileReader read = new FileReader(fileName);
+		
+		System.out.println(read.read());
+		
+		return read;
+	}
+
 	@Override
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());

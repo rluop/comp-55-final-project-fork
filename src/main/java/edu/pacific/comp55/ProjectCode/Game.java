@@ -8,12 +8,16 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.nio.file.Files;
+
 import javax.swing.JFrame;
 
 public class Game {
 	public static Board board;
+	private DifficultyPane difficultyPane;
 	
-	public  void main(String[] args) {
+	public  void main(String[] args) {		
 		Game g = new Game();
 		JFrame frame = new JFrame("Key Listener");
         Container contentPane = frame.getContentPane();
@@ -90,6 +94,12 @@ public class Game {
 	}
 	
 	public void playGame() {
+		try {
+			System.out.println(difficultyPane.getDifficulty());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		board.createNextBlock(Orientation.UP, false, false, 0,0);
 		board.spawnBlock();
 		int counter = 0;
@@ -100,6 +110,7 @@ public class Game {
 				if (board.getActiveBlock() == null) {
 					break;
 				}
+				board.moveActiveBlockDown();
 				board.moveActiveBlockDown();
 			}
 			System.out.println(board);
@@ -115,7 +126,7 @@ public class Game {
 		}
 		System.out.println("game over!");
 		
-	}
+	}	
 
 	public static void wait(int ms) {
 	    try {
