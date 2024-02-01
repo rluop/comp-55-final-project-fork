@@ -27,6 +27,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage heldBlock;
 	private GImage hold;
 	private String difficulty;
+	public String fileData;
 
 	private boolean readDifficulty = false;
 	public boolean gamePaused = false;
@@ -42,7 +43,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		counter = 0;
 	}
 	
-	public void readDifficulty() throws FileNotFoundException {
+	public String readDifficulty() throws FileNotFoundException {
 		File file = new File("bin\\main\\output.txt");
 		
 		// System.out.println("1");
@@ -52,11 +53,16 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		while (readFile.hasNextLine()) {
 			String data = readFile.nextLine();
-			difficulty += data;
-			System.out.println(data);
+			
+			fileData = data;
+			//System.out.println(data);
 		}
 		
+		difficulty = fileData.substring(fileData.length() - 1);
+	
 		readFile.close();
+		
+		return difficulty;
 	}
 	
 	@Override
@@ -303,7 +309,14 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 
 	public void actionPerformed( ActionEvent e) {
+		//System.out.println(fileData);
+		//System.out.println(fileData.substring(fileData.length() - 1));
 		playGame();
+		/*
+		if (difficulty.substring(difficulty.length() - 1) == "1") {
+			playGame();
+		}
+		*/
 	}
 
 	@Override
