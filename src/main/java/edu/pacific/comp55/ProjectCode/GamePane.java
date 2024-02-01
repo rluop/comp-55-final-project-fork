@@ -312,11 +312,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		String difficultyValue = null;
 		
 		playGame();
-		playGame();
-		playGame();
-		playGame();
-		playGame();
-		playGame();
 				
 		try {
 			difficultyValue = readDifficulty();
@@ -334,11 +329,8 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		if (difficultyValue == "2") {
 			playGame();
 			playGame();
-			playGame();
 		}
 		if (difficultyValue == "3") {
-			playGame();
-			playGame();
 			playGame();
 			playGame();
 			playGame();
