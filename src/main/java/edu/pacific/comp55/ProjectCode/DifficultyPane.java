@@ -70,12 +70,14 @@ public class DifficultyPane extends GraphicsPane {
 			e1.printStackTrace();
 		}
 		
+		/*
 		try {
 			getDifficulty();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 	}
 
 	@Override
@@ -96,6 +98,7 @@ public class DifficultyPane extends GraphicsPane {
 		program.add(back);
 	}
 	
+	/*
 	public FileReader getDifficulty() throws IOException {		
 		FileReader read = new FileReader(fileName);
 		
@@ -103,6 +106,7 @@ public class DifficultyPane extends GraphicsPane {
 		
 		return read;
 	}
+	*/
 
 	@Override
 	public void mousePressed(MouseEvent e) {

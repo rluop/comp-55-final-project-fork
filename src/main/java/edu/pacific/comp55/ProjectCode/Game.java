@@ -8,8 +8,11 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 
@@ -17,6 +20,7 @@ public class Game {
 	public static Board board;
 	
 	public  void main(String[] args) {		
+		System.out.println("1");
 		Game g = new Game();
 		JFrame frame = new JFrame("Key Listener");
         Container contentPane = frame.getContentPane();
@@ -103,7 +107,6 @@ public class Game {
 				if (board.getActiveBlock() == null) {
 					break;
 				}
-				board.moveActiveBlockDown();
 				board.moveActiveBlockDown();
 			}
 			System.out.println(board);

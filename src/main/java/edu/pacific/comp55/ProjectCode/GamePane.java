@@ -3,6 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import javax.swing.Timer;
 
@@ -23,7 +26,9 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	private GImage next;
 	private GImage heldBlock;
 	private GImage hold;
+	private String difficulty;
 
+	private boolean readDifficulty = false;
 	public boolean gamePaused = false;
 	public boolean justPaused = false;
 	public boolean newGame = false;
@@ -35,6 +40,23 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		board = new Board();
 		gameTimer = new Timer(speed, this);
 		counter = 0;
+	}
+	
+	public void readDifficulty() throws FileNotFoundException {
+		File file = new File("bin\\main\\output.txt");
+		
+		// System.out.println("1");
+		System.out.println(file.exists());
+		
+		Scanner readFile = new Scanner(file);
+		
+		while (readFile.hasNextLine()) {
+			String data = readFile.nextLine();
+			difficulty += data;
+			System.out.println(data);
+		}
+		
+		readFile.close();
 	}
 	
 	@Override
@@ -110,6 +132,16 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		counter++;
 		justPaused = false;
 		
+		if (newGame && !readDifficulty) {
+			try {
+				readDifficulty();
+				readDifficulty = true;
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		if (board.fullBoard()) {
 			System.out.println("game over!");
 			gameTimer.stop();
@@ -138,7 +170,7 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		
 		if(counter % 20 == 0 && speed > 100) {
 			gameTimer.stop();
-			speed -= 50;
+			speed -= 10;
 			gameTimer = new Timer(speed, this);
 			gameTimer.start();
 		}
