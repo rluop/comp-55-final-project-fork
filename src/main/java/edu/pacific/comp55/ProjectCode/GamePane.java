@@ -309,14 +309,40 @@ public class GamePane extends GraphicsPane implements ActionListener {
 	
 
 	public void actionPerformed( ActionEvent e) {
-		//System.out.println(fileData);
-		//System.out.println(fileData.substring(fileData.length() - 1));
+		String difficultyValue = null;
+		
 		playGame();
-		/*
-		if (difficulty.substring(difficulty.length() - 1) == "1") {
+		playGame();
+		playGame();
+		playGame();
+		playGame();
+		playGame();
+				
+		try {
+			difficultyValue = readDifficulty();
+		} catch (FileNotFoundException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		// System.out.println("Difficulty: " + difficultyValue);
+		
+		// the more playGame(), the faster the blocks move
+		if (difficultyValue == "1") {
 			playGame();
 		}
-		*/
+		if (difficultyValue == "2") {
+			playGame();
+			playGame();
+			playGame();
+		}
+		if (difficultyValue == "3") {
+			playGame();
+			playGame();
+			playGame();
+			playGame();
+			playGame();
+		}		
 	}
 
 	@Override
